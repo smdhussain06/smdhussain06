@@ -5,6 +5,9 @@ import { ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
+// Get the base path for GitHub Pages
+const basePath = process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''
+
 const projects = [
   {
     title: "AI-Powered Design Tool",
@@ -39,7 +42,7 @@ const projects = [
     title: "3D Product Visualization",
     category: "Digital Marketing",
     description: "Stunning 3D product renders and animations created in Blender for e-commerce and marketing campaigns.",
-    image: `${process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''}/3DMOCKUP.jpg`,
+    image: "/3DMOCKUP.jpg",
     tags: ["Blender", "3D Modeling", "Product Design", "Marketing"],
     link: "#",
     github: "#",
@@ -121,9 +124,14 @@ export default function Projects() {
             >
               <div className="relative overflow-hidden">
                 <img
-                  src={project.image || "/placeholder.svg"}
+                  src={`${basePath}${project.image}` || `${basePath}/placeholder.svg`}
                   alt={project.title}
                   className="w-full h-48 object-cover"
+                  onError={(e) => {
+                    console.log('Image failed to load:', project.image);
+                    e.currentTarget.src = `${basePath}/placeholder.svg`;
+                  }}
+                  onLoad={() => console.log('Image loaded successfully:', project.image)}
                 />
               </div>
 
