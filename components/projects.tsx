@@ -39,7 +39,7 @@ const projects = [
     title: "3D Product Visualization",
     category: "Digital Marketing",
     description: "Stunning 3D product renders and animations created in Blender for e-commerce and marketing campaigns.",
-    image: "/placeholder.svg?height=300&width=400",
+    image: `${process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''}/3DMOCKUP.jpg`,
     tags: ["Blender", "3D Modeling", "Product Design", "Marketing"],
     link: "#",
     github: "#",

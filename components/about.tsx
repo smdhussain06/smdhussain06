@@ -21,16 +21,16 @@ export default function About() {
           <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="order-2 lg:order-1"
+            className="order-1 lg:order-1"
           >
             <div className="relative">
-              <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 mx-auto lg:mx-0 rounded-3xl bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 flex items-center justify-center overflow-hidden">
+              <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-full lg:h-full lg:max-w-md mx-auto lg:mx-0 rounded-3xl bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 flex items-center justify-center overflow-hidden lg:aspect-square">
                 <img
                   src={`${basePath}/profilepic.jpg`}
                   alt="Mohammad Hussain"
@@ -45,7 +45,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-4 sm:space-y-6 order-1 lg:order-2"
+            className="space-y-4 sm:space-y-6 order-2 lg:order-2 lg:flex lg:flex-col lg:justify-center"
           >
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
