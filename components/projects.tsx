@@ -82,26 +82,26 @@ export default function Projects() {
     selectedCategory === "All" ? projects : projects.filter((project) => project.category === selectedCategory)
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-black">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="projects" className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-black dark:text-white mb-6">Featured Projects</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full mb-8" />
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-4 sm:mb-6">Featured Projects</h2>
+          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full mb-6 sm:mb-8" />
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 px-4">
             {categories.map((category) => (
               <Button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 variant={selectedCategory === category ? "default" : "outline"}
-                className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                className={`px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full transition-all duration-300 ${
                   selectedCategory === category
                     ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white"
                     : "border-gray-300 dark:border-gray-600 hover:border-orange-500 dark:hover:border-orange-400"
@@ -113,7 +113,7 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={index}

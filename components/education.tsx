@@ -46,8 +46,8 @@ const education = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8">
+    <section id="education" className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
