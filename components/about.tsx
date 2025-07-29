@@ -33,22 +33,6 @@ export default function About() {
                   className="w-full h-full object-cover rounded-3xl"
                 />
               </div>
-
-              {/* Floating One Piece Easter Egg */}
-              <motion.div
-                animate={{
-                  rotate: [0, 10, -10, 0],
-                  y: [0, -5, 5, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                }}
-                className="absolute -top-4 -right-4 bg-orange-500 text-white p-3 rounded-full shadow-lg"
-              >
-                <Sparkles className="w-6 h-6" />
-              </motion.div>
             </div>
           </motion.div>
 

@@ -39,15 +39,6 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 text-center px-6 sm:px-8 max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-6"
-        >
-          <span className="text-orange-500 dark:text-orange-400 font-medium text-lg">He/Him</span>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
