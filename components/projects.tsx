@@ -8,7 +8,7 @@ import { useState } from "react"
 const projects = [
   {
     title: "AI-Powered Design Tool",
-    category: "AI & Design",
+    category: "AI Engineering",
     description:
       "Revolutionary design tool that uses machine learning to generate creative assets and optimize design workflows.",
     image: "/placeholder.svg?height=300&width=400",
@@ -17,21 +17,30 @@ const projects = [
     github: "#",
   },
   {
+    title: "Data Visualization Dashboard",
+    category: "AI Engineering",
+    description: "Interactive dashboard for data analysis and visualization using Python and modern web technologies.",
+    image: "/placeholder.svg?height=300&width=400",
+    tags: ["Python", "Data Science", "Visualization", "Dashboard"],
+    link: "#",
+    github: "#",
+  },
+  {
     title: "Brand Identity Campaign",
-    category: "Graphic Design",
+    category: "Digital Marketing",
     description:
       "Complete brand identity design for a tech startup including logo, color palette, and marketing materials.",
     image: "/placeholder.svg?height=300&width=400",
-    tags: ["Branding", "Logo Design", "Adobe Illustrator", "Print Design"],
+    tags: ["Branding", "Logo Design", "Adobe Illustrator", "Marketing"],
     link: "#",
     github: "#",
   },
   {
     title: "3D Product Visualization",
-    category: "3D Design",
-    description: "Stunning 3D product renders and animations created in Blender for e-commerce and marketing.",
+    category: "Digital Marketing",
+    description: "Stunning 3D product renders and animations created in Blender for e-commerce and marketing campaigns.",
     image: "/placeholder.svg?height=300&width=400",
-    tags: ["Blender", "3D Modeling", "Product Design", "Animation"],
+    tags: ["Blender", "3D Modeling", "Product Design", "Marketing"],
     link: "#",
     github: "#",
   },
@@ -45,17 +54,8 @@ const projects = [
     github: "#",
   },
   {
-    title: "Data Visualization Dashboard",
-    category: "Data Science",
-    description: "Interactive dashboard for data analysis and visualization using Python and modern web technologies.",
-    image: "/placeholder.svg?height=300&width=400",
-    tags: ["Python", "Data Science", "Visualization", "Dashboard"],
-    link: "#",
-    github: "#",
-  },
-  {
     title: "Motion Graphics Reel",
-    category: "Motion Graphics",
+    category: "Content Creation",
     description: "Creative motion graphics reel showcasing various animation techniques and visual effects.",
     image: "/placeholder.svg?height=300&width=400",
     tags: ["After Effects", "Motion Graphics", "Animation", "Visual Effects"],
@@ -66,12 +66,9 @@ const projects = [
 
 const categories = [
   "All",
-  "AI & Design",
-  "Graphic Design",
-  "3D Design",
+  "AI Engineering",
+  "Digital Marketing",
   "Content Creation",
-  "Data Science",
-  "Motion Graphics",
 ]
 
 export default function Projects() {
