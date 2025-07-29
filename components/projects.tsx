@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink, Github, Eye } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -76,7 +76,6 @@ const categories = [
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All")
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   const filteredProjects =
     selectedCategory === "All" ? projects : projects.filter((project) => project.category === selectedCategory)
@@ -121,38 +120,14 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              onHoverStart={() => setHoveredProject(index)}
-              onHoverEnd={() => setHoveredProject(null)}
               className="group relative bg-gray-50 dark:bg-gray-900 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-800"
             >
               <div className="relative overflow-hidden">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-48 object-cover"
                 />
-
-                {/* Overlay */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: hoveredProject === index ? 1 : 0 }}
-                  className="absolute inset-0 bg-black/60 flex items-center justify-center space-x-4"
-                >
-                  <Button
-                    size="sm"
-                    className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30"
-                  >
-                    <Eye className="w-4 h-4 mr-2" />
-                    View
-                  </Button>
-                  <Button
-                    size="sm"
-                    className="bg-white/20 backdrop-blur-sm text-white border-white/30 hover:bg-white/30"
-                  >
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </Button>
-                </motion.div>
               </div>
 
               <div className="p-6">
