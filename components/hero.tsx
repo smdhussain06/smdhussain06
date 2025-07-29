@@ -11,8 +11,8 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-orange-50 dark:from-gray-900 dark:via-black dark:to-orange-950" />
+      {/* Clean Background */}
+      <div className="absolute inset-0 bg-white dark:bg-black" />
 
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
@@ -47,7 +47,17 @@ export default function Hero() {
         >
           Mohammad
           <br />
-          <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Hussain</span>
+          <span className="relative inline-block">
+            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent glow-text">
+              Hussain
+            </span>
+            <span 
+              className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent pointer-events-none select-none animate-breathe-glow"
+              style={{ zIndex: -1 }}
+            >
+              Hussain
+            </span>
+          </span>
         </motion.h1>
 
         <motion.p
