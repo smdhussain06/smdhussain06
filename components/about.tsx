@@ -3,6 +3,9 @@
 import { motion } from "framer-motion"
 import { Sparkles } from "lucide-react"
 
+// Get the base path for GitHub Pages
+const basePath = process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''
+
 export default function About() {
   return (
     <section id="about" className="py-20 bg-white dark:bg-black">
@@ -28,7 +31,7 @@ export default function About() {
             <div className="relative">
               <div className="w-80 h-80 mx-auto lg:mx-0 rounded-3xl bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 flex items-center justify-center overflow-hidden">
                 <img
-                  src="/profilepic.jpg"
+                  src={`${basePath}/profilepic.jpg`}
                   alt="Mohammad Hussain"
                   className="w-full h-full object-cover rounded-3xl"
                 />
