@@ -1,10 +1,29 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useState, useEffect } from "react"
 // Remove ChevronDown from imports since it's no longer used
 import { Button } from "@/components/ui/button"
 
 export default function Hero() {
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
+  const roles = [
+    "AI & Data Science Enthusiast",
+    "Graphic Designer", 
+    "Content Creator",
+    "3D Artist",
+    "Photographer",
+    "Marketing Strategist"
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRoleIndex((prev) => (prev + 1) % roles.length)
+    }, 3000) // Change every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [roles.length])
+
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
   }
@@ -19,7 +38,7 @@ export default function Hero() {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-orange-200 dark:bg-orange-800 rounded-full opacity-20"
+            className="absolute w-2 h-2 bg-orange-200 dark:bg-orange-800 rounded-full opacity-60"
             animate={{
               x: [0, 100, 0],
               y: [0, -100, 0],
@@ -47,27 +66,31 @@ export default function Hero() {
         >
           Mohammad
           <br />
-          <span className="relative inline-block">
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent glow-text">
-              Hussain
-            </span>
-            <span 
-              className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent pointer-events-none select-none animate-breathe-glow"
-              style={{ zIndex: -1 }}
-            >
-              Hussain
-            </span>
+          <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+            Hussain
           </span>
         </motion.h1>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4"
+          className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4 min-h-[2em] flex items-center justify-center"
         >
-          AI & Data Science Enthusiast | Graphic Designer | Content Creator
-        </motion.p>
+          <motion.span
+            key={currentRoleIndex}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ 
+              duration: 0.5,
+              ease: "easeInOut"
+            }}
+            className="block"
+          >
+            {roles[currentRoleIndex]}
+          </motion.span>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}

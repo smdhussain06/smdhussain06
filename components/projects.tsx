@@ -1,12 +1,35 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ExternalLink } from "lucide-react"
+import { Brain, BarChart3, Palette, Box, Video, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import ImageSlider from "./image-slider"
 
 // Get the base path for GitHub Pages
 const basePath = process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''
+
+// Icon mapping for different project types
+const getProjectIcon = (iconType: string) => {
+  const iconProps = "w-4 h-4 text-gray-400 group-hover:text-orange-500 transition-colors duration-300"
+  
+  switch (iconType) {
+    case 'ai':
+      return <Brain className={iconProps} />
+    case 'data':
+      return <BarChart3 className={iconProps} />
+    case 'design':
+      return <Palette className={iconProps} />
+    case '3d':
+      return <Box className={iconProps} />
+    case 'video':
+      return <Video className={iconProps} />
+    case 'motion':
+      return <Sparkles className={iconProps} />
+    default:
+      return <Brain className={iconProps} />
+  }
+}
 
 const projects = [
   {
@@ -15,6 +38,12 @@ const projects = [
     description:
       "Revolutionary design tool that uses machine learning to generate creative assets and optimize design workflows.",
     image: "/placeholder.svg?height=300&width=400",
+    iconType: "ai",
+    isSlider: true,
+    sliderConfig: {
+      folderPath: "ai-design-tool",
+      imageCount: 4 // Update this number based on how many images you add
+    },
     tags: ["AI", "Machine Learning", "Design", "SaaS"],
     link: "#",
     github: "#",
@@ -24,6 +53,12 @@ const projects = [
     category: "AI Engineering",
     description: "Interactive dashboard for data analysis and visualization using Python and modern web technologies.",
     image: "/placeholder.svg?height=300&width=400",
+    iconType: "data",
+    isSlider: true,
+    sliderConfig: {
+      folderPath: "data-visualization",
+      imageCount: 3 // Update this number based on how many images you add
+    },
     tags: ["Python", "Data Science", "Visualization", "Dashboard"],
     link: "#",
     github: "#",
@@ -34,6 +69,12 @@ const projects = [
     description:
       "Complete brand identity design for a tech startup including logo, color palette, and marketing materials.",
     image: "/placeholder.svg?height=300&width=400",
+    iconType: "design",
+    isSlider: true,
+    sliderConfig: {
+      folderPath: "brand-identity",
+      imageCount: 5 // Update this number based on how many images you add
+    },
     tags: ["Branding", "Logo Design", "Adobe Illustrator", "Marketing"],
     link: "#",
     github: "#",
@@ -43,6 +84,12 @@ const projects = [
     category: "Digital Marketing",
     description: "Stunning 3D product renders and animations created in Blender for e-commerce and marketing campaigns.",
     image: "/3DMOCKUP.jpg",
+    iconType: "3d",
+    isSlider: true,
+    sliderConfig: {
+      folderPath: "3d-projects",
+      imageCount: 5 // Update this number based on how many images you add
+    },
     tags: ["Blender", "3D Modeling", "Product Design", "Marketing"],
     link: "#",
     github: "#",
@@ -52,6 +99,12 @@ const projects = [
     category: "Content Creation",
     description: "Comprehensive social media campaign with video content, graphics, and strategic content planning.",
     image: "/placeholder.svg?height=300&width=400",
+    iconType: "video",
+    isSlider: true,
+    sliderConfig: {
+      folderPath: "social-media-campaign",
+      imageCount: 6 // Update this number based on how many images you add
+    },
     tags: ["Video Editing", "Social Media", "Content Strategy", "After Effects"],
     link: "#",
     github: "#",
@@ -61,6 +114,12 @@ const projects = [
     category: "Content Creation",
     description: "Creative motion graphics reel showcasing various animation techniques and visual effects.",
     image: "/placeholder.svg?height=300&width=400",
+    iconType: "motion",
+    isSlider: true,
+    sliderConfig: {
+      folderPath: "motion-graphics",
+      imageCount: 4 // Update this number based on how many images you add
+    },
     tags: ["After Effects", "Motion Graphics", "Animation", "Visual Effects"],
     link: "#",
     github: "#",
@@ -122,23 +181,33 @@ export default function Projects() {
               viewport={{ once: true }}
               className="group relative bg-gray-50 dark:bg-gray-900 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-800"
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={`${basePath}${project.image}` || `${basePath}/placeholder.svg`}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                  onError={(e) => {
-                    console.log('Image failed to load:', project.image);
-                    e.currentTarget.src = `${basePath}/placeholder.svg`;
-                  }}
-                  onLoad={() => console.log('Image loaded successfully:', project.image)}
-                />
+              <div className="relative overflow-hidden h-48">
+                {project.isSlider && project.sliderConfig ? (
+                  <ImageSlider 
+                    basePath={basePath}
+                    folderPath={project.sliderConfig.folderPath}
+                    imageCount={project.sliderConfig.imageCount}
+                    alt={project.title}
+                    fileExtension="jpg"
+                  />
+                ) : (
+                  <img
+                    src={`${basePath}${project.image}` || `${basePath}/placeholder.svg`}
+                    alt={project.title}
+                    className="w-full h-48 object-cover"
+                    onError={(e) => {
+                      console.log('Image failed to load:', project.image);
+                      e.currentTarget.src = `${basePath}/placeholder.svg`;
+                    }}
+                    onLoad={() => console.log('Image loaded successfully:', project.image)}
+                  />
+                )}
               </div>
 
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-medium text-orange-500 dark:text-orange-400">{project.category}</span>
-                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-orange-500 transition-colors duration-300" />
+                  {getProjectIcon(project.iconType)}
                 </div>
 
                 <h3 className="text-xl font-bold text-black dark:text-white mb-3 group-hover:text-orange-500 transition-colors duration-300">

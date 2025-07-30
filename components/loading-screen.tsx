@@ -17,7 +17,7 @@ export default function LoadingScreen() {
           className="mb-8"
         >
           <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-orange-400 to-orange-600 flex items-center justify-center">
-            <span className="text-white font-bold text-2xl">MH</span>
+            <span className="text-white font-bold text-2xl">SMD</span>
           </div>
         </motion.div>
 
