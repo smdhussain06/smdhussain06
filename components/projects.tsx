@@ -33,10 +33,10 @@ const getProjectIcon = (iconType: string) => {
 
 const projects = [
   {
-    title: "AI-Powered Design Tool",
+    title: "Edge AI Mobile Computation",
     category: "AI Engineering",
     description:
-      "Revolutionary design tool that uses machine learning to generate creative assets and optimize design workflows.",
+      "Purpose-built system that enables large language models to run directly on mobile devices, eliminating server dependence to boost privacy and cut operational costs.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "ai",
     isSlider: true,
@@ -44,7 +44,7 @@ const projects = [
       folderPath: "ai-design-tool",
       imageCount: 4 // Update this number based on how many images you add
     },
-    tags: ["AI", "Machine Learning", "Design", "SaaS"],
+    tags: ["Edge AI", "Mobile AI", "LLM", "Privacy"],
     link: "#",
     github: "#",
   },
