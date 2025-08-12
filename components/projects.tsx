@@ -40,26 +40,20 @@ const projects = [
     image: "/placeholder.svg?height=300&width=400",
     iconType: "ai",
     isSlider: true,
-    sliderConfig: {
-      folderPath: "ai-design-tool",
-      imageCount: 4 // Update this number based on how many images you add
-    },
+    folderPath: "edge-ai-mobile-computation",
     tags: ["Edge AI", "Mobile AI", "LLM", "Privacy"],
     link: "#",
     github: "#",
   },
   {
-    title: "Data Visualization Dashboard",
+    title: "AttiTutor – Personalized Learning",
     category: "AI Engineering",
-    description: "Interactive dashboard for data analysis and visualization using Python and modern web technologies.",
+    description: "Fun AI learning tool that explains tough concepts in your friends' voice using shared memories — like a last-minute study jam session turned into a web app.",
     image: "/placeholder.svg?height=300&width=400",
-    iconType: "data",
+    iconType: "ai",
     isSlider: true,
-    sliderConfig: {
-      folderPath: "data-visualization",
-      imageCount: 3 // Update this number based on how many images you add
-    },
-    tags: ["Python", "Data Science", "Visualization", "Dashboard"],
+    folderPath: "attitutor-learning",
+    tags: ["AI", "EdTech", "Web App", "Personalized Learning"],
     link: "#",
     github: "#",
   },
@@ -71,10 +65,7 @@ const projects = [
     image: "/placeholder.svg?height=300&width=400",
     iconType: "design",
     isSlider: true,
-    sliderConfig: {
-      folderPath: "brand-identity",
-      imageCount: 5 // Update this number based on how many images you add
-    },
+    folderPath: "brand-identity",
     tags: ["Branding", "Logo Design", "Adobe Illustrator", "Marketing"],
     link: "#",
     github: "#",
@@ -86,10 +77,7 @@ const projects = [
     image: "/3DMOCKUP.jpg",
     iconType: "3d",
     isSlider: true,
-    sliderConfig: {
-      folderPath: "3d-projects",
-      imageCount: 5 // Update this number based on how many images you add
-    },
+    folderPath: "3d-projects",
     tags: ["Blender", "3D Modeling", "Product Design", "Marketing"],
     link: "#",
     github: "#",
@@ -101,10 +89,7 @@ const projects = [
     image: "/placeholder.svg?height=300&width=400",
     iconType: "video",
     isSlider: true,
-    sliderConfig: {
-      folderPath: "social-media-campaign",
-      imageCount: 6 // Update this number based on how many images you add
-    },
+    folderPath: "social-media-campaign",
     tags: ["Video Editing", "Social Media", "Content Strategy", "After Effects"],
     link: "#",
     github: "#",
@@ -116,10 +101,7 @@ const projects = [
     image: "/placeholder.svg?height=300&width=400",
     iconType: "motion",
     isSlider: true,
-    sliderConfig: {
-      folderPath: "motion-graphics",
-      imageCount: 4 // Update this number based on how many images you add
-    },
+    folderPath: "motion-graphics",
     tags: ["After Effects", "Motion Graphics", "Animation", "Visual Effects"],
     link: "#",
     github: "#",
@@ -182,11 +164,10 @@ export default function Projects() {
               className="group relative bg-gray-50 dark:bg-gray-900 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-800"
             >
               <div className="relative overflow-hidden h-48">
-                {project.isSlider && project.sliderConfig ? (
+                {project.isSlider && project.folderPath ? (
                   <ImageSlider 
                     basePath={basePath}
-                    folderPath={project.sliderConfig.folderPath}
-                    imageCount={project.sliderConfig.imageCount}
+                    folderPath={project.folderPath}
                     alt={project.title}
                     fileExtension="jpg"
                   />

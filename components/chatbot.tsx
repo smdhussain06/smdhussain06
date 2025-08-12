@@ -89,10 +89,8 @@ export default function Chatbot() {
     setInputValue("")
     setIsLoading(true)
 
-    // FORCE API CALL - NO FALLBACK TO OFFLINE
-    try {
-      console.log("🔥 FORCING API CALL - NO OFFLINE FALLBACK")
-      
+    // Simulate AI response delay for better UX
+    setTimeout(() => {
       // Check for booking intent first
       if (checkBookingIntent(userMessage.content)) {
         const bookingResponse: Message = {
@@ -107,93 +105,114 @@ export default function Chatbot() {
         return
       }
 
-      // Simple system prompt
-      const instructions = "You are Capcicum 🌶️, Mohammad's AI assistant with RIZZ! Be funny, playful, and charming. Make users smile with wit and humor. Don't say 'hi/hello' unless it's the first message. Be confident, flirty in a cute way, and entertaining. Keep responses SHORT - max 2-3 sentences, under 100 words. Add spice to conversations! 🔥 IMPORTANT: Use **bold** for emphasis, never use * or # symbols. Keep responses clean and professional looking."
-      const fullUserMessage = `${instructions}\n\nUser: ${userMessage.content}\n\nCapcicum:`
-
-      const payload = {
-        model: "google/gemma-3n-e2b-it:free",
-        messages: [
-          { role: "user", content: fullUserMessage }
-        ],
-        max_tokens: 60,
-        temperature: 0.7
-      }
-
-      console.log("🚀 API Call Details:")
-      console.log("- URL:", API_URL)
-      console.log("- Model:", payload.model)
-      console.log("- User input:", userMessage.content)
-      console.log("- Full payload:", JSON.stringify(payload))
-
-      const response = await fetch(API_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${API_KEY}`
-        },
-        body: JSON.stringify(payload)
-      })
-
-      console.log("📡 Response status:", response.status)
-      console.log("📡 Response headers:", response.headers)
-
-      if (!response.ok) {
-        const errorText = await response.text()
-        console.error("❌ API Error:", response.status, errorText)
-        
-        // Show error instead of fallback
-        const errorMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          content: `❌ API Error ${response.status}: ${errorText}. Please check the console for details.`,
-          role: "assistant", 
-          timestamp: new Date()
-        }
-        setMessages(prev => [...prev, errorMessage])
-        setIsLoading(false)
-        return
-      }
-
-      const data = await response.json()
-      console.log("📦 Full API Response:", data)
-      
-      if (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
-        const aiResponse = data.choices[0].message.content.trim()
-        console.log("✅ SUCCESS! AI Response:", aiResponse)
-        
-        const botResponse: Message = {
-          id: (Date.now() + 1).toString(),
-          content: aiResponse,
-          role: "assistant",
-          timestamp: new Date()
-        }
-        
-        setMessages(prev => [...prev, botResponse])
-      } else {
-        console.error("❌ Invalid response structure:", data)
-        const errorMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          content: `❌ Invalid API response structure. Check console for details.`,
-          role: "assistant",
-          timestamp: new Date()
-        }
-        setMessages(prev => [...prev, errorMessage])
-      }
-
-    } catch (error) {
-      console.error("💥 Network/Fetch Error:", error)
-      
-      // Show actual error instead of fallback
-      const errorMessage: Message = {
+      // Generate smart response based on user input
+      const response = generateSmartResponse(userMessage.content)
+      const botResponse: Message = {
         id: (Date.now() + 1).toString(),
-        content: `💥 Network Error: ${error instanceof Error ? error.message : String(error)}. Check console for details.`,
+        content: response,
         role: "assistant",
         timestamp: new Date()
       }
-      setMessages(prev => [...prev, errorMessage])
-    } finally {
+      
+      setMessages(prev => [...prev, botResponse])
       setIsLoading(false)
+    }, 1000 + Math.random() * 1000) // Random delay between 1-2 seconds for realism
+  }
+
+  // Generate intelligent responses with Capcicum's rizzy personality
+  const generateSmartResponse = (userInput: string): string => {
+    const input = userInput.toLowerCase()
+    
+    // Greeting responses
+    if (input.includes("hello") || input.includes("hi") || input.includes("hey")) {
+      const greetings = [
+        "Yo! 🌶️ Ready to dive into Mohammad's **amazing** world of AI and design? What's got you curious?",
+        "Well well well! 🔥 You've found the **coolest** assistant around! What can I tell you about Mohammad's genius?",
+        "Hey there, gorgeous! 😎 I'm Capcicum, and I'm here to spill all the **tea** about Mohammad's incredible work!"
+      ]
+      return greetings[Math.floor(Math.random() * greetings.length)]
     }
+
+    // Projects inquiries
+    if (input.includes("project") || input.includes("work") || input.includes("portfolio")) {
+      const projectResponses = [
+        "Oh honey, Mohammad's projects are **fire**! 🚀 His Edge AI runs LLMs on phones (no servers needed!), plus those WhatsApp bots are pure **genius**. Which one's catching your eye?",
+        "Mohammad's portfolio is **chef's kiss** 👌 Edge AI, WhatsApp bots, A Generative Slice... the man doesn't miss! What type of project gets you excited?",
+        "Ready to be **amazed**? 🤩 Mohammad's building the future with Edge AI and smart bots. His work is honestly **next level** - what interests you most?"
+      ]
+      return projectResponses[Math.floor(Math.random() * projectResponses.length)]
+    }
+
+    // Skills and tech stack
+    if (input.includes("skill") || input.includes("tech") || input.includes("stack") || input.includes("technology")) {
+      const skillResponses = [
+        "Mohammad's skills? **Absolutely stacked**! 💻 AI/ML wizard, React ninja, Blender master, and design god. The man's basically a **creative-tech superhero**!",
+        "Babe, Mohammad's got **everything** covered! 🎯 Python, React, AI magic, 3D artistry... he's the **whole package** and then some!",
+        "Mohammad's tech arsenal is **insane**! 🔥 From AI algorithms to stunning designs, he's got skills that'll make your head spin in the **best way**!"
+      ]
+      return skillResponses[Math.floor(Math.random() * skillResponses.length)]
+    }
+
+    // Experience and background
+    if (input.includes("experience") || input.includes("background") || input.includes("story") || input.includes("journey")) {
+      const experienceResponses = [
+        "Mohammad's journey? **Pure inspiration**! 📈 From sales to design to startup founder - talk about **glow up goals**! Never says 'I don't know', just learns and **delivers**!",
+        "His story gives me **chills**! 🌟 Bank sales → graphic design → AI genius → startup boss. Mohammad's proof that **dreams plus hustle** equals magic!",
+        "Get this - Mohammad went from State Bank sales to AI startup founder! **That's what I call character development**! 🚀 Pure determination and **never-give-up** vibes!"
+      ]
+      return experienceResponses[Math.floor(Math.random() * experienceResponses.length)]
+    }
+
+    // Contact and collaboration
+    if (input.includes("contact") || input.includes("hire") || input.includes("collaborate") || input.includes("work together")) {
+      const contactResponses = [
+        "Want to work with Mohammad? **Smart choice**! 🤝 Hit him up at s.m.d.hussainjoe@gmail.com or find him @smdhussain06. Trust me, he's **worth it**!",
+        "Mohammad's always down for **amazing collaborations**! 💫 Email him or slide into those DMs @smdhussain06. Fair warning - his talent might **blow your mind**!",
+        "Ready to create something **epic** together? 🔥 Mohammad's your guy! Chennai-based, globally minded, and **absolutely brilliant** to work with!"
+      ]
+      return contactResponses[Math.floor(Math.random() * contactResponses.length)]
+    }
+
+    // AI specific questions
+    if (input.includes("ai") || input.includes("artificial intelligence") || input.includes("machine learning")) {
+      const aiResponses = [
+        "Mohammad + AI = **pure magic**! 🤖 Edge AI, LLMs, business solutions... he's not just studying the future, he's **building** it with A Generative Slice!",
+        "AI is Mohammad's **playground**! 🧠 From mobile AI to prompt engineering, he's making tech more accessible and **absolutely brilliant**. What aspect interests you?",
+        "Mohammad's AI work is **revolutionary**! 🚀 Running models locally, creating smart solutions... the man's basically an **AI whisperer**!"
+      ]
+      return aiResponses[Math.floor(Math.random() * aiResponses.length)]
+    }
+
+    // Fun/personal questions
+    if (input.includes("anime") || input.includes("one piece") || input.includes("fun") || input.includes("hobby")) {
+      const funResponses = [
+        "One Piece fan spotted! 👒 Mohammad's got that **Luffy energy** - never gives up, always adventures forward! His work has serious **anime protagonist vibes**!",
+        "Mohammad puts **anime spirit** into everything he builds! 🏴‍☠️ That One Piece determination? It shows in every project. **Absolutely legendary**!",
+        "A person of **culture**! 🔥 Mohammad channels that anime passion into his work - creative, determined, and always **pushing boundaries**!"
+      ]
+      return funResponses[Math.floor(Math.random() * funResponses.length)]
+    }
+
+    // About Capcicum
+    if (input.includes("you") || input.includes("capcicum") || input.includes("who are you")) {
+      const aboutResponses = [
+        "I'm Capcicum! 🌶️ Mohammad's **spiciest** assistant with serious rizz! I know everything about his work and I'm here to make you **smile** while learning!",
+        "Your friendly neighborhood **Capcicum**! 😎 Think of me as Mohammad's hype person - I've got all the **tea** on his amazing projects and personality!",
+        "Capcicum at your service! 🔥 I'm here to show you why Mohammad's the **coolest** AI-design hybrid you'll ever meet. Ready to be **impressed**?"
+      ]
+      return aboutResponses[Math.floor(Math.random() * aboutResponses.length)]
+    }
+
+    // Default responses with personality
+    const defaultResponses = [
+      "That's **interesting**! 🌶️ Tell me more about what you'd like to know regarding Mohammad's **incredible** work!",
+      "Ooh, **curious** are we? 😏 I love that energy! What specific aspect of Mohammad's journey has caught your **attention**?",
+      "You've got **great taste** in questions! 🔥 Mohammad's world is full of surprises - what would you like to explore **first**?",
+      "**Spicy** question! 🌶️ I'm here to help you discover all the **amazing** things about Mohammad's work. What's on your mind?",
+      "Now we're **talking**! 🚀 Mohammad's got so many cool projects and skills. What's got you **most excited** to learn about?"
+    ]
+    
+    return defaultResponses[Math.floor(Math.random() * defaultResponses.length)]
   }
 
   // Generate intelligent offline responses based on keywords

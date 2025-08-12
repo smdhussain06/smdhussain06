@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Sparkles } from "lucide-react"
+import PersonalImageSlider from "@/components/personal-image-slider"
 
 // Get the base path for GitHub Pages
 const basePath = process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''
@@ -30,13 +31,7 @@ export default function About() {
             className="order-1 lg:order-1"
           >
             <div className="relative">
-              <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-full lg:h-full lg:max-w-md mx-auto lg:mx-0 rounded-3xl bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-900 dark:to-orange-800 flex items-center justify-center overflow-hidden lg:aspect-square">
-                <img
-                  src={`${basePath}/profilepic.jpg`}
-                  alt="Mohammad Hussain"
-                  className="w-full h-full object-cover rounded-3xl"
-                />
-              </div>
+              <PersonalImageSlider className="w-64 h-64 sm:w-72 sm:h-72 lg:w-full lg:h-full lg:max-w-md mx-auto lg:mx-0 lg:aspect-square" />
             </div>
           </motion.div>
 

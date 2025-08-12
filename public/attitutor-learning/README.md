@@ -1,4 +1,4 @@
-# 3D Product Visualization Images
+# AttiTutor – Personalized Learning Images
 
 ## ✨ Auto-Detection Feature
 The image slider now automatically detects images in this folder! Just add images with sequential numbering:
@@ -9,7 +9,7 @@ The image slider now automatically detects images in this folder! Just add image
 - ... and so on!
 
 ## 🚀 How to Add Images:
-1. Drop your 3D renders/product visualizations into this folder
+1. Drop your AttiTutor project images into this folder
 2. Name them sequentially: `image-1.jpg`, `image-2.jpg`, etc.
 3. The slider will automatically detect and display all available images
 4. No need to update any configuration files!
@@ -20,15 +20,14 @@ The image slider now automatically detects images in this folder! Just add image
 - **Size:** Recommended 400x300px or similar aspect ratio
 - **Limit:** Up to 20 images (can be increased if needed)
 
-## 🎯 Current Images:
-- image-1.jpg through image-6.jpg (6 total images)
-- Showcasing stunning 3D product renders and Blender creations
-- Perfect for e-commerce and marketing campaign visuals
-
-## 🎬 Animation Style:
-- Smooth right-to-left slide transition
-- 3-second display time per image
-- Professional overlay animation
-- Seamless looping through all images
+## 🎯 Image Suggestions:
+- Main dashboard/interface of AttiTutor
+- Voice personalization feature in action  
+- Learning session showing concept explanation with memories
+- Student interaction examples
+- Friend's voice integration demo
+- Shared memories visualization
+- Study jam session interface
+- Learning progress dashboards
 
 The slider automatically cycles through all available images every 3 seconds and shows a counter in the bottom-right corner!
