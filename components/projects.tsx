@@ -44,6 +44,8 @@ const projects = [
     tags: ["Edge AI", "Mobile AI", "LLM", "Privacy"],
     link: "#",
     github: "#",
+    buttonText: "View Research",
+    buttonType: "research",
   },
   {
     title: "AttiTutor – Personalized Learning",
@@ -54,8 +56,10 @@ const projects = [
     isSlider: true,
     folderPath: "attitutor-learning",
     tags: ["AI", "EdTech", "Web App", "Personalized Learning"],
-    link: "#",
+    link: "https://smdhussain06.github.io/AttiTutor/",
     github: "#",
+    buttonText: "Try It Live",
+    buttonType: "demo",
   },
   {
     title: "Brand Identity Campaign",
@@ -69,6 +73,8 @@ const projects = [
     tags: ["Branding", "Logo Design", "Adobe Illustrator", "Marketing"],
     link: "#",
     github: "#",
+    buttonText: "View Portfolio",
+    buttonType: "portfolio",
   },
   {
     title: "3D Product Visualization",
@@ -81,6 +87,8 @@ const projects = [
     tags: ["Blender", "3D Modeling", "Product Design", "Marketing"],
     link: "#",
     github: "#",
+    buttonText: "View Gallery",
+    buttonType: "gallery",
   },
   {
     title: "Social Media Campaign",
@@ -93,6 +101,8 @@ const projects = [
     tags: ["Video Editing", "Social Media", "Content Strategy", "After Effects"],
     link: "#",
     github: "#",
+    buttonText: "Watch Campaign",
+    buttonType: "video",
   },
   {
     title: "Motion Graphics Reel",
@@ -105,6 +115,8 @@ const projects = [
     tags: ["After Effects", "Motion Graphics", "Animation", "Visual Effects"],
     link: "#",
     github: "#",
+    buttonText: "Watch Reel",
+    buttonType: "video",
   },
 ]
 
@@ -197,7 +209,7 @@ export default function Projects() {
 
                 <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{project.description}</p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
@@ -207,6 +219,18 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
+
+                {/* Action Buttons */}
+                {project.buttonText && (
+                  <div className="flex gap-2">
+                    <Button
+                      onClick={() => window.open(project.link, '_blank')}
+                      className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+                    >
+                      {project.buttonText}
+                    </Button>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
