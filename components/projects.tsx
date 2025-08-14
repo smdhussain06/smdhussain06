@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Brain, BarChart3, Palette, Box, Video, Sparkles } from "lucide-react"
+import { Brain, BarChart3, Palette, Box, Video, Sparkles, Megaphone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import ImageSlider from "./image-slider"
@@ -23,7 +23,7 @@ const getProjectIcon = (iconType: string) => {
     case '3d':
       return <Box className={iconProps} />
     case 'video':
-      return <Video className={iconProps} />
+      return <Megaphone className={iconProps} />
     case 'motion':
       return <Sparkles className={iconProps} />
     default:
@@ -33,19 +33,19 @@ const getProjectIcon = (iconType: string) => {
 
 const projects = [
   {
-    title: "Edge AI Mobile Computation",
+    title: "KaiPulla - Offline AI Assistant",
     category: "AI Engineering",
     description:
-      "Purpose-built system that enables large language models to run directly on mobile devices, eliminating server dependence to boost privacy and cut operational costs.",
+      "Private, offline AI assistant powered by Ollama local models. Works on PC & Android (Termux) with complete privacy and no internet dependency.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "ai",
     isSlider: true,
     folderPath: "edge-ai-mobile-computation",
-    tags: ["Edge AI", "Mobile AI", "LLM", "Privacy"],
-    link: "#",
-    github: "#",
-    buttonText: "View Research",
-    buttonType: "research",
+    tags: ["Offline AI", "Ollama", "Privacy", "Local Models"],
+    link: "https://github.com/smdhussain06/KaiPulla-offline-assistant",
+    github: "https://github.com/smdhussain06/KaiPulla-offline-assistant",
+    buttonText: "View Repository",
+    buttonType: "github",
   },
   {
     title: "AttiTutor – Personalized Learning",
@@ -117,6 +117,7 @@ const projects = [
     github: "#",
     buttonText: "Watch Reel",
     buttonType: "video",
+    fileExtension: "mp4", // Use MP4 for motion graphics videos
   },
 ]
 
@@ -181,7 +182,7 @@ export default function Projects() {
                     basePath={basePath}
                     folderPath={project.folderPath}
                     alt={project.title}
-                    fileExtension="jpg"
+                    fileExtension={project.fileExtension || "jpg"}
                   />
                 ) : (
                   <img
