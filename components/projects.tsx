@@ -3,8 +3,10 @@
 import { motion } from "framer-motion"
 import { Brain, BarChart3, Palette, Box, Video, Sparkles, Megaphone } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import ImageSlider from "./image-slider"
+import githubProjectsData from "@/data/github-projects.json"
+import type { Project } from "@/types/project"
 
 // Get the base path for GitHub Pages
 const basePath = process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''
@@ -31,36 +33,8 @@ const getProjectIcon = (iconType: string) => {
   }
 }
 
-const projects = [
-  {
-    title: "KaiPulla - Offline AI Assistant",
-    category: "AI Engineering",
-    description:
-      "Private, offline AI assistant powered by Ollama local models. Works on PC & Android (Termux) with complete privacy and no internet dependency.",
-    image: "/placeholder.svg?height=300&width=400",
-    iconType: "ai",
-    isSlider: true,
-    folderPath: "edge-ai-mobile-computation",
-    tags: ["Offline AI", "Ollama", "Privacy", "Local Models"],
-    link: "https://github.com/smdhussain06/KaiPulla-offline-assistant",
-    github: "https://github.com/smdhussain06/KaiPulla-offline-assistant",
-    buttonText: "View Repository",
-    buttonType: "github",
-  },
-  {
-    title: "AttiTutor – Personalized Learning",
-    category: "AI Engineering",
-    description: "Fun AI learning tool that explains tough concepts in your friends' voice using shared memories — like a last-minute study jam session turned into a web app.",
-    image: "/placeholder.svg?height=300&width=400",
-    iconType: "ai",
-    isSlider: true,
-    folderPath: "attitutor-learning",
-    tags: ["AI", "EdTech", "Web App", "Personalized Learning"],
-    link: "https://smdhussain06.github.io/AttiTutor/",
-    github: "#",
-    buttonText: "Try It Live",
-    buttonType: "demo",
-  },
+// Static projects (Digital Marketing and Content Creation)
+const staticProjects: Project[] = [
   {
     title: "Brand Identity Campaign",
     category: "Digital Marketing",
@@ -120,6 +94,9 @@ const projects = [
     fileExtension: "mp4", // Use MP4 for motion graphics videos
   },
 ]
+
+// Merge AI Engineering projects from JSON with static projects
+const projects: Project[] = [...(githubProjectsData as Project[]), ...staticProjects]
 
 const categories = [
   "All",

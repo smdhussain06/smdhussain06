@@ -1,0 +1,30 @@
+[
+  {
+    "title": "KaiPulla - Offline AI Assistant",
+    "category": "AI Engineering",
+    "description": "Private, offline AI assistant powered by Ollama local models. Works on PC & Android (Termux) with complete privacy and no internet dependency.",
+    "image": "/placeholder.svg?height=300&width=400",
+    "iconType": "ai",
+    "isSlider": true,
+    "folderPath": "edge-ai-mobile-computation",
+    "tags": ["Offline AI", "Ollama", "Privacy", "Local Models"],
+    "link": "https://github.com/smdhussain06/KaiPulla-offline-assistant",
+    "github": "https://github.com/smdhussain06/KaiPulla-offline-assistant",
+    "buttonText": "View Repository",
+    "buttonType": "github"
+  },
+  {
+    "title": "AttiTutor – Personalized Learning",
+    "category": "AI Engineering",
+    "description": "Fun AI learning tool that explains tough concepts in your friends' voice using shared memories — like a last-minute study jam session turned into a web app.",
+    "image": "/placeholder.svg?height=300&width=400",
+    "iconType": "ai",
+    "isSlider": true,
+    "folderPath": "attitutor-learning",
+    "tags": ["AI", "EdTech", "Web App", "Personalized Learning"],
+    "link": "https://smdhussain06.github.io/AttiTutor/",
+    "github": "#",
+    "buttonText": "Try It Live",
+    "buttonType": "demo"
+  }
+]

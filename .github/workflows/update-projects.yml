@@ -1,0 +1,144 @@
+name: Update AI Projects
+
+on:
+  schedule:
+    # Run weekly on Mondays at 9:00 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write
+
+jobs:
+  update-projects:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup GitHub CLI
+        run: |
+          gh --version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Add ai-engineering topic to repositories
+        run: |
+          echo "Adding ai-engineering topic to KaiPulla-offline-assistant..."
+          gh repo edit smdhussain06/KaiPulla-offline-assistant --add-topic ai-engineering || echo "Topic already added or repo not accessible"
+          
+          echo "Adding ai-engineering topic to AttiTutor..."
+          gh repo edit smdhussain06/AttiTutor --add-topic ai-engineering || echo "Topic already added or repo not accessible"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Fetch AI Engineering projects
+        run: |
+          echo "Fetching AI Engineering projects..."
+          
+          # Create a script to fetch and update projects
+          cat > fetch-projects.sh << 'EOF'
+          #!/bin/bash
+          set -e
+          
+          # Initialize JSON array
+          echo "[" > data/github-projects.json.tmp
+          
+          first=true
+          
+          # Fetch repos with ai-engineering topic
+          repos=$(gh api \
+            --method GET \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "/search/repositories?q=user:smdhussain06+topic:ai-engineering" \
+            --jq '.items[] | @json')
+          
+          while IFS= read -r repo; do
+            name=$(echo "$repo" | jq -r '.name')
+            description=$(echo "$repo" | jq -r '.description // "AI Engineering project"')
+            html_url=$(echo "$repo" | jq -r '.html_url')
+            homepage=$(echo "$repo" | jq -r '.homepage // ""')
+            
+            # Determine the appropriate link and button text
+            if [ -n "$homepage" ] && [ "$homepage" != "null" ]; then
+              link="$homepage"
+              buttonText="Try It Live"
+              buttonType="demo"
+            else
+              link="$html_url"
+              buttonText="View Repository"
+              buttonType="github"
+            fi
+            
+            # Determine title based on repo name
+            case "$name" in
+              "KaiPulla-offline-assistant")
+                title="KaiPulla - Offline AI Assistant"
+                tags='["Offline AI", "Ollama", "Privacy", "Local Models"]'
+                folderPath="edge-ai-mobile-computation"
+                ;;
+              "AttiTutor")
+                title="AttiTutor – Personalized Learning"
+                tags='["AI", "EdTech", "Web App", "Personalized Learning"]'
+                folderPath="attitutor-learning"
+                ;;
+              *)
+                title="$name"
+                tags='["AI", "Engineering"]'
+                folderPath=""
+                ;;
+            esac
+            
+            # Add comma if not first item
+            if [ "$first" = false ]; then
+              echo "," >> data/github-projects.json.tmp
+            fi
+            first=false
+            
+            # Create JSON object
+            cat >> data/github-projects.json.tmp << ITEM
+  {
+    "title": "$title",
+    "category": "AI Engineering",
+    "description": "$description",
+    "image": "/placeholder.svg?height=300&width=400",
+    "iconType": "ai",
+    "isSlider": true,
+    "folderPath": "$folderPath",
+    "tags": $tags,
+    "link": "$link",
+    "github": "$html_url",
+    "buttonText": "$buttonText",
+    "buttonType": "$buttonType"
+  }
+ITEM
+          done <<< "$repos"
+          
+          echo "" >> data/github-projects.json.tmp
+          echo "]" >> data/github-projects.json.tmp
+          
+          # Replace old file with new one
+          mv data/github-projects.json.tmp data/github-projects.json
+          
+          echo "Projects file updated successfully"
+          EOF
+          
+          chmod +x fetch-projects.sh
+          ./fetch-projects.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          if git diff --quiet data/github-projects.json; then
+            echo "No changes to commit"
+          else
+            git add data/github-projects.json
+            git commit -m "chore: update AI Engineering projects from GitHub"
+            git push
+          fi
