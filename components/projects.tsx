@@ -5,7 +5,7 @@ import { Brain, BarChart3, Palette, Box, Video, Sparkles, Megaphone } from "luci
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import ImageSlider from "./image-slider"
-import githubProjects from "@/data/github-projects.json"
+import githubProjects, { type Project } from "@/data/github-projects.json"
 
 // Get the base path for GitHub Pages
 const basePath = process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''
@@ -127,7 +127,7 @@ const hardcodedProjects = [
 // GitHub projects take precedence if they have the same github URL
 const mergeProjects = () => {
   const merged = [...githubProjects];
-  const githubUrls = new Set(githubProjects.map((p: any) => p.github?.toLowerCase()));
+  const githubUrls = new Set(githubProjects.map((p: Project) => p.github?.toLowerCase()));
   
   // Add hardcoded projects that don't exist in GitHub projects
   hardcodedProjects.forEach(project => {

@@ -1,5 +1,5 @@
 declare module '@/data/github-projects.json' {
-  interface Project {
+  export interface Project {
     title: string;
     category: string;
     description: string;
@@ -11,6 +11,8 @@ declare module '@/data/github-projects.json' {
     github: string;
     buttonText: string;
     buttonType: string;
+    folderPath?: string;
+    fileExtension?: string;
     stars?: number;
     forks?: number;
     language?: string;

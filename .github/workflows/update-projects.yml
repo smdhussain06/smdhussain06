@@ -15,6 +15,8 @@ permissions:
 jobs:
   update-projects:
     runs-on: ubuntu-latest
+    # Skip if commit message contains [skip ci]
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     
     steps:
       - name: Checkout repository

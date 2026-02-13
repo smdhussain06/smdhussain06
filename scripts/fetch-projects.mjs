@@ -26,9 +26,9 @@ const CATEGORY_ICON_MAP = {
   'Content Creation': 'video'
 };
 
-// Capitalize words for tags
-function formatTag(tag) {
-  return tag
+// Capitalize words (for tags and titles)
+function capitalizeWords(text) {
+  return text
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
@@ -61,7 +61,7 @@ async function fetchGitHubProjects() {
     
     // Add auth token if available
     if (GITHUB_TOKEN) {
-      headers['Authorization'] = `token ${GITHUB_TOKEN}`;
+      headers['Authorization'] = `Bearer ${GITHUB_TOKEN}`;
     }
     
     const response = await fetch(API_URL, { headers });
@@ -92,15 +92,13 @@ async function fetchGitHubProjects() {
       // Get tags (excluding the category topic itself)
       const tags = topics
         .filter(topic => topic !== categoryTopic)
-        .map(formatTag);
+        .map(capitalizeWords);
 
       // Get button info
       const buttonInfo = getButtonInfo(repo.homepage);
 
       const project = {
-        title: repo.name.split('-').map(word => 
-          word.charAt(0).toUpperCase() + word.slice(1)
-        ).join(' '),
+        title: capitalizeWords(repo.name),
         category: category,
         description: repo.description || 'No description provided',
         image: '/placeholder.svg?height=300&width=400',
