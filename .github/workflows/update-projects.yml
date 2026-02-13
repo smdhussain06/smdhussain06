@@ -1,0 +1,69 @@
+name: Update GitHub Projects
+
+on:
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    # Allow manual trigger
+
+permissions:
+  contents: write  # Required to commit and push changes
+
+jobs:
+  update-projects:
+    runs-on: ubuntu-latest
+    # Skip if commit message contains [skip ci]
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Add topics to existing AI Engineering repos
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Add ai-engineering topic to KaiPulla repo
+          gh repo edit smdhussain06/KaiPulla-offline-assistant --add-topic ai-engineering || true
+          
+          # Add ai-engineering topic to AttiTutor repo
+          gh repo edit smdhussain06/AttiTutor --add-topic ai-engineering || true
+          
+          echo "✅ Topics added to existing repos"
+          
+      - name: Fetch GitHub projects
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/fetch-projects.mjs
+        
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code data/github-projects.json || echo "changed=true" >> $GITHUB_OUTPUT
+          
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/github-projects.json
+          git commit -m "Update GitHub projects [skip ci]"
+          git push
+          
+      - name: Log completion
+        run: |
+          if [ "${{ steps.git-check.outputs.changed }}" == "true" ]; then
+            echo "✅ Projects updated and committed"
+          else
+            echo "✅ No changes to projects"
+          fi

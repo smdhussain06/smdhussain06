@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "fetch-projects": "node scripts/fetch-projects.mjs"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

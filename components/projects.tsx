@@ -5,6 +5,7 @@ import { Brain, BarChart3, Palette, Box, Video, Sparkles, Megaphone } from "luci
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import ImageSlider from "./image-slider"
+import githubProjects, { type Project } from "@/data/github-projects.json"
 
 // Get the base path for GitHub Pages
 const basePath = process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''
@@ -31,7 +32,8 @@ const getProjectIcon = (iconType: string) => {
   }
 }
 
-const projects = [
+// Hardcoded fallback projects (for categories without GitHub repos or custom projects with images/sliders)
+const hardcodedProjects = [
   {
     title: "KaiPulla - Offline AI Assistant",
     category: "AI Engineering",
@@ -120,6 +122,25 @@ const projects = [
     fileExtension: "mp4", // Use MP4 for motion graphics videos
   },
 ]
+
+// Merge GitHub projects with hardcoded projects, avoiding duplicates
+// GitHub projects take precedence if they have the same github URL
+const mergeProjects = () => {
+  const merged = [...githubProjects];
+  const githubUrls = new Set(githubProjects.map((p: Project) => p.github?.toLowerCase()));
+  
+  // Add hardcoded projects that don't exist in GitHub projects
+  hardcodedProjects.forEach(project => {
+    const projectGithubUrl = project.github?.toLowerCase();
+    if (!projectGithubUrl || !githubUrls.has(projectGithubUrl) || projectGithubUrl === '#') {
+      merged.push(project);
+    }
+  });
+  
+  return merged;
+}
+
+const projects = mergeProjects();
 
 const categories = [
   "All",
