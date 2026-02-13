@@ -50,75 +50,57 @@ jobs:
             "/search/repositories?q=user:smdhussain06+topic:ai-engineering" \
             --jq '.items')
           
-          # Process repos and create JSON array
-          echo "$repos" | jq -c 'map({
-            name: .name,
-            description: (.description // "AI Engineering project"),
-            html_url: .html_url,
-            homepage: (.homepage // "")
-          })' | jq -r 'to_entries[] | .value' | while IFS= read -r repo_data; do
-            name=$(echo "$repo_data" | jq -r '.name')
-            description=$(echo "$repo_data" | jq -r '.description')
-            html_url=$(echo "$repo_data" | jq -r '.html_url')
-            homepage=$(echo "$repo_data" | jq -r '.homepage')
-            
-            # Determine the appropriate link and button text
-            if [ -n "$homepage" ] && [ "$homepage" != "null" ] && [ "$homepage" != "" ]; then
-              link="$homepage"
-              buttonText="Try It Live"
-              buttonType="demo"
+          # Process all repos in one jq command to build the projects array
+          echo "$repos" | jq -c '[
+            .[] | 
+            {
+              name: .name,
+              description: (.description // "AI Engineering project"),
+              html_url: .html_url,
+              homepage: (.homepage // "")
+            } |
+            # Determine link and button based on homepage
+            if .homepage != "" and .homepage != null then
+              . + {link: .homepage, buttonText: "Try It Live", buttonType: "demo"}
             else
-              link="$html_url"
-              buttonText="View Repository"
-              buttonType="github"
-            fi
-            
-            # Determine title and metadata based on repo name
-            case "$name" in
-              "KaiPulla-offline-assistant")
-                title="KaiPulla - Offline AI Assistant"
-                tags='["Offline AI", "Ollama", "Privacy", "Local Models"]'
-                folderPath="edge-ai-mobile-computation"
-                ;;
-              "AttiTutor")
-                title="AttiTutor – Personalized Learning"
-                tags='["AI", "EdTech", "Web App", "Personalized Learning"]'
-                folderPath="attitutor-learning"
-                ;;
-              *)
-                title="$name"
-                tags='["AI", "Engineering"]'
-                folderPath=""
-                ;;
-            esac
-            
-            # Store in array for later
-            projects_json=$(echo "${projects_json:-[]}" | jq --arg title "$title" \
-              --arg description "$description" \
-              --arg link "$link" \
-              --arg html_url "$html_url" \
-              --arg buttonText "$buttonText" \
-              --arg buttonType "$buttonType" \
-              --argjson tags "$tags" \
-              --arg folderPath "$folderPath" \
-              '. += [{
-                title: $title,
-                category: "AI Engineering",
-                description: $description,
-                image: "/placeholder.svg?height=300&width=400",
-                iconType: "ai",
-                isSlider: true,
-                folderPath: $folderPath,
-                tags: $tags,
-                link: $link,
-                github: $html_url,
-                buttonText: $buttonText,
-                buttonType: $buttonType
-              }]')
-          done
-          
-          # Write the final JSON to file
-          echo "${projects_json:-[]}" | jq '.' > data/github-projects.json
+              . + {link: .html_url, buttonText: "View Repository", buttonType: "github"}
+            end |
+            # Map repo names to custom metadata
+            if .name == "KaiPulla-offline-assistant" then
+              . + {
+                title: "KaiPulla - Offline AI Assistant",
+                tags: ["Offline AI", "Ollama", "Privacy", "Local Models"],
+                folderPath: "edge-ai-mobile-computation"
+              }
+            elif .name == "AttiTutor" then
+              . + {
+                title: "AttiTutor – Personalized Learning",
+                tags: ["AI", "EdTech", "Web App", "Personalized Learning"],
+                folderPath: "attitutor-learning"
+              }
+            else
+              . + {
+                title: .name,
+                tags: ["AI", "Engineering"],
+                folderPath: ""
+              }
+            end |
+            # Build final project object
+            {
+              title: .title,
+              category: "AI Engineering",
+              description: .description,
+              image: "/placeholder.svg?height=300&width=400",
+              iconType: "ai",
+              isSlider: true,
+              folderPath: .folderPath,
+              tags: .tags,
+              link: .link,
+              github: .html_url,
+              buttonText: .buttonText,
+              buttonType: .buttonType
+            }
+          ]' > data/github-projects.json
           
           echo "Projects file updated successfully"
           EOF
