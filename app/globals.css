@@ -181,7 +181,7 @@ html {
 @media print {
   @page {
     size: letter portrait;
-    margin: 4mm 6mm;
+    margin: 0;
   }
 
   html, body {
