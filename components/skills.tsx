@@ -5,10 +5,10 @@ import { Brain, Layers, PhoneCall, BarChart3, ShieldCheck, Cpu } from "lucide-re
 
 const skills = [
   {
-    category: "Financial Operations & AR Lifecycle",
+    category: "Financial Operations and Accounts Lifecycle",
     icon: ShieldCheck,
     skills: [
-      "Accounts Receivable (AR) Lifecycle Tracking",
+      "Accounts Receivable Lifecycle Tracking",
       "Invoice Verification & Dispute Mitigation",
       "Account Reconciliation & Aging Analysis",
       "Client Documentation & KYC Verification",
@@ -34,7 +34,7 @@ const skills = [
     category: "Workflow Automation & AI",
     icon: Brain,
     skills: [
-      "Intelligent Process Automation (IPA)",
+      "Intelligent Process Automation",
       "Automated Communication & Ticket Routing",
       "Model Context Protocol & FastMCP Middleware",
       "Document OCR Extraction & Validation",

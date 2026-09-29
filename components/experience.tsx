@@ -5,27 +5,47 @@ import { Calendar, MapPin, Building, ShieldCheck } from "lucide-react"
 
 const experiences = [
   {
-    title: "Founder & Lead Systems Architect",
+    title: "Founder and Lead Systems Architect",
     company: "A Generative Slice",
-    type: "Enterprise Automation & AI Systems",
+    type: "Enterprise Automation and AI Systems",
     duration: "July 2024 — Present",
-    location: "Chennai, Tamil Nadu, India · Hybrid & Global",
+    location: "Chennai, Tamil Nadu, India · Hybrid and Global",
     description:
       "Founded and leading an enterprise automation and AI systems venture. Architected and deployed eleven client enterprise solutions across commercial logistics, manufacturing ERP, and overseas client workflows. Engineered SliceInbox automated communication triage for European luxury brand Litelab Milano, automated OCR invoice generation pipelines, and multi-warehouse reconciliation systems. Directing end-to-end client engagement and cross-functional team productivity.",
     skills: ["Enterprise Automation", "Workflow Triage", "OCR Invoice Generation", "FastMCP Architecture", "Client Relations", "Team Direction"],
   },
   {
-    title: "Financial Operations & Client Relations Specialist",
-    company: "State Bank of India (SBI Cards)",
+    title: "Financial Operations and Client Relations Specialist",
+    company: "State Bank of India",
     type: "Institutional Banking Operations",
-    duration: "July 2020 — January 2021",
+    duration: "July 2022 — January 2023",
     location: "Chennai, Tamil Nadu, India · Main Branch",
     description:
       "Formative financial operations role at State Bank of India main branch managing customer accounts, financial documentation, KYC compliance, and credit verification. Handled high-volume customer inquiries, billing explanations, and financial dispute mitigation adhering to strict institutional regulatory standards. Developed high-level voice communication resilience, active listening, client counseling, and objection resolution.",
     skills: ["Financial Documentation", "Account Verification", "Customer Dispute Mitigation", "Voice Communication", "Banking Compliance", "Client Retention"],
   },
   {
-    title: "Creative Director & Technical Designer",
+    title: "Auto Loan Insurance Verification Specialist",
+    company: "Sutherland Global Services",
+    type: "US Night Shift Operations",
+    duration: "January 2022 — April 2022",
+    location: "Chennai, Tamil Nadu, India · Night Shift",
+    description:
+      "Conducted US night-shift voice operations verifying auto insurance policies, coverage limits, and lienholder status directly with US insurance carriers. Validated comprehensive and collision coverage to mitigate lender financial risk prior to automotive loan disbursement. Maintained ninety-nine percent verification accuracy and complied strictly with US financial services regulatory guidelines.",
+    skills: ["Auto Insurance Verification", "US Night Shift Operations", "Carrier Communication", "Policy Validation", "Risk Mitigation", "International Voice"],
+  },
+  {
+    title: "Telecalling and Loan Recovery Specialist",
+    company: "Kotak Mahindra Prime",
+    type: "Loan Collections and Account Rehabilitation",
+    duration: "June 2021 — December 2021",
+    location: "Chennai, Tamil Nadu, India",
+    description:
+      "Managed outbound and inbound telecalling across Hindi and Tamil speaking customer segments for auto finance loan accounts and debt recovery. Negotiated structured repayment schedules and resolved customer account grievances with high persuasion, active listening, and empathy. Consistently exceeded monthly collection and rehabilitation targets while strictly observing banking ethical recovery standards.",
+    skills: ["Debt Recovery", "Telecalling in Hindi and Tamil", "Customer Negotiation", "Account Rehabilitation", "Dispute Resolution", "Target Achievement"],
+  },
+  {
+    title: "Creative Director and Technical Designer",
     company: "A Graphic Slice",
     type: "Independent Studio",
     duration: "January 2020 — Present",
@@ -33,26 +53,6 @@ const experiences = [
     description:
       "Founded A Graphic Slice delivering high-impact brand identities, commercial presentation systems, 3D visualizations in Blender, and UI/UX architectures for high-growth enterprises and tech ventures. Established procedural design frameworks that bridged directly into automated 3D spatial computing pipelines.",
     skills: ["Blender 3D", "Procedural Modeling", "Adobe Creative Suite", "Visual Reporting", "Brand Architecture", "UI/UX Design"],
-  },
-  {
-    title: "Content & Video Communications Strategist",
-    company: "MT Clothing Limited",
-    type: "Full-time",
-    duration: "September 2022 — January 2023",
-    location: "Chennai, Tamil Nadu, India · Remote",
-    description:
-      "Engineered digital media communications, dynamic video workflows, and stakeholder presentations for an apparel enterprise, significantly expanding brand recognition and engagement.",
-    skills: ["After Effects", "Adobe Premiere Pro", "Digital Communication", "Stakeholder Presentation"],
-  },
-  {
-    title: "Commercial Graphic Designer",
-    company: "Design Decorative",
-    type: "Full-time",
-    duration: "January 2021 — August 2021",
-    location: "Chennai, Tamil Nadu, India · On-site",
-    description:
-      "Professional design role focused on commercial documentation, print typography, packaging layouts, and digital branding assets across industry standard creative suites.",
-    skills: ["Adobe Photoshop", "CorelDRAW", "Commercial Typography", "Print Production"],
   },
 ]
 

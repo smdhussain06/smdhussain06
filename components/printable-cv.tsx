@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Mail, MapPin, Globe, Linkedin, Github, Phone, Award, CheckCircle2, Building, GraduationCap, Cpu, ShieldCheck } from "lucide-react"
+import { Mail, MapPin, Globe, Linkedin, Github } from "lucide-react"
 
 interface PrintableCVProps {
   id?: string
@@ -12,128 +12,98 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
   return (
     <div
       id={id}
-      className={`bg-white text-slate-900 w-full max-w-[210mm] mx-auto font-sans print:p-0 print:m-0 print:max-w-none print:w-full border border-slate-200 print:border-none shadow-xl print:shadow-none ${className}`}
+      className={`bg-white text-slate-900 w-full font-sans print:p-0 print:m-0 print:max-w-none print:w-full border-0 shadow-none ${className}`}
       style={{
         WebkitPrintColorAdjust: "exact",
         printColorAdjust: "exact",
       }}
     >
-      {/* Top Header Banner with Deep Corporate Navy & Orange Accent */}
-      <header className="bg-[#0A192F] text-white p-5 sm:p-6 print:p-5 border-b-4 border-[#FF5C00]">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      {/* Top Gradient Orange Accent Line */}
+      <div className="h-1.5 w-full bg-gradient-to-r from-[#FF5C00] via-[#FF7A1A] to-[#FF8C1A]" />
+
+      {/* Modern Executive Header */}
+      <header className="bg-white border-b border-slate-200 px-5 py-4">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
           <div>
-            <div className="flex items-center gap-2">
-              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white uppercase">
-                Mohammed Hussain<span className="text-[#FF5C00]">.</span>
-              </h1>
-              <span className="text-[9px] uppercase font-bold tracking-widest px-2 py-0.5 rounded bg-[#FF5C00]/20 text-[#FF5C00] border border-[#FF5C00]/40">
-                Immediate Joiner
-              </span>
-            </div>
-            <p className="text-xs sm:text-[13px] font-bold text-[#FF8C1A] tracking-wider mt-1 uppercase">
-              AI & Data Science Engineer · Financial Operations & Enterprise Systems
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-950 uppercase">
+              Mohammed Hussain<span className="text-[#FF5C00]">.</span>
+            </h1>
+            <p className="text-xs sm:text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] tracking-wide mt-0.5 uppercase">
+              Artificial Intelligence and Data Science Engineer · Enterprise Financial Operations
             </p>
           </div>
 
-          <div className="text-[10px] sm:text-[10.5px] text-slate-300 space-y-1 sm:text-right font-medium">
-            <div className="flex items-center sm:justify-end gap-1.5 text-white">
-              <MapPin className="w-3 h-3 text-[#FF5C00] shrink-0" />
-              <span>Chennai, Tamil Nadu, India · Porur DLF Corridor</span>
+          <div className="text-[10px] text-slate-600 space-y-0.5 sm:text-right font-medium">
+            <div className="text-slate-900 font-semibold">
+              Chennai, Tamil Nadu, India · Porur DLF Corridor
             </div>
-            <div className="flex items-center sm:justify-end gap-1.5">
-              <Mail className="w-3 h-3 text-[#FF5C00] shrink-0" />
-              <span className="text-slate-100 font-semibold">s.m.d.hussainjoe@gmail.com</span>
-            </div>
-            <div className="flex items-center sm:justify-end gap-2 text-slate-300">
-              <span className="text-slate-200">linkedin.com/in/smdhussain06</span>
-              <span>•</span>
-              <span className="text-slate-200">github.com/smdhussain06</span>
+            <div>s.m.d.hussainjoe@gmail.com</div>
+            <div className="text-slate-700">
+              linkedin.com/in/smdhussain06 • github.com/smdhussain06
             </div>
           </div>
         </div>
       </header>
 
-      {/* Two Column Document Body */}
-      <div className="grid grid-cols-12 min-h-[920px]">
-        {/* Left Column: Background, Education & Competencies (35% width / 4 cols) */}
-        <aside className="col-span-12 sm:col-span-4 bg-[#F8FAFC] p-4 sm:p-5 print:p-4 border-r border-slate-200 space-y-4">
-          {/* Quick Profile Summary */}
-          <div>
-            <h2 className="text-[10.5px] font-black uppercase tracking-wider text-[#0A192F] border-b-2 border-[#0A192F]/20 pb-1 mb-2 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#FF5C00]"></span>
-              Candidate Profile
-            </h2>
-            <div className="space-y-1.5 text-[9px] text-slate-700">
-              <div className="flex items-start gap-1.5">
-                <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>2025 Graduate:</strong> Anna University B.Tech in AI & Data Science (First Class Distinction).</span>
-              </div>
-              <div className="flex items-start gap-1.5">
-                <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Banking & Finance:</strong> State Bank of India operations, verification & dispute handling.</span>
-              </div>
-              <div className="flex items-start gap-1.5">
-                <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0 mt-0.5" />
-                <span><strong>Shift Flexibility:</strong> Ready for International Voice / Night Shifts & US client timelines.</span>
-              </div>
-            </div>
-          </div>
-
+      {/* Two Column Document Body filling full Letter sheet */}
+      <div className="grid grid-cols-12 w-full">
+        {/* Left Column: Background, Education & Competencies (33% width / 4 cols) */}
+        <aside className="col-span-12 sm:col-span-4 bg-[#FAFAFA] p-4 border-r border-slate-200 space-y-4">
           {/* Education Section */}
           <div>
-            <h2 className="text-[10.5px] font-black uppercase tracking-wider text-[#0A192F] border-b-2 border-[#0A192F]/20 pb-1 mb-2 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#FF5C00]"></span>
+            <h2 className="text-[10px] font-black uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1 mb-2 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-sm bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]"></span>
               Education
             </h2>
             <div className="space-y-1">
               <div className="font-bold text-[10px] text-slate-950 leading-tight">
-                Bachelor of Technology in Artificial Intelligence & Data Science
+                Bachelor of Technology in Artificial Intelligence and Data Science
               </div>
-              <div className="text-[9.5px] font-bold text-[#FF5C00]">
-                Graduated with First Class Distinction
+              <div className="text-[9px] font-bold text-[#FF5C00]">
+                First Class Distinction
               </div>
               <div className="text-[9px] text-slate-600">
-                Aalim Muhammed Salegh College of Engineering (Anna University) · 2021 — 2025
+                Aalim Muhammed Salegh College of Engineering, Anna University · 2021 — 2025
               </div>
               <div className="text-[8.5px] text-slate-500 pt-0.5 leading-snug">
-                Relevant Coursework: Workflow Automation, Distributed Intelligence, Data Analytics, Python Neural Computing.
+                Coursework: Workflow Automation, Distributed Intelligence, Data Analytics, Python Neural Computing.
               </div>
             </div>
           </div>
 
           {/* Core Competencies (Categorized) */}
           <div>
-            <h2 className="text-[10.5px] font-black uppercase tracking-wider text-[#0A192F] border-b-2 border-[#0A192F]/20 pb-1 mb-2 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#FF5C00]"></span>
+            <h2 className="text-[10px] font-black uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1 mb-2 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-sm bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]"></span>
               Core Competencies
             </h2>
 
             <div className="space-y-2.5 text-[9px]">
               <div>
-                <span className="font-bold text-[#0A192F] block text-[9.5px]">Financial Operations & AR:</span>
+                <span className="font-bold text-slate-950 block text-[9.5px]">Financial Operations & AR:</span>
                 <span className="text-slate-600 leading-snug block">
-                  Accounts Receivable (AR) Lifecycle, Account Reconciliation, Invoicing Verification, Dispute Mitigation, Compliance & Audit.
+                  Accounts Receivable Lifecycle, Loan Recovery, Account Reconciliation, Invoice Verification, Dispute Mitigation, Regulatory Compliance.
                 </span>
               </div>
 
               <div>
-                <span className="font-bold text-[#0A192F] block text-[9.5px]">Voice & Communication:</span>
+                <span className="font-bold text-slate-950 block text-[9.5px]">Voice & Client Communication:</span>
                 <span className="text-slate-600 leading-snug block">
-                  International Voice Standards, US Client Representation, Professional Active Listening, Objection Handling, Multi-Channel Triage.
+                  Night Shift US Process, Carrier Verification, Professional English Fluency, Active Listening, Persuasive Objection Handling.
                 </span>
               </div>
 
               <div>
-                <span className="font-bold text-[#0A192F] block text-[9.5px]">Workflow Automation & AI:</span>
+                <span className="font-bold text-slate-950 block text-[9.5px]">Intelligent Automation & AI:</span>
                 <span className="text-slate-600 leading-snug block">
-                  Intelligent Process Automation, FastMCP Middleware, Document OCR Extraction, Predictive Lead Routing, Automated Ticketing.
+                  Intelligent Process Automation, FastMCP Middleware, Document OCR Extraction, Automated Inquiry Routing, Predictive Workflow Optimization.
                 </span>
               </div>
 
               <div>
-                <span className="font-bold text-[#0A192F] block text-[9.5px]">Data & Analytical Stack:</span>
+                <span className="font-bold text-slate-950 block text-[9.5px]">Analytical & Software Stack:</span>
                 <span className="text-slate-600 leading-snug block">
-                  Python, Advanced Spreadsheets/Excel, SQL/PostgreSQL, Process Flow Diagrams, Data Validation, Statistical Reporting.
+                  Python, Advanced Excel and Spreadsheets, SQL, PostgreSQL, Process Flow Architecture, Next.js, REST APIs.
                 </span>
               </div>
             </div>
@@ -141,150 +111,172 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
 
           {/* Languages */}
           <div>
-            <h2 className="text-[10.5px] font-black uppercase tracking-wider text-[#0A192F] border-b-2 border-[#0A192F]/20 pb-1 mb-2 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#FF5C00]"></span>
+            <h2 className="text-[10px] font-black uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1 mb-2 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-sm bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]"></span>
               Languages
             </h2>
-            <div className="grid grid-cols-2 gap-1 text-[9px] text-slate-700">
-              <div>• <strong>English:</strong> Fluent (Voice)</div>
+            <div className="space-y-1 text-[9px] text-slate-700">
+              <div>• <strong>English:</strong> Fluent Professional Voice</div>
               <div>• <strong>Tamil:</strong> Native</div>
-              <div>• <strong>Hindi:</strong> Working</div>
+              <div>• <strong>Hindi:</strong> Working Professional Fluency</div>
               <div>• <strong>Urdu:</strong> Fluent</div>
             </div>
           </div>
 
-          {/* Key Metrics Strip */}
+          {/* Key Operational Metrics */}
           <div>
-            <h2 className="text-[10.5px] font-black uppercase tracking-wider text-[#0A192F] border-b-2 border-[#0A192F]/20 pb-1 mb-2 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#FF5C00]"></span>
-              Operational Metrics
+            <h2 className="text-[10px] font-black uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1 mb-2 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-sm bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]"></span>
+              Performance Benchmarks
             </h2>
-            <div className="grid grid-cols-2 gap-1.5 text-center">
-              <div className="p-1.5 rounded bg-white border border-slate-200">
-                <div className="text-sm font-black text-[#FF5C00] leading-none">99%+</div>
-                <div className="text-[7.5px] uppercase font-bold text-slate-600 mt-0.5">Workflow Accuracy</div>
+            <div className="grid grid-cols-2 gap-2 text-center pt-0.5">
+              <div className="p-2 rounded-xl bg-white border border-slate-200 shadow-sm">
+                <div className="text-base font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] leading-none">99%+</div>
+                <div className="text-[8px] uppercase font-bold text-slate-600 mt-1">Verification Accuracy</div>
               </div>
-              <div className="p-1.5 rounded bg-white border border-slate-200">
-                <div className="text-sm font-black text-[#0A192F] leading-none">11+</div>
-                <div className="text-[7.5px] uppercase font-bold text-slate-600 mt-0.5">Client Deployments</div>
+              <div className="p-2 rounded-xl bg-white border border-slate-200 shadow-sm">
+                <div className="text-base font-black text-slate-950 leading-none">11+</div>
+                <div className="text-[8px] uppercase font-bold text-slate-600 mt-1">Enterprise Deployments</div>
               </div>
             </div>
           </div>
         </aside>
 
-        {/* Right Column: Experience, Systems & Value Delivered (65% width / 8 cols) */}
-        <main className="col-span-12 sm:col-span-8 p-4 sm:p-5 print:p-4 space-y-4">
-          {/* Executive Summary */}
+        {/* Right Column: Experience, Systems & Value Delivered (67% width / 8 cols) */}
+        <main className="col-span-12 sm:col-span-8 p-4 sm:p-5 space-y-3.5 bg-white">
+          {/* Professional Summary */}
           <section>
-            <h2 className="text-[11px] font-black uppercase tracking-wider text-[#0A192F] border-b-2 border-[#0A192F]/20 pb-1 mb-1.5 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#FF5C00]"></span>
+            <h2 className="text-[10.5px] font-black uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1 mb-1.5 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-sm bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]"></span>
               Professional Summary
             </h2>
-            <p className="text-[9.5px] leading-relaxed text-slate-700 text-justify">
-              Articulate and analytically driven <strong>Artificial Intelligence & Data Science Engineer</strong> with demonstrated financial operations and customer relationship experience at <strong>State Bank of India</strong>, complemented by venture leadership in automated workflow pipelines at <strong>A Generative Slice</strong>. Skilled in the accounts receivable lifecycle, financial record verification, dispute mitigation, and cross-border client communication. Combines formal engineering discipline with commercial persuasion to accelerate revenue capture, ensure regulatory accuracy, and minimize process leakage.
+            <p className="text-[9px] leading-relaxed text-slate-700 text-justify">
+              Results-focused <strong>Artificial Intelligence and Data Science Engineer</strong> with direct hands-on experience across banking financial operations, debt recovery telecalling, and US night-shift auto loan insurance verification. Proven track record at <strong>State Bank of India</strong>, <strong>Kotak Mahindra Prime</strong>, and <strong>Sutherland Global Services</strong>, complemented by founding <strong>A Generative Slice</strong> to engineer automated workflow and invoicing pipelines. Skilled in accounts receivable reconciliation, billing dispute mitigation, high-velocity customer voice communication, and institutional compliance. Combines commercial persuasion with technical rigor to accelerate revenue capture and eliminate operational bottlenecks.
             </p>
           </section>
 
           {/* Professional Experience */}
           <section>
-            <h2 className="text-[11px] font-black uppercase tracking-wider text-[#0A192F] border-b-2 border-[#0A192F]/20 pb-1 mb-2 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#FF5C00]"></span>
+            <h2 className="text-[10.5px] font-black uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1 mb-2 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-sm bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]"></span>
               Professional Experience
             </h2>
 
-            <div className="space-y-3">
-              {/* Role 1: State Bank of India (Finance & Customer Operations) */}
-              <div className="border-l-2 border-[#0A192F]/30 pl-3">
+            <div className="space-y-2.5">
+              {/* Role 1: A Generative Slice */}
+              <div className="border-l-2 border-[#FF5C00] pl-2.5">
                 <div className="flex items-baseline justify-between">
-                  <span className="font-bold text-[10.5px] text-slate-950">State Bank of India (SBI Cards)</span>
-                  <span className="text-[9px] font-bold text-[#FF5C00]">2022 – 2023 · CHENNAI</span>
+                  <span className="font-bold text-[10px] text-slate-950">A Generative Slice</span>
+                  <span className="text-[8.5px] font-bold text-[#FF5C00]">2024 – PRESENT · CHENNAI</span>
                 </div>
-                <div className="text-[9.5px] font-semibold text-slate-700 mb-1">
-                  Sales & Financial Operations Specialist · Customer Relations
+                <div className="text-[9px] font-semibold text-slate-700 mb-0.5">
+                  Founder and Lead Systems Architect · Enterprise Workflow Automation
                 </div>
-                <ul className="text-[9px] text-slate-700 space-y-0.5 list-disc list-inside leading-snug">
+                <ul className="text-[8.5px] text-slate-600 space-y-0.5 list-disc list-inside leading-snug">
+                  <li>Engineered automated communication triage and intake routing systems for European luxury client accounts.</li>
+                  <li>Deployed commercial trading ERP featuring automated OCR invoice generation and ledger reconciliation.</li>
+                  <li>Successfully delivered eleven client enterprise solutions, overseeing client relations and delivery roadmaps.</li>
+                </ul>
+              </div>
+
+              {/* Role 2: State Bank of India */}
+              <div className="border-l-2 border-slate-300 pl-2.5">
+                <div className="flex items-baseline justify-between">
+                  <span className="font-bold text-[10px] text-slate-950">State Bank of India</span>
+                  <span className="text-[8.5px] font-bold text-slate-600">2022 – 2023 · CHENNAI</span>
+                </div>
+                <div className="text-[9px] font-semibold text-slate-700 mb-0.5">
+                  Financial Operations and Client Relations Specialist
+                </div>
+                <ul className="text-[8.5px] text-slate-600 space-y-0.5 list-disc list-inside leading-snug">
                   <li>Managed high-volume customer accounts, KYC documentation, credit verification, and compliance validation.</li>
-                  <li>Handled client counseling, billing inquiries, and financial dispute mitigation adhering to strict institutional banking standards.</li>
-                  <li>Achieved top client acquisition and retention metrics through structured, empathetic, and persuasive voice communication.</li>
+                  <li>Handled client counseling, billing inquiries, and financial dispute mitigation adhering to strict banking standards.</li>
+                  <li>Achieved top client retention and onboarding metrics through structured, empathetic voice communication.</li>
                 </ul>
               </div>
 
-              {/* Role 2: A Generative Slice (Enterprise Automation & Invoicing) */}
-              <div className="border-l-2 border-[#0A192F]/30 pl-3">
+              {/* Role 3: Sutherland Global Services (Car Loan Insurance Verification Night Shift) */}
+              <div className="border-l-2 border-slate-300 pl-2.5">
                 <div className="flex items-baseline justify-between">
-                  <span className="font-bold text-[10.5px] text-slate-950">A Generative Slice</span>
-                  <span className="text-[9px] font-bold text-[#FF5C00]">2024 – PRESENT · CHENNAI</span>
+                  <span className="font-bold text-[10px] text-slate-950">Sutherland Global Services</span>
+                  <span className="text-[8.5px] font-bold text-slate-600">2022 · 3 MONTHS · NIGHT SHIFT</span>
                 </div>
-                <div className="text-[9.5px] font-semibold text-slate-700 mb-1">
-                  Founder & Lead Systems Architect · Enterprise Automation
+                <div className="text-[9px] font-semibold text-slate-700 mb-0.5">
+                  Auto Loan Insurance Verification Specialist · US Night Shift Process
                 </div>
-                <ul className="text-[9px] text-slate-700 space-y-0.5 list-disc list-inside leading-snug">
-                  <li>Engineered automated communication triage and intake routing systems (SliceInbox) for European luxury client accounts.</li>
-                  <li>Deployed multi-godown chemical trading ERP featuring automated OCR invoice generation and payment tracking.</li>
-                  <li>Successfully delivered 11+ client solutions, overseeing end-to-end service delivery and client stakeholder management.</li>
+                <ul className="text-[8.5px] text-slate-600 space-y-0.5 list-disc list-inside leading-snug">
+                  <li>Conducted US night-shift voice operations verifying auto insurance policies, coverage limits, and lienholder status with US insurance carriers.</li>
+                  <li>Reviewed policy declarations to confirm active comprehensive and collision coverage, mitigating lender risk before loan disbursement.</li>
+                  <li>Maintained 99%+ accuracy adhering to US financial services compliance standards.</li>
                 </ul>
               </div>
 
-              {/* Role 3: A Graphic Slice (Creative & Design Systems) */}
-              <div className="border-l-2 border-[#0A192F]/30 pl-3">
+              {/* Role 4: Kotak Mahindra Prime (Telecalling Loan Recovery Hindi & Tamil) */}
+              <div className="border-l-2 border-slate-300 pl-2.5">
                 <div className="flex items-baseline justify-between">
-                  <span className="font-bold text-[10.5px] text-slate-950">A Graphic Slice</span>
-                  <span className="text-[9px] font-bold text-slate-500">2020 – 2024 · CHENNAI</span>
+                  <span className="font-bold text-[10px] text-slate-950">Kotak Mahindra Prime</span>
+                  <span className="text-[8.5px] font-bold text-slate-600">2021 – 2022 · 6 MONTHS · CHENNAI</span>
                 </div>
-                <div className="text-[9.5px] font-semibold text-slate-700 mb-1">
-                  Founder & Creative Director · Digital Identity
+                <div className="text-[9px] font-semibold text-slate-700 mb-0.5">
+                  Telecalling and Loan Recovery Specialist · Hindi and Tamil Accounts
                 </div>
-                <ul className="text-[9px] text-slate-700 space-y-0.5 list-disc list-inside leading-snug">
-                  <li>Delivered commercial design systems, pitch decks, and digital assets for emerging enterprises and tech ventures.</li>
+                <ul className="text-[8.5px] text-slate-600 space-y-0.5 list-disc list-inside leading-snug">
+                  <li>Managed outbound and inbound telecalling across Hindi and Tamil customer segments for loan account rehabilitation and debt recovery.</li>
+                  <li>Negotiated structured repayment schedules and resolved billing disputes with high persuasion, active listening, and empathy.</li>
+                  <li>Consistently exceeded monthly recovery targets while strictly adhering to ethical banking collection protocols.</li>
+                </ul>
+              </div>
+
+              {/* Role 5: A Graphic Slice */}
+              <div className="border-l-2 border-slate-300 pl-2.5">
+                <div className="flex items-baseline justify-between">
+                  <span className="font-bold text-[10px] text-slate-950">A Graphic Slice</span>
+                  <span className="text-[8.5px] font-bold text-slate-600">2020 – 2024 · CHENNAI</span>
+                </div>
+                <div className="text-[9px] font-semibold text-slate-700 mb-0.5">
+                  Founder and Creative Director · Commercial Design Systems
+                </div>
+                <ul className="text-[8.5px] text-slate-600 space-y-0.5 list-disc list-inside leading-snug">
+                  <li>Delivered commercial design systems, technical presentations, and executive reporting assets for commercial brands.</li>
                 </ul>
               </div>
             </div>
           </section>
 
-          {/* Key Production Systems & Workflow Deployments */}
+          {/* Selected Enterprise Systems */}
           <section>
-            <h2 className="text-[11px] font-black uppercase tracking-wider text-[#0A192F] border-b-2 border-[#0A192F]/20 pb-1 mb-2 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#FF5C00]"></span>
-              Selected Enterprise Systems & Projects
+            <h2 className="text-[10.5px] font-black uppercase tracking-wider text-slate-900 border-b border-slate-200 pb-1 mb-1.5 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-sm bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]"></span>
+              Selected Enterprise Systems
             </h2>
 
-            <div className="space-y-2 text-[9px]">
-              <div className="p-2 rounded bg-slate-50 border border-slate-200">
+            <div className="space-y-1.5 text-[8.5px]">
+              <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
                 <div className="flex items-baseline justify-between">
-                  <span className="font-bold text-[9.5px] text-slate-950">Commercial Chemical ERP & Invoice OCR Pipeline</span>
-                  <span className="text-[8.5px] text-[#FF5C00] font-bold uppercase">Automated Billing</span>
+                  <span className="font-bold text-[9px] text-slate-950">Commercial Chemical ERP and Invoice OCR Pipeline</span>
+                  <span className="text-[8px] text-[#FF5C00] font-bold uppercase">Automated Billing</span>
                 </div>
-                <p className="text-slate-600 leading-snug mt-0.5">
-                  End-to-end trading system incorporating automated optical character recognition (OCR) for invoice extraction, preventing billing discrepancies and streamlining accounts reconciliation across multiple inventory warehouses.
+                <p className="text-slate-600 leading-tight mt-0.5">
+                  Automated OCR data extraction from invoices and purchase orders, preventing billing discrepancies and streamlining accounts reconciliation across multiple inventory warehouses.
                 </p>
               </div>
 
-              <div className="p-2 rounded bg-slate-50 border border-slate-200">
+              <div className="p-1.5 rounded-lg bg-slate-50 border border-slate-200">
                 <div className="flex items-baseline justify-between">
-                  <span className="font-bold text-[9.5px] text-slate-950">SliceInbox · International Communication Triage</span>
-                  <span className="text-[8.5px] text-[#FF5C00] font-bold uppercase">Workflow Routing</span>
+                  <span className="font-bold text-[9px] text-slate-950">SliceInbox · International Communication Triage</span>
+                  <span className="text-[8px] text-[#FF5C00] font-bold uppercase">Workflow Routing</span>
                 </div>
-                <p className="text-slate-600 leading-snug mt-0.5">
-                  Automated email triage and intelligent inquiry routing system deployed for Milan-based luxury lighting agency Litelab Milano, ensuring zero missed communications and rapid escalation of priority client accounts.
-                </p>
-              </div>
-
-              <div className="p-2 rounded bg-slate-50 border border-slate-200">
-                <div className="flex items-baseline justify-between">
-                  <span className="font-bold text-[9.5px] text-slate-950">Automated B2B Lead Intelligence Pipeline</span>
-                  <span className="text-[8.5px] text-[#FF5C00] font-bold uppercase">Data Extraction</span>
-                </div>
-                <p className="text-slate-600 leading-snug mt-0.5">
-                  Autonomous data extraction and validation pipeline enriching corporate prospect data and validating contact authenticity for targeted enterprise outreach.
+                <p className="text-slate-600 leading-tight mt-0.5">
+                  Automated email triage and intelligent inquiry routing system deployed for Milan-based luxury lighting agency Litelab Milano, ensuring zero missed communications and priority account escalation.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Footer certification */}
+          {/* Footer note */}
           <footer className="pt-2 border-t border-slate-200 flex items-center justify-between text-[8px] text-slate-500 font-medium">
             <div>Professional Curriculum Vitae · Mohammed Hussain · Anna University Graduate</div>
-            <div>Single-Page Document · Ready for Immediate Joining</div>
+            <div>Single-Page Letter Document · Chennai, India</div>
           </footer>
         </main>
       </div>

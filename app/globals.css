@@ -177,11 +177,11 @@ html {
   line-clamp: 3;
 }
 
-/* Print Styles for Guaranteed Single-Page Executive CV across all devices */
+/* Print Styles for Guaranteed Single-Page Full-Screen Executive CV on Letter/A4 */
 @media print {
   @page {
-    size: A4 portrait;
-    margin: 6mm 8mm;
+    size: letter portrait;
+    margin: 4mm 6mm;
   }
 
   html, body {
@@ -214,13 +214,14 @@ html {
     display: none !important;
   }
 
-  /* Make the print CV container strictly visible and format as 1-page */
+  /* Make the print CV container strictly visible, full-width edge-to-edge on Letter */
   #print-cv-container {
     display: block !important;
     position: static !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0 auto !important;
+    min-height: 100% !important;
+    margin: 0 !important;
     padding: 0 !important;
     box-shadow: none !important;
     border: none !important;
