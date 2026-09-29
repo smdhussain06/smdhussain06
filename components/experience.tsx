@@ -1,58 +1,58 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Calendar, MapPin, Building } from "lucide-react"
+import { Calendar, MapPin, Building, ShieldCheck } from "lucide-react"
 
 const experiences = [
   {
-    title: "Founder and Lead AI Systems Architect",
+    title: "Founder & Lead Systems Architect",
     company: "A Generative Slice",
-    type: "AI Venture Studio and Engineering Lab",
+    type: "Enterprise Automation & AI Systems",
     duration: "July 2024 — Present",
-    location: "Chennai, Tamil Nadu, India · Hybrid and Global",
+    location: "Chennai, Tamil Nadu, India · Hybrid & Global",
     description:
-      "Founded and leading an elite AI venture studio and engineering lab. Architected and deployed eleven client enterprise systems across logistics, banquet hospitality, civil engineering, and e-commerce alongside six proprietary AI products including SliceInbox Chief of Staff, SliceLeads automated acquisition engine, SliceDAM document generator, and Slice3D spatial computing lab. Directing an expanding multi-disciplinary engineering and design team.",
-    skills: ["Venture Leadership", "Autonomous Multi-Agent Systems", "FastMCP Architecture", "Enterprise ERP Logic", "Edge AI Systems", "Team Direction"],
+      "Founded and leading an enterprise automation and AI systems venture. Architected and deployed eleven client enterprise solutions across commercial logistics, manufacturing ERP, and overseas client workflows. Engineered SliceInbox automated communication triage for European luxury brand Litelab Milano, automated OCR invoice generation pipelines, and multi-warehouse reconciliation systems. Directing end-to-end client engagement and cross-functional team productivity.",
+    skills: ["Enterprise Automation", "Workflow Triage", "OCR Invoice Generation", "FastMCP Architecture", "Client Relations", "Team Direction"],
   },
   {
-    title: "Creative Director and Technical Designer",
+    title: "Financial Operations & Client Relations Specialist",
+    company: "State Bank of India (SBI Cards)",
+    type: "Institutional Banking Operations",
+    duration: "July 2020 — January 2021",
+    location: "Chennai, Tamil Nadu, India · Main Branch",
+    description:
+      "Formative financial operations role at State Bank of India main branch managing customer accounts, financial documentation, KYC compliance, and credit verification. Handled high-volume customer inquiries, billing explanations, and financial dispute mitigation adhering to strict institutional regulatory standards. Developed high-level voice communication resilience, active listening, client counseling, and objection resolution.",
+    skills: ["Financial Documentation", "Account Verification", "Customer Dispute Mitigation", "Voice Communication", "Banking Compliance", "Client Retention"],
+  },
+  {
+    title: "Creative Director & Technical Designer",
     company: "A Graphic Slice",
     type: "Independent Studio",
     duration: "January 2020 — Present",
     location: "Chennai, Tamil Nadu, India · Hybrid",
     description:
-      "Founded A Graphic Slice delivering high-impact brand identities, 3D product visualizations in Blender, UI/UX systems, and cinematic motion graphics for high-growth startups and global brands. Pioneered procedural design workflows that now bridge directly into automated 3D spatial computing pipelines.",
-    skills: ["Blender 3D", "Procedural Modeling", "Adobe Creative Suite", "Motion Graphics", "Brand Architecture", "UI/UX Design"],
+      "Founded A Graphic Slice delivering high-impact brand identities, commercial presentation systems, 3D visualizations in Blender, and UI/UX architectures for high-growth enterprises and tech ventures. Established procedural design frameworks that bridged directly into automated 3D spatial computing pipelines.",
+    skills: ["Blender 3D", "Procedural Modeling", "Adobe Creative Suite", "Visual Reporting", "Brand Architecture", "UI/UX Design"],
   },
   {
-    title: "Content Creator and Video Strategist",
+    title: "Content & Video Communications Strategist",
     company: "MT Clothing Limited",
     type: "Full-time",
     duration: "September 2022 — January 2023",
     location: "Chennai, Tamil Nadu, India · Remote",
     description:
-      "Engineered viral social media campaigns and dynamic video workflows for an apparel startup, significantly driving brand recognition and digital audience acquisition.",
-    skills: ["After Effects", "Adobe Premiere Pro", "Social Media Growth", "Content Strategy"],
+      "Engineered digital media communications, dynamic video workflows, and stakeholder presentations for an apparel enterprise, significantly expanding brand recognition and engagement.",
+    skills: ["After Effects", "Adobe Premiere Pro", "Digital Communication", "Stakeholder Presentation"],
   },
   {
-    title: "Graphic Designer",
+    title: "Commercial Graphic Designer",
     company: "Design Decorative",
     type: "Full-time",
     duration: "January 2021 — August 2021",
     location: "Chennai, Tamil Nadu, India · On-site",
     description:
-      "Professional design role focused on print layouts, commercial typography, packaging, and digital branding assets across industry standard creative suites.",
+      "Professional design role focused on commercial documentation, print typography, packaging layouts, and digital branding assets across industry standard creative suites.",
     skills: ["Adobe Photoshop", "CorelDRAW", "Commercial Typography", "Print Production"],
-  },
-  {
-    title: "Sales Specialist",
-    company: "State Bank of India",
-    type: "Full-time",
-    duration: "July 2020 — January 2021",
-    location: "Chennai, Tamil Nadu, India · On-site",
-    description:
-      "Formative role in credit card sales at State Bank of India main branch. Developed high-level communication resilience, client psychology, persuasion, and enterprise sales fundamentals.",
-    skills: ["Enterprise Sales", "Communication Mastery", "Client Relations", "Strategic Thinking"],
   },
 ]
 

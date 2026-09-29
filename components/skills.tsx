@@ -1,44 +1,86 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Brain, Palette, Video, Code, Megaphone, Cpu, Layers, Sparkles } from "lucide-react"
+import { Brain, Layers, PhoneCall, BarChart3, ShieldCheck, Cpu } from "lucide-react"
 
 const skills = [
   {
-    category: "Autonomous AI and Agents",
-    icon: Brain,
-    skills: ["Multi-Agent Orchestration", "FastMCP Protocol Architecture", "Local Offline Language Models", "Prompt Engineering and Retrieval Systems", "Gemini and OpenAI Model Pipelines", "Autonomous Tool Calling"],
+    category: "Financial Operations & AR Lifecycle",
+    icon: ShieldCheck,
+    skills: [
+      "Accounts Receivable (AR) Lifecycle Tracking",
+      "Invoice Verification & Dispute Mitigation",
+      "Account Reconciliation & Aging Analysis",
+      "Client Documentation & KYC Verification",
+      "Banking Compliance & Institutional Standards",
+      "Cash Flow Acceleration Strategies"
+    ],
     color: "from-[#FF5C00] to-[#FF8C1A]",
   },
   {
-    category: "Enterprise Systems and SaaS",
-    icon: Layers,
-    skills: ["Next.js and React Architecture", "TypeScript and Python", "Tailwind CSS", "Enterprise ERP Business Logic", "RESTful and GraphQL Services", "PostgreSQL and Supabase"],
+    category: "Voice & Client Communication",
+    icon: PhoneCall,
+    skills: [
+      "International Voice Process Standards",
+      "US Client & Payer Representation",
+      "Active Listening & Dispute Resolution",
+      "Empathetic & Persuasive Communication",
+      "High-Volume Call & Inquiry Triage",
+      "Multi-Stakeholder Account Counseling"
+    ],
     color: "from-blue-500 to-indigo-600",
   },
   {
-    category: "Edge AI and Systems",
-    icon: Cpu,
-    skills: ["Android Termux and Linux Tooling", "On-Device Local Inference", "Optical Character Recognition", "ARM64 Architecture Optimization", "Lightweight Agent Runtimes"],
+    category: "Workflow Automation & AI",
+    icon: Brain,
+    skills: [
+      "Intelligent Process Automation (IPA)",
+      "Automated Communication & Ticket Routing",
+      "Model Context Protocol & FastMCP Middleware",
+      "Document OCR Extraction & Validation",
+      "Local Machine Learning & Edge Inferences",
+      "Predictive Workflow Optimization"
+    ],
     color: "from-purple-500 to-violet-600",
   },
   {
-    category: "3D Spatial Computing",
-    icon: Palette,
-    skills: ["Headless Blender Automation", "Procedural 3D Modeling", "GLTF and GLB Web Pipelines", "Interactive Spline 3D", "Spatial UI Architecture"],
+    category: "Data Analytics & Reporting",
+    icon: BarChart3,
+    skills: [
+      "Python Data Modeling & Analytics",
+      "Advanced Spreadsheets & Excel Modeling",
+      "SQL & PostgreSQL Relational Databases",
+      "Key Metric Dashboards & DSO Reduction",
+      "Operational Turnaround Time Tracking",
+      "Statistical Analysis & Data Integrity"
+    ],
     color: "from-emerald-500 to-teal-600",
   },
   {
-    category: "Creative Direction and Motion",
-    icon: Video,
-    skills: ["Adobe Premiere Pro", "After Effects Motion Design", "Photoshop and Illustrator", "Cinematic Storytelling", "Design Systems"],
-    color: "from-red-500 to-rose-600",
+    category: "Enterprise Systems & Software",
+    icon: Layers,
+    skills: [
+      "Next.js and React Production Architectures",
+      "Enterprise ERP Business Logic & Invoicing",
+      "RESTful API Integration & Webhooks",
+      "Supabase & Cloud Relational Storage",
+      "Git & GitHub Actions CI/CD Workflows",
+      "Tailwind CSS Design Systems"
+    ],
+    color: "from-amber-500 to-yellow-600",
   },
   {
-    category: "Venture and Team Leadership",
-    icon: Megaphone,
-    skills: ["Venture Studio Leadership", "Cross-Functional Team Direction", "Enterprise Client Strategy", "Product Roadmapping", "Agile AI Delivery"],
-    color: "from-amber-500 to-yellow-600",
+    category: "Systems Infrastructure & Edge",
+    icon: Cpu,
+    skills: [
+      "ARM64 Linux & Mobile Environment Tuning",
+      "Tesseract Optical Character Recognition",
+      "Offline Edge Tooling & Data Privacy",
+      "Containerization & Service Orchestration",
+      "3D Spatial Visualization in Blender",
+      "Process Architecture Diagrams"
+    ],
+    color: "from-red-500 to-rose-600",
   },
 ]
 

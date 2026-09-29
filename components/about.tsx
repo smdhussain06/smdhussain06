@@ -1,32 +1,29 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Sparkles, Bot, Layers, Cpu, Box } from "lucide-react"
+import { Sparkles, Bot, Layers, Cpu, ShieldCheck } from "lucide-react"
 import PersonalImageSlider from "@/components/personal-image-slider"
-
-// Get the base path for GitHub Pages
-const basePath = process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''
 
 const pillars = [
   {
     icon: Bot,
-    title: "Autonomous Multi-Agent Architecture",
-    desc: "Architecting collaborative multi-agent workspaces, protocol bridges, and automated client acquisition pipelines.",
+    title: "Autonomous Workflow Automation",
+    desc: "Architecting intelligent workflow routing, intake triage pipelines, and automated multi-channel communication bridges.",
   },
   {
     icon: Layers,
-    title: "Enterprise AI and Scalable SaaS Platforms",
-    desc: "Production deployments across real-time ERP systems, OCR processing engines, and multi-channel conversational bots.",
+    title: "Financial Operations & Enterprise ERP",
+    desc: "Hands-on experience in banking client verification at State Bank of India, paired with custom billing, OCR invoice extraction, and reconciliation systems.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Client Relations & Voice Communication",
+    desc: "High-touch customer counseling, international voice standards, dispute resolution, and regulatory compliance across multi-stakeholder accounts.",
   },
   {
     icon: Cpu,
-    title: "Edge AI and Offline Intelligence",
-    desc: "Running local machine learning models and lightweight agent runtimes natively on Android Termux and edge hardware.",
-  },
-  {
-    icon: Box,
-    title: "3D Spatial Computing and Motion Design",
-    desc: "Headless Blender automation, procedural 3D modeling, and cinematic After Effects visual identity systems.",
+    title: "Data Analytics & Predictive Insights",
+    desc: "Rigorous academic and practical foundation in AI, statistical modeling, data integrity, and operational turnaround optimization.",
   },
 ]
 
@@ -68,19 +65,19 @@ export default function About() {
             className="space-y-5 order-2"
           >
             <p className="text-lg sm:text-xl font-medium text-[#0F172A] dark:text-white leading-relaxed">
-              I am <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]">Mohammed Hussain</span> — Founder and Lead AI Systems Architect at A Generative Slice, and a graduate with a Bachelor of Technology in Artificial Intelligence and Data Science from Aalim Muhammed Salegh College of Engineering.
+              I am <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]">Mohammed Hussain</span> — an Artificial Intelligence & Data Science Engineer and Founder of A Generative Slice, blending financial operations rigor with modern automated workflow systems.
             </p>
 
             <p className="text-[#64748B] dark:text-white/60 leading-relaxed text-base sm:text-lg">
-              My journey began with four years of creative direction and visual storytelling across the Adobe Creative Suite and 3D modeling in Blender. That design foundation evolved into something far more expansive: pioneering high-performance AI systems that solve complex enterprise bottlenecks with precision.
+              My professional foundation combines direct institutional banking and financial customer relations at State Bank of India with formal engineering training in machine learning, statistics, and distributed software systems at Anna University.
             </p>
 
             <p className="text-[#64748B] dark:text-white/60 leading-relaxed text-base sm:text-lg">
-              Today, through A Generative Slice, I lead an engineering and creative team delivering eleven client enterprise deployments across industrial logistics, architectural showcases, and luxury commerce, alongside six proprietary AI platforms.
+              Through A Generative Slice, I have engineered and deployed eleven enterprise software systems — ranging from OCR-driven trading ERPs that eliminate invoice reconciliation bottlenecks to automated communication triage platforms that handle international customer inquiries with zero friction.
             </p>
 
             <p className="text-[#64748B] dark:text-white/60 leading-relaxed text-base sm:text-lg">
-              Whether deploying privacy-first Edge AI running locally on mobile hardware or orchestrating autonomous agent workflows, my focus remains bridging technical rigor with bespoke design elegance.
+              Whether optimizing accounts lifecycle workflows, resolving client queries through high-touch voice communication, or deploying intelligent tools to accelerate cash turnaround, my commitment is driving operational accuracy and measurable performance.
             </p>
           </motion.div>
         </div>

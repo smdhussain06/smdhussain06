@@ -10,7 +10,7 @@ export default function Hero() {
   }
 
   const handlePrintCV = () => {
-    // Triggers direct native print/Save as PDF spooler immediately (Screen 2)
+    // Triggers direct native print/Save as PDF spooler immediately
     window.print()
   }
 
@@ -31,7 +31,7 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Stable Non-Glitching Subtitle */}
+        {/* Stable Subtitle: Blending AI Systems Architecture & Financial Enterprise Operations */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,11 +39,11 @@ export default function Hero() {
           className="text-base sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 max-w-2xl mx-auto leading-relaxed px-2 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2"
         >
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]">
-            Founder & Lead AI Architect
+            AI & Data Science Engineer
           </span>
           <span className="text-slate-300 dark:text-slate-700 hidden sm:inline">·</span>
           <span className="text-slate-700 dark:text-slate-300 font-semibold">
-            A Generative Slice
+            Enterprise Operations & Automation
           </span>
         </motion.div>
 
@@ -54,7 +54,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.25 }}
           className="text-sm sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4 font-normal"
         >
-          Architecting autonomous multi-agent ecosystems, high-impact enterprise AI workflows, and spatial 3D computing with mathematical precision and Apple-grade craft.
+          Bridging artificial intelligence engineering, financial operations, and enterprise workflow automation to accelerate revenue capture, client engagement, and operational accuracy.
         </motion.p>
 
         {/* Action Buttons: Minimal, with Print icon and CV only */}
@@ -85,7 +85,7 @@ export default function Hero() {
           </Button>
         </motion.div>
 
-        {/* Minimal Executive Stats Grid on Flat White Surface */}
+        {/* Executive Stats Grid on Flat White Surface */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,9 +94,9 @@ export default function Hero() {
         >
           {[
             { value: "11+", label: "Client Enterprise Deployments" },
-            { value: "6+", label: "Proprietary AI SaaS Platforms" },
-            { value: "30+", label: "Autonomous Digital Solutions" },
-            { value: "Completed", label: "Artificial Intelligence and Data Science" },
+            { value: "Banking", label: "State Bank of India Operations" },
+            { value: "99%+", label: "Workflow Accuracy & Compliance" },
+            { value: "2025", label: "Anna University AI & Data Science" },
           ].map((stat, i) => (
             <div
               key={i}
