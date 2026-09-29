@@ -186,7 +186,7 @@ export default function Projects() {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] mx-auto rounded-full mb-8" />
 
-          {/* Category Filter - Responsive on mobile (smooth horizontal scroll) & desktop */}
+          {/* Category Filter - Responsive on mobile and desktop */}
           <div className="flex overflow-x-auto sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-3 mb-8 px-1 pb-2 sm:pb-0 no-scrollbar">
             {categories.map((category) => (
               <Button
