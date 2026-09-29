@@ -36,6 +36,7 @@ export default function Navbar() {
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" },
     { name: "Projects", href: "#projects" },
     { name: "Newsletters", href: "#newsletters" },
     { name: "Contact", href: "#contact" },
@@ -47,14 +48,15 @@ export default function Navbar() {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-800/20"
+          ? "bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200/20 dark:border-gray-800/20 shadow-sm"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex items-center justify-between h-16">
-          <motion.div whileHover={{ scale: 1.05 }} className="font-bold text-xl text-black dark:text-white">
-            {"SMD"}
+          <motion.div whileHover={{ scale: 1.05 }} className="font-extrabold text-xl tracking-tight text-black dark:text-white flex items-center gap-2">
+            <span>SMD</span>
+            <span className="text-orange-500 font-normal text-xs px-2 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/20">AGS</span>
           </motion.div>
 
           {/* Desktop Navigation */}

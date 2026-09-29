@@ -1,5 +1,11 @@
 # 💫 About Me:
-🔭 I’m currently working on building AI-powered apps & branding streetwear with Nuhas Apparel<br>👯 I’m looking to collaborate on creative AI projects, startups, or design campaigns<br>🤝 I’m looking for help with scaling local LLMs & mobile AI integration<br>🌱 I’m currently learning full-stack development & advanced ML techniques<br>💬 Ask me about AI tools, automation, branding, or video editing<br>⚡ Fun fact: I blend tech, design, and anime references into everything I build (yes, even One Piece 👒)
+🚀 **Founder & Lead AI Architect** at [A Generative Slice](https://github.com/A-Generative-Slice) — Engineering autonomous multi-agent systems, FastMCP workspaces, and bespoke enterprise AI software<br>
+🎓 **B.Tech Graduate in Artificial Intelligence & Data Science** (Aalim Muhammed Salegh College of Engineering, Class of 2025)<br>
+🔭 **Currently building**: Autonomous B2B acquisition engines (SliceLeads), executive FastMCP AI agents (SliceInbox), and headless 3D spatial computing labs (Slice3D)<br>
+⚡ **Pioneering**: Privacy-first Edge AI & local LLM computation natively on Android (Termux) & embedded hardware (KaiPulla)<br>
+🎨 **Creative Technologist**: 4+ years bridging Blender 3D, After Effects motion design, and high-impact brand systems with deep AI engineering<br>
+💬 **Ask me about**: Multi-Agent orchestration, FastMCP, Edge AI, Next.js 14/15, Blender 3D pipelines, or enterprise AI deployment<br>
+👒 **Fun fact**: I channel Luffy's 'never give up' energy into every system I architect (One Piece forever 🏴‍☠️)
 
 
 ## 🌐 Socials:

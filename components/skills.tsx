@@ -1,44 +1,44 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Brain, Palette, Video, Code, Megaphone, Lightbulb } from "lucide-react"
+import { Brain, Palette, Video, Code, Megaphone, Cpu, Layers, Sparkles } from "lucide-react"
 
 const skills = [
   {
-    category: "AI & Data Science",
+    category: "Autonomous AI & Agents",
     icon: Brain,
-    skills: ["Artificial Intelligence", "Data Science", "Machine Learning", "Python", "LLMs", "Prompt Engineering"],
-    color: "from-blue-500 to-purple-600",
+    skills: ["Multi-Agent Orchestration", "FastMCP Architecture", "Local LLMs (Ollama)", "Prompt Engineering & RAG", "Gemini 2.0 / OpenAI APIs", "Autonomous Tool Calling"],
+    color: "from-orange-500 to-amber-600",
   },
   {
-    category: "Design & Creative",
+    category: "Enterprise Systems & SaaS",
+    icon: Layers,
+    skills: ["Next.js 14/15 & React", "TypeScript & Python", "Tailwind CSS", "Enterprise ERP Logic", "RESTful & GraphQL APIs", "PostgreSQL & Supabase"],
+    color: "from-blue-500 to-indigo-600",
+  },
+  {
+    category: "Edge AI & Optimization",
+    icon: Cpu,
+    skills: ["Android PRoot & Termux CLI", "On-Device Local Inference", "Tesseract OCR Integration", "ARM64 Architecture Tuning", "Lightweight Agent Runtimes"],
+    color: "from-purple-500 to-violet-600",
+  },
+  {
+    category: "3D & Spatial Computing",
     icon: Palette,
-    skills: ["Adobe Photoshop", "Illustrator", "After Effects", "Lightroom", "Figma", "Blender 3D"],
-    color: "from-orange-500 to-red-600",
+    skills: ["Headless Blender Automation", "Procedural 3D Modeling", "GLTF/GLB Web Pipelines", "Interactive Spline 3D", "Spatial UI Architecture"],
+    color: "from-emerald-500 to-teal-600",
   },
   {
-    category: "Video & Motion",
+    category: "Creative Direction & Motion",
     icon: Video,
-    skills: ["Premiere Pro", "After Effects", "3D Animation", "Motion Graphics", "Video Editing"],
-    color: "from-green-500 to-teal-600",
+    skills: ["Adobe Premiere Pro", "After Effects Motion Design", "Photoshop & Illustrator", "Visual Storytelling", "Design Systems"],
+    color: "from-red-500 to-rose-600",
   },
   {
-    category: "Development",
-    icon: Code,
-    skills: ["Web Design", "UI/UX Design", "Responsive Design", "Branding", "Typography"],
-    color: "from-purple-500 to-pink-600",
-  },
-  {
-    category: "Content & Marketing",
+    category: "Venture & Team Leadership",
     icon: Megaphone,
-    skills: ["Content Creation", "Social Media Marketing", "Digital Marketing", "Storytelling"],
-    color: "from-yellow-500 to-orange-600",
-  },
-  {
-    category: "Soft Skills",
-    icon: Lightbulb,
-    skills: ["Communication", "Show Hosting", "Strategic Thinking", "Leadership", "Problem Solving"],
-    color: "from-indigo-500 to-blue-600",
+    skills: ["Venture Studio Leadership", "Cross-Functional Team Direction", "Enterprise Client Strategy", "Product Roadmapping", "Agile AI Delivery"],
+    color: "from-amber-500 to-yellow-600",
   },
 ]
 

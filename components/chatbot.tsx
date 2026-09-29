@@ -28,7 +28,7 @@ export default function Chatbot() {
       setMessages([
         {
           id: "1",
-          content: "Hello! 👋 I'm Capcicum, Mohammad Hussain's AI assistant! 🌶️\n\nI'm here to help you learn about Mohammad's incredible journey from AI & Data Science student to startup founder. He's working on amazing projects like Edge AI Mobile Computation and loves blending creativity with cutting-edge technology!\n\nWhat would you like to know about Mohammad? His projects, skills, experience, or maybe his One Piece passion? 👒✨",
+          content: "Hello! 👋 I'm Capcicum, Mohammed Hussain's AI assistant! 🌶️\n\nI'm here to help you explore Mohammed's journey as Founder & Lead AI Architect at A Generative Slice (AGS) and recent graduate with a B.Tech in Artificial Intelligence & Data Science! He architects autonomous multi-agent systems, FastMCP workspaces, and edge AI computation, all infused with 4+ years of creative mastery.\n\nWhat would you like to know about Mohammed? His enterprise AI platforms, AGS ecosystem, proprietary products, or One Piece adventures? 👒✨",
           role: "assistant",
           timestamp: new Date()
         }
@@ -136,9 +136,9 @@ export default function Chatbot() {
     // Projects inquiries
     if (input.includes("project") || input.includes("work") || input.includes("portfolio")) {
       const projectResponses = [
-        "Oh honey, Mohammad's projects are **fire**! 🚀 His Edge AI runs LLMs on phones (no servers needed!), plus those WhatsApp bots are pure **genius**. Which one's catching your eye?",
-        "Mohammad's portfolio is **chef's kiss** 👌 Edge AI, WhatsApp bots, A Generative Slice... the man doesn't miss! What type of project gets you excited?",
-        "Ready to be **amazed**? 🤩 Mohammad's building the future with Edge AI and smart bots. His work is honestly **next level** - what interests you most?"
+        "Oh honey, Mohammed's projects are **fire**! 🚀 From **A Generative Slice** enterprise ecosystems to **SliceInbox** FastMCP agents and **KaiPulla** Edge AI, the man is building the future!",
+        "Mohammed's portfolio is **chef's kiss** 👌 11+ client enterprise deployments, 6+ proprietary AI products (SliceInbox, SliceLeads, Slice3D), and local offline AI! Which one's catching your eye?",
+        "Ready to be **amazed**? 🤩 Mohammed's building autonomous multi-agent systems, OCR-powered ERPs, and headless 3D spatial engines. His work is honestly **next level**!"
       ]
       return projectResponses[Math.floor(Math.random() * projectResponses.length)]
     }
@@ -146,9 +146,9 @@ export default function Chatbot() {
     // Skills and tech stack
     if (input.includes("skill") || input.includes("tech") || input.includes("stack") || input.includes("technology")) {
       const skillResponses = [
-        "Mohammad's skills? **Absolutely stacked**! 💻 AI/ML wizard, React ninja, Blender master, and design god. The man's basically a **creative-tech superhero**!",
-        "Babe, Mohammad's got **everything** covered! 🎯 Python, React, AI magic, 3D artistry... he's the **whole package** and then some!",
-        "Mohammad's tech arsenal is **insane**! 🔥 From AI algorithms to stunning designs, he's got skills that'll make your head spin in the **best way**!"
+        "Mohammed's skills? **Absolutely stacked**! 💻 Autonomous Agents, FastMCP, Next.js, Python, Blender 3D, and Adobe motion graphics. The man's a **creative-tech powerhouse**!",
+        "Babe, Mohammed's got **everything** covered! 🎯 Multi-agent systems, edge computing, full-stack AI, 3D spatial pipelines... he's the **whole package** and then some!",
+        "Mohammed's tech arsenal is **insane**! 🔥 From local Ollama models on mobile Termux to high-ticket enterprise workflows, he's got skills that'll make your head spin in the **best way**!"
       ]
       return skillResponses[Math.floor(Math.random() * skillResponses.length)]
     }
@@ -156,9 +156,9 @@ export default function Chatbot() {
     // Experience and background
     if (input.includes("experience") || input.includes("background") || input.includes("story") || input.includes("journey")) {
       const experienceResponses = [
-        "Mohammad's journey? **Pure inspiration**! 📈 From sales to design to startup founder - talk about **glow up goals**! Never says 'I don't know', just learns and **delivers**!",
-        "His story gives me **chills**! 🌟 Bank sales → graphic design → AI genius → startup boss. Mohammad's proof that **dreams plus hustle** equals magic!",
-        "Get this - Mohammad went from State Bank sales to AI startup founder! **That's what I call character development**! 🚀 Pure determination and **never-give-up** vibes!"
+        "Mohammed's journey? **Pure inspiration**! 📈 From State Bank sales to freelance design mastery to B.Tech graduate in AI & DS, and now Founder of **A Generative Slice (AGS)**! Talk about **glow up goals**!",
+        "His story gives me **chills**! 🌟 Bank sales → graphic designer → AI systems architect & B.Tech graduate → AI venture studio founder. Mohammed's proof that **dreams plus relentless hustle** equals magic!",
+        "Get this - Mohammed went from credit card sales to founding A Generative Slice and directing an engineering team! **That's what I call character development**! 🚀"
       ]
       return experienceResponses[Math.floor(Math.random() * experienceResponses.length)]
     }
@@ -166,9 +166,9 @@ export default function Chatbot() {
     // Contact and collaboration
     if (input.includes("contact") || input.includes("hire") || input.includes("collaborate") || input.includes("work together")) {
       const contactResponses = [
-        "Want to work with Mohammad? **Smart choice**! 🤝 Hit him up at s.m.d.hussainjoe@gmail.com or find him @smdhussain06. Trust me, he's **worth it**!",
-        "Mohammad's always down for **amazing collaborations**! 💫 Email him or slide into those DMs @smdhussain06. Fair warning - his talent might **blow your mind**!",
-        "Ready to create something **epic** together? 🔥 Mohammad's your guy! Chennai-based, globally minded, and **absolutely brilliant** to work with!"
+        "Want to work with Mohammed? **Smart choice**! 🤝 Hit him up at s.m.d.hussainjoe@gmail.com or find him @smdhussain06. Trust me, he's **worth it**!",
+        "Mohammed's always down for **amazing collaborations**! 💫 Email him or slide into those DMs @smdhussain06. Fair warning - his talent might **blow your mind**!",
+        "Ready to create something **epic** together? 🔥 Mohammed's your guy! Chennai-based, globally minded, and **absolutely brilliant** to work with!"
       ]
       return contactResponses[Math.floor(Math.random() * contactResponses.length)]
     }
@@ -176,9 +176,9 @@ export default function Chatbot() {
     // AI specific questions
     if (input.includes("ai") || input.includes("artificial intelligence") || input.includes("machine learning")) {
       const aiResponses = [
-        "Mohammad + AI = **pure magic**! 🤖 Edge AI, LLMs, business solutions... he's not just studying the future, he's **building** it with A Generative Slice!",
-        "AI is Mohammad's **playground**! 🧠 From mobile AI to prompt engineering, he's making tech more accessible and **absolutely brilliant**. What aspect interests you?",
-        "Mohammad's AI work is **revolutionary**! 🚀 Running models locally, creating smart solutions... the man's basically an **AI whisperer**!"
+        "Mohammed + AI = **pure magic**! 🤖 FastMCP workspaces, local mobile LLMs, enterprise trading ERPs... he's actively **building** the future with A Generative Slice!",
+        "AI is Mohammed's **playground**! 🧠 From on-device edge AI (KaiPulla) to autonomous B2B acquisition (SliceLeads), he's making tech more accessible and **brilliant**!",
+        "Mohammed's AI work is **revolutionary**! 🚀 Running models locally, orchestrating multi-agent systems... the man's an **AI whisperer**!"
       ]
       return aiResponses[Math.floor(Math.random() * aiResponses.length)]
     }
@@ -186,9 +186,9 @@ export default function Chatbot() {
     // Fun/personal questions
     if (input.includes("anime") || input.includes("one piece") || input.includes("fun") || input.includes("hobby")) {
       const funResponses = [
-        "One Piece fan spotted! 👒 Mohammad's got that **Luffy energy** - never gives up, always adventures forward! His work has serious **anime protagonist vibes**!",
-        "Mohammad puts **anime spirit** into everything he builds! 🏴‍☠️ That One Piece determination? It shows in every project. **Absolutely legendary**!",
-        "A person of **culture**! 🔥 Mohammad channels that anime passion into his work - creative, determined, and always **pushing boundaries**!"
+        "One Piece fan spotted! 👒 Mohammed's got that **Luffy energy** - never gives up, always adventures forward! His work has serious **anime protagonist vibes**!",
+        "Mohammed puts **anime spirit** into everything he builds! 🏴‍☠️ That One Piece determination? It shows in every project. **Absolutely legendary**!",
+        "A person of **culture**! 🔥 Mohammed channels that anime passion into his work - creative, determined, and always **pushing boundaries**!"
       ]
       return funResponses[Math.floor(Math.random() * funResponses.length)]
     }
@@ -196,20 +196,20 @@ export default function Chatbot() {
     // About Capcicum
     if (input.includes("you") || input.includes("capcicum") || input.includes("who are you")) {
       const aboutResponses = [
-        "I'm Capcicum! 🌶️ Mohammad's **spiciest** assistant with serious rizz! I know everything about his work and I'm here to make you **smile** while learning!",
-        "Your friendly neighborhood **Capcicum**! 😎 Think of me as Mohammad's hype person - I've got all the **tea** on his amazing projects and personality!",
-        "Capcicum at your service! 🔥 I'm here to show you why Mohammad's the **coolest** AI-design hybrid you'll ever meet. Ready to be **impressed**?"
+        "I'm Capcicum! 🌶️ Mohammed's **spiciest** assistant with serious rizz! I know everything about his work and I'm here to make you **smile** while learning!",
+        "Your friendly neighborhood **Capcicum**! 😎 Think of me as Mohammed's hype person - I've got all the **tea** on his amazing projects and personality!",
+        "Capcicum at your service! 🔥 I'm here to show you why Mohammed's the **coolest** AI-design hybrid you'll ever meet. Ready to be **impressed**?"
       ]
       return aboutResponses[Math.floor(Math.random() * aboutResponses.length)]
     }
 
     // Default responses with personality
     const defaultResponses = [
-      "That's **interesting**! 🌶️ Tell me more about what you'd like to know regarding Mohammad's **incredible** work!",
-      "Ooh, **curious** are we? 😏 I love that energy! What specific aspect of Mohammad's journey has caught your **attention**?",
-      "You've got **great taste** in questions! 🔥 Mohammad's world is full of surprises - what would you like to explore **first**?",
-      "**Spicy** question! 🌶️ I'm here to help you discover all the **amazing** things about Mohammad's work. What's on your mind?",
-      "Now we're **talking**! 🚀 Mohammad's got so many cool projects and skills. What's got you **most excited** to learn about?"
+      "That's **interesting**! 🌶️ Tell me more about what you'd like to know regarding Mohammed's **incredible** work!",
+      "Ooh, **curious** are we? 😏 I love that energy! What specific aspect of Mohammed's journey has caught your **attention**?",
+      "You've got **great taste** in questions! 🔥 Mohammed's world is full of surprises - what would you like to explore **first**?",
+      "**Spicy** question! 🌶️ I'm here to help you discover all the **amazing** things about Mohammed's work. What's on your mind?",
+      "Now we're **talking**! 🚀 Mohammed's got so many cool projects and skills. What's got you **most excited** to learn about?"
     ]
     
     return defaultResponses[Math.floor(Math.random() * defaultResponses.length)]
@@ -221,32 +221,32 @@ export default function Chatbot() {
     
     // Booking intent
     if (checkBookingIntent(userInput)) {
-      return "Awesome! 📅 Mohammad would love to chat with you! Whether you want to discuss AI projects, need design work, collaborate on a startup idea, or just geek out about One Piece - he's all ears! 🎯\n\nHere's his Calendly link: https://calendly.com/mohammad-hussain/30min\n\nPick a time that works for you and get ready for an engaging conversation! 🚀✨"
+      return "Awesome! 📅 Mohammed would love to chat with you! Whether you want to discuss enterprise AI solutions, collaborative venture ideas, or just geek out about One Piece - he's all ears! 🎯\n\nHere's his Calendly link: https://calendly.com/mohammad-hussain/30min\n\nPick a time that works for you and get ready for an engaging conversation! 🚀✨"
     }
 
     // Greeting responses
     if (input.includes("hello") || input.includes("hi") || input.includes("hey")) {
-      return "Hey there! 👋 Great to meet you! I'm Capcicum, Mohammad's AI assistant. I'm here to help you learn about Mohammad's incredible journey in AI, design, and entrepreneurship. What would you like to know about him? 🌶️✨"
+      return "Hey there! 👋 Great to meet you! I'm Capcicum, Mohammed's AI assistant. I'm here to help you explore Mohammed's work in enterprise AI, autonomous agents, and venture building. What would you like to know? 🌶️✨"
     }
 
     // Projects inquiries
     if (input.includes("project") || input.includes("work") || input.includes("portfolio")) {
-      return "Mohammad's working on some amazing projects! 🚀 His standout work includes:\n\n• **Edge AI Mobile Computation** - Running LLMs directly on mobile devices for privacy & cost savings\n• **WhatsApp AI Bot** - Smart conversational bots that learn from business data\n• **A Generative Slice** - His AI SaaS platform for startups\n• **3D Product Visualization** - Stunning Blender renders for e-commerce\n\nWhich project interests you most? 🎯"
+      return "Mohammed's working on some amazing high-impact systems! 🚀 His standout work includes:\n\n• **A Generative Slice (AGS)** - Enterprise AI venture studio & solution suite\n• **SliceInbox** - FastMCP AI Chief of Staff triaging Zoho Mail for Litelab Milano\n• **SliceLeads** - Autonomous B2B acquisition pipeline (Playwright + Gemini 2.0)\n• **KaiPulla Edge AI** - 100% offline local LLM assistant on Android Termux & PC\n• **Project Mald & Rose Chemicals** - Multi-godown ERP & WhatsApp commerce\n\nWhich project interests you most? 🎯"
     }
 
     // Skills and tech stack
     if (input.includes("skill") || input.includes("tech") || input.includes("stack") || input.includes("technology")) {
-      return "Mohammad's tech arsenal is seriously impressive! 💻 He's got:\n\n🤖 **AI & Data Science**: Python, Machine Learning, LLMs, Prompt Engineering\n🎨 **Design**: Adobe Creative Suite, Blender 3D, Figma\n💻 **Development**: React, Next.js, TypeScript, Node.js\n🎬 **Video**: After Effects, Premiere Pro, Motion Graphics\n\nHe's basically a creative-tech hybrid who brings ideas to life! What specific area interests you? ⚡"
+      return "Mohammed's tech arsenal is seriously impressive! 💻 He's got:\n\n🤖 **AI & Autonomous Agents**: Multi-Agent Systems, FastMCP, Local LLMs (Ollama), Prompt Engineering\n🎨 **Design & 3D**: Blender 3D, Adobe Creative Suite, Procedural Spatial Computing\n💻 **Full-Stack**: Next.js 14/15, TypeScript, Python, Tailwind CSS, Supabase\n⚡ **Edge & CLI**: Android Termux, Linux, Tesseract OCR, ARM64 Optimization\n\nHe brings technical rigor together with bespoke aesthetics! What specific area interests you? ⚡"
     }
 
     // Experience and background
     if (input.includes("experience") || input.includes("background") || input.includes("story") || input.includes("journey")) {
-      return "Mohammad's journey is truly inspiring! 📈 He started from sales at State Bank of India, became a graphic designer, then content creator, and now he's a startup founder! 🚀\n\nCurrently he's:\n• Founder of A Generative Slice (AI SaaS)\n• Running A Graphic Slice (design company since 2020)\n• Pursuing AI & Data Science degree\n• Never says 'I don't know' - just learns and delivers!\n\nHis growth mindset is incredible! 💪"
+      return "Mohammed's journey is truly inspiring! 📈 He started from sales at State Bank of India, mastered graphic design and 3D modeling, completed his B.Tech in AI & Data Science, and founded **A Generative Slice (AGS)**! 🚀\n\nToday he leads an expanding team delivering enterprise AI solutions across India and Europe. His growth mindset is unstoppable! 💪"
     }
 
     // Education
     if (input.includes("education") || input.includes("study") || input.includes("college") || input.includes("degree")) {
-      return "Mohammad's currently pursuing a Bachelor's in AI & Data Science at Aalim Muhammed Salegh College of Engineering (2023-2027)! 🎓\n\nHe's focused on machine learning algorithms and practical AI applications. Before this, he aced Bio Mathematics and even hosted events despite being initially shy - showing his amazing personal growth! ✨\n\nEducation + real-world experience = powerful combination! 📚💡"
+      return "Mohammed has successfully completed and graduated his **Bachelor of Technology (B.Tech) in Artificial Intelligence and Data Science** from Aalim Muhammed Salegh College of Engineering! 🎓✨\n\nHis academic journey culminated in advanced work with distributed multi-agent systems and edge intelligence, combining rigorous theory with real-world production engineering! 📚💡"
     }
 
     // Contact and collaboration

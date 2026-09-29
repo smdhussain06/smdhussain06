@@ -6,19 +6,21 @@ import { GraduationCap, Calendar, Award, Users } from "lucide-react"
 const education = [
   {
     institution: "Aalim Muhammed Salegh College of Engineering",
-    degree: "Bachelor in Artificial Intelligence and Data Science",
-    field: "Artificial Intelligence",
-    duration: "Feb 2023 - Feb 2027",
-    grade: "In Progress",
+    degree: "Bachelor of Technology (B.Tech) in Artificial Intelligence and Data Science",
+    field: "Artificial Intelligence & Data Science",
+    duration: "2021 - 2025",
+    grade: "Completed & Graduated",
     skills: [
       "Artificial Intelligence (AI)",
-      "Data Science",
-      "Python (Programming Language)",
-      "Machine Learning",
-      "Data Analytics",
+      "Multi-Agent Systems",
+      "Data Science & Analytics",
+      "Machine Learning & Deep Learning",
+      "Python & Neural Architectures",
+      "Edge AI & Edge Computing",
+      "Natural Language Processing",
     ],
     description:
-      "Currently pursuing advanced studies in AI and Data Science, focusing on machine learning algorithms, data analytics, and practical applications of artificial intelligence in real-world scenarios.",
+      "Successfully completed full 4-year B.Tech engineering degree in Artificial Intelligence & Data Science. Mastered machine learning, deep learning, statistical modeling, distributed multi-agent systems, and production edge computing. Concluded with the Semester 8 Capstone Project engineering production-ready autonomous intelligence systems.",
   },
   {
     institution: "Fathima Central Senior Secondary School",

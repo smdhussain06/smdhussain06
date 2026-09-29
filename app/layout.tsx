@@ -8,40 +8,44 @@ import Chatbot from "@/components/chatbot"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Mohammad Hussain - AI & Data Science Enthusiast | Graphic Designer",
+  title: "Mohammed Hussain — Founder @ A Generative Slice | AI Engineer & Systems Architect",
   description:
-    "Portfolio of Mohammad Hussain - AI & Data Science Enthusiast, Graphic Designer, and Content Creator. Blending creativity with cutting-edge AI to create extraordinary digital experiences.",
+    "Official portfolio of Mohammed Hussain — B.Tech Graduate in AI & Data Science, Founder & CEO of A Generative Slice (AGS). Architecting autonomous multi-agent systems, enterprise AI solutions, edge intelligence, and bespoke digital ecosystems.",
   keywords: [
-    "Mohammad Hussain",
-    "AI",
+    "Mohammed Hussain",
+    "A Generative Slice",
+    "AGS",
+    "AI Engineer",
+    "Autonomous Multi-Agent Systems",
+    "Model Context Protocol",
+    "MCP",
+    "Edge AI",
     "Data Science",
-    "Graphic Design",
-    "Content Creator",
     "Machine Learning",
-    "Adobe Creative Suite",
+    "Graphic Designer",
+    "3D Spatial Computing",
     "Blender",
   ],
-  authors: [{ name: "Mohammad Hussain" }],
-  creator: "Mohammad Hussain",
+  authors: [{ name: "Mohammed Hussain" }],
+  creator: "Mohammed Hussain",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://mohammadhussain.dev",
-    title: "Mohammad Hussain - AI & Data Science Enthusiast | Graphic Designer",
-    description: "Portfolio of Mohammad Hussain - AI & Data Science Enthusiast, Graphic Designer, and Content Creator.",
-    siteName: "Mohammad Hussain Portfolio",
+    title: "Mohammed Hussain — Founder @ A Generative Slice | AI Engineer",
+    description: "Portfolio of Mohammed Hussain — B.Tech in AI & Data Science, Founder & CEO of A Generative Slice. Architecting autonomous multi-agent systems and enterprise AI solutions.",
+    siteName: "Mohammed Hussain Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohammad Hussain - AI & Data Science Enthusiast | Graphic Designer",
-    description: "Portfolio of Mohammad Hussain - AI & Data Science Enthusiast, Graphic Designer, and Content Creator.",
+    title: "Mohammed Hussain — Founder @ A Generative Slice | AI Engineer",
+    description: "Portfolio of Mohammed Hussain — B.Tech in AI & Data Science, Founder & CEO of A Generative Slice.",
     creator: "@smdhussain06",
   },
   robots: {
     index: true,
     follow: true,
   },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

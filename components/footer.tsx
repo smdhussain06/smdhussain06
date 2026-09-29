@@ -18,10 +18,12 @@ export default function Footer() {
             viewport={{ once: true }}
             className="mb-8"
           >
-            <h3 className="text-2xl font-bold mb-4">Mohammad Hussain</h3>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Blending creativity with cutting-edge AI to create extraordinary digital experiences. Let's build the
-              future together, one pixel and one algorithm at a time.
+            <h3 className="text-2xl font-bold mb-2">Mohammed Hussain</h3>
+            <p className="text-orange-500 font-medium text-sm mb-3">
+              Founder & Lead AI Architect @ A Generative Slice (AGS) · B.Tech in AI & Data Science
+            </p>
+            <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+              Architecting autonomous multi-agent systems, enterprise AI workflows, and spatial 3D digital experiences. Let's build the future together, one pixel and one algorithm at a time.
             </p>
           </motion.div>
 
@@ -33,7 +35,7 @@ export default function Footer() {
             className="border-t border-gray-800 pt-8"
           >
             <div className="flex flex-col sm:flex-row items-center justify-between">
-              <p className="text-gray-400 mb-4 sm:mb-0">© 2025 Mohammad Hussain – Crafted with AI & Imagination</p>
+              <p className="text-gray-400 mb-4 sm:mb-0">© 2026 Mohammed Hussain – A Generative Slice</p>
 
               <motion.div
                 className="flex items-center space-x-2 cursor-pointer"

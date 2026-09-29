@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Brain, BarChart3, Palette, Box, Video, Sparkles, Megaphone } from "lucide-react"
+import { Brain, BarChart3, Palette, Box, Video, Sparkles, Megaphone, Bot, Layers, Building, Cpu, Globe, ArrowUpRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import ImageSlider from "./image-slider"
@@ -15,7 +15,13 @@ const getProjectIcon = (iconType: string) => {
   
   switch (iconType) {
     case 'ai':
-      return <Brain className={iconProps} />
+      return <Bot className={iconProps} />
+    case 'saas':
+      return <Layers className={iconProps} />
+    case 'enterprise':
+      return <Building className={iconProps} />
+    case 'edge':
+      return <Cpu className={iconProps} />
     case 'data':
       return <BarChart3 className={iconProps} />
     case 'design':
@@ -33,99 +39,130 @@ const getProjectIcon = (iconType: string) => {
 
 const projects = [
   {
-    title: "KaiPulla - Offline AI Assistant",
-    category: "AI Engineering",
+    title: "A Generative Slice (AGS) — Enterprise AI Ecosystem",
+    category: "Autonomous AI & SaaS",
     description:
-      "Private, offline AI assistant powered by Ollama local models. Works on PC & Android (Termux) with complete privacy and no internet dependency.",
+      "Flagship venture studio platform engineering elite enterprise AI software, autonomous multi-agent pipelines, FastMCP workspaces, and bespoke digital ecosystems.",
+    image: "/placeholder.svg?height=300&width=400",
+    iconType: "saas",
+    isSlider: false,
+    tags: ["Venture Studio", "FastMCP", "Multi-Agent Systems", "SaaS Hub"],
+    link: "https://github.com/A-Generative-Slice",
+    github: "https://github.com/A-Generative-Slice",
+    buttonText: "Explore Ecosystem",
+    buttonType: "github",
+  },
+  {
+    title: "SliceInbox — Litelab AI Chief of Staff (MCP)",
+    category: "Autonomous AI & SaaS",
+    description:
+      "Autonomous Executive AI Chief of Staff Model Context Protocol (FastMCP) workspace triaging 4 corporate Zoho Mail channels for European lighting house Litelab Milano.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "ai",
+    isSlider: false,
+    tags: ["FastMCP", "Zoho Mail", "Autonomous Triage", "Enterprise AI"],
+    link: "https://github.com/A-Generative-Slice/SliceInbox",
+    github: "https://github.com/A-Generative-Slice/SliceInbox",
+    buttonText: "View Architecture",
+    buttonType: "github",
+  },
+  {
+    title: "SliceLeads — Autonomous Client Acquisition Engine",
+    category: "Autonomous AI & SaaS",
+    description:
+      "4-tier B2B acquisition engine integrating Playwright Google Maps scraping, Groq AI, and Gemini 2.0 Flash automated cold email pitching and mailbox verification.",
+    image: "/placeholder.svg?height=300&width=400",
+    iconType: "ai",
+    isSlider: false,
+    tags: ["Playwright", "Gemini 2.0", "Groq AI", "Lead Automation"],
+    link: "https://github.com/A-Generative-Slice/SliceLeads",
+    github: "https://github.com/A-Generative-Slice/SliceLeads",
+    buttonText: "View Pipeline",
+    buttonType: "github",
+  },
+  {
+    title: "Project Mald & Rose Chemicals — Enterprise AI ERP",
+    category: "Enterprise Deployments",
+    description:
+      "Multi-godown stock sync ERP with Tesseract OCR waybill capture, Gemini AI invoice parsing, and Sarvam AI conversational WhatsApp ordering.",
+    image: "/placeholder.svg?height=300&width=400",
+    iconType: "enterprise",
+    isSlider: false,
+    tags: ["Enterprise ERP", "Tesseract OCR", "Gemini AI", "Sarvam AI"],
+    link: "https://rosechemicals.in/",
+    github: "https://github.com/A-Generative-Slice/Rose-Chemicals",
+    buttonText: "Live Platform",
+    buttonType: "demo",
+  },
+  {
+    title: "KaiPulla - Edge AI & Offline Assistant",
+    category: "Edge AI & Systems",
+    description:
+      "Private, 100% offline AI assistant powered by Ollama local models. Works natively on PC & Android (Termux) with zero cloud reliance and complete data privacy.",
+    image: "/placeholder.svg?height=300&width=400",
+    iconType: "edge",
     isSlider: true,
     folderPath: "edge-ai-mobile-computation",
-    tags: ["Offline AI", "Ollama", "Privacy", "Local Models"],
+    tags: ["Edge AI", "Ollama", "Android Termux", "Privacy First"],
     link: "https://github.com/smdhussain06/KaiPulla-offline-assistant",
     github: "https://github.com/smdhussain06/KaiPulla-offline-assistant",
     buttonText: "View Repository",
     buttonType: "github",
   },
   {
-    title: "AttiTutor – Personalized Learning",
-    category: "AI Engineering",
-    description: "Fun AI learning tool that explains tough concepts in your friends' voice using shared memories — like a last-minute study jam session turned into a web app.",
+    title: "AttiTutor – Personalized Peer Learning",
+    category: "Edge AI & Systems",
+    description:
+      "Interactive AI learning companion that explains difficult academic concepts in your peers' voice using shared memories — turning study sessions into engaging web apps.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "ai",
     isSlider: true,
     folderPath: "attitutor-learning",
-    tags: ["AI", "EdTech", "Web App", "Personalized Learning"],
+    tags: ["EdTech", "AI", "Web App", "Personalized Learning"],
     link: "https://smdhussain06.github.io/AttiTutor/",
-    github: "#",
+    github: "https://github.com/smdhussain06/AttiTutor",
     buttonText: "Try It Live",
     buttonType: "demo",
   },
   {
-    title: "Brand Identity Campaign",
-    category: "Digital Marketing",
+    title: "Slice3D & Spatial Computing Lab",
+    category: "Creative & 3D",
     description:
-      "Complete brand identity design for a tech startup including logo, color palette, and marketing materials.",
-    image: "/placeholder.svg?height=300&width=400",
-    iconType: "design",
-    isSlider: true,
-    folderPath: "brand-identity",
-    tags: ["Branding", "Logo Design", "Adobe Illustrator", "Marketing"],
-    link: "#",
-    github: "#",
-    buttonText: "View Portfolio",
-    buttonType: "portfolio",
-  },
-  {
-    title: "3D Product Visualization",
-    category: "Digital Marketing",
-    description: "Stunning 3D product renders and animations created in Blender for e-commerce and marketing campaigns.",
+      "Headless Blender 3D procedural spatial computing engine, procedural MCP bridge, and automated GLTF/GLB web asset pipelines for architectural visualization.",
     image: "/3DMOCKUP.jpg",
     iconType: "3d",
     isSlider: true,
     folderPath: "3d-projects",
-    tags: ["Blender", "3D Modeling", "Product Design", "Marketing"],
-    link: "#",
-    github: "#",
-    buttonText: "View Gallery",
+    tags: ["Blender 3D", "Headless 3D", "Spatial Computing", "FastMCP"],
+    link: "https://github.com/A-Generative-Slice/Slice3D",
+    github: "https://github.com/A-Generative-Slice/Slice3D",
+    buttonText: "View 3D Lab",
     buttonType: "gallery",
   },
   {
-    title: "Social Media Campaign",
-    category: "Content Creation",
-    description: "Comprehensive social media campaign with video content, graphics, and strategic content planning.",
-    image: "/placeholder.svg?height=300&width=400",
-    iconType: "video",
-    isSlider: true,
-    folderPath: "social-media-campaign",
-    tags: ["Video Editing", "Social Media", "Content Strategy", "After Effects"],
-    link: "#",
-    github: "#",
-    buttonText: "Watch Campaign",
-    buttonType: "video",
-  },
-  {
-    title: "Motion Graphics Reel",
-    category: "Content Creation",
-    description: "Creative motion graphics reel showcasing various animation techniques and visual effects.",
+    title: "Motion Graphics Reel & Cinematic Systems",
+    category: "Creative & 3D",
+    description:
+      "Creative motion graphics reel and brand identity campaigns showcasing 3D animation, typography, and visual effects across Adobe Suite and Blender.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "motion",
     isSlider: true,
     folderPath: "motion-graphics",
-    tags: ["After Effects", "Motion Graphics", "Animation", "Visual Effects"],
+    tags: ["After Effects", "Motion Graphics", "3D Animation", "Visual FX"],
     link: "#",
     github: "#",
     buttonText: "Watch Reel",
     buttonType: "video",
-    fileExtension: "mp4", // Use MP4 for motion graphics videos
+    fileExtension: "mp4",
   },
 ]
 
 const categories = [
   "All",
-  "AI Engineering",
-  "Digital Marketing",
-  "Content Creation",
+  "Autonomous AI & SaaS",
+  "Enterprise Deployments",
+  "Edge AI & Systems",
+  "Creative & 3D",
 ]
 
 export default function Projects() {

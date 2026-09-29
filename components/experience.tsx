@@ -5,24 +5,24 @@ import { Calendar, MapPin, Building } from "lucide-react"
 
 const experiences = [
   {
-    title: "Founder",
-    company: "A Generative Slice",
-    type: "Self-employed",
-    duration: "Jul 2025 - Present",
-    location: "Chennai, Tamil Nadu, India · Remote",
+    title: "Founder & Lead AI Systems Architect",
+    company: "A Generative Slice (AGS)",
+    type: "Venture Studio & AI Engineering Lab",
+    duration: "Jul 2024 - Present",
+    location: "Chennai, Tamil Nadu, India · Hybrid / Global",
     description:
-      "A Generative Slice provides a Software as a Service (SaaS) platform for startups, using Artificial Intelligence (AI) to address business challenges and drive growth. The platform offers smart, scalable AI solutions to optimize operations, enhance decision-making, and gain a competitive edge.",
-    skills: ["Business Ownership", "Start-up Leadership", "AI Solutions", "SaaS Development"],
+      "Founded and leading an elite AI venture studio and engineering lab. Architected and deployed 11+ client enterprise systems across logistics, F&B, civil engineering, and e-commerce alongside 6+ proprietary AI products (SliceInbox FastMCP Chief of Staff, SliceLeads automated acquisition engine, SliceDAM document generator, and Slice3D headless spatial computing lab). Directing an expanding multi-disciplinary engineering and design team.",
+    skills: ["Venture Leadership", "Autonomous Multi-Agent Systems", "FastMCP Architecture", "Enterprise ERP & AI Workflows", "Edge AI & LLM Deployment", "Team Direction"],
   },
   {
-    title: "Freelance Graphic Designer",
+    title: "Creative Director & Technical Designer",
     company: "A Graphic Slice",
-    type: "Freelance",
+    type: "Independent Studio",
     duration: "Jan 2020 - Present",
     location: "Chennai, Tamil Nadu, India · Hybrid",
     description:
-      'Created A Graphic Slice, a graphic design company helping individual and wholesale clients. Gained extensive knowledge working as a freelancer, never saying "I don\'t know" to anything but always learning and providing solutions by deadlines.',
-    skills: ["Blender", "UI/UX Design", "Adobe Creative Suite", "Client Management", "Creative Problem Solving"],
+      "Founded A Graphic Slice delivering high-impact brand identities, 3D product visualizations (Blender), UI/UX systems, and cinematic motion graphics for high-growth startups and global brands. Pioneered procedural design workflows that now bridge directly into automated 3D spatial pipelines.",
+    skills: ["Blender 3D", "Procedural Modeling", "Adobe Creative Suite", "Motion Graphics", "Brand Architecture", "UI/UX Design"],
   },
   {
     title: "Content Creator",

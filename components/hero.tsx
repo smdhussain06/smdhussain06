@@ -87,44 +87,55 @@ const BackgroundDots = () => {
 export default function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
   const roles = [
-    "AI & Data Science Enthusiast",
-    "Graphic Designer", 
-    "Content Creator",
-    "3D Artist",
-    "Photographer",
-    "Marketing Strategist"
+    "Founder & CEO @ A Generative Slice",
+    "B.Tech in Artificial Intelligence & Data Science",
+    "Autonomous Multi-Agent Systems Architect",
+    "FastMCP & Edge Intelligence Pioneer",
+    "Enterprise AI Solutions Builder",
+    "Creative Technologist & 3D Visualizer"
   ]
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentRoleIndex((prev) => (prev + 1) % roles.length)
-    }, 3000) // Change every 3 seconds
+    }, 2800)
 
     return () => clearInterval(interval)
   }, [roles.length])
 
-  const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-16">
       {/* Clean Background */}
       <div className="absolute inset-0 bg-white dark:bg-black" />
 
-      {/* Animated Background Elements - Now Stable */}
+      {/* Animated Background Elements */}
       <BackgroundDots />
 
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        {/* Status Pill Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-600 dark:text-orange-400 text-xs sm:text-sm font-semibold mb-6 backdrop-blur-md shadow-sm"
+        >
+          <span className="w-2 h-2 rounded-full bg-orange-500 animate-ping" />
+          <span>Founder @ A Generative Slice · B.Tech Graduate in AI & Data Science</span>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black dark:text-white mb-4 sm:mb-6 leading-tight"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-black dark:text-white mb-4 sm:mb-6 tracking-tight leading-none"
         >
-          Mohammad
+          Mohammed
           <br />
-          <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 bg-clip-text text-transparent">
             Hussain
           </span>
         </motion.h1>
@@ -133,14 +144,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed px-4 min-h-[2em] flex items-center justify-center"
+          className="text-lg sm:text-2xl font-medium text-gray-700 dark:text-gray-200 mb-6 max-w-3xl mx-auto leading-relaxed px-4 min-h-[2.5em] flex items-center justify-center"
         >
           <div className="relative w-full h-full text-center">
             {roles.map((role, index) => (
               <span
                 key={index}
-                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-                  index === currentRoleIndex ? 'opacity-100' : 'opacity-0'
+                className={`absolute inset-0 flex items-center justify-center transition-all duration-500 transform ${
+                  index === currentRoleIndex 
+                    ? 'opacity-100 translate-y-0 text-orange-600 dark:text-orange-400 font-semibold' 
+                    : 'opacity-0 translate-y-2 pointer-events-none'
                 }`}
               >
                 {role}
@@ -149,19 +162,64 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-4"
+        >
+          Architecting autonomous multi-agent systems, high-impact enterprise AI workflows, and spatial 3D computing at the intersection of deep engineering and creative mastery.
+        </motion.p>
+
+        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="px-4"
+          className="flex flex-wrap items-center justify-center gap-4 px-4 mb-14"
         >
           <Button
-            onClick={scrollToProjects}
+            onClick={() => scrollToSection("projects")}
             size="lg"
-            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-base sm:text-lg font-semibold rounded-full shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105"
           >
-            View Portfolio
+            Explore Solutions & Work
           </Button>
+          <Button
+            onClick={() => scrollToSection("experience")}
+            variant="outline"
+            size="lg"
+            className="border-gray-300 dark:border-gray-700 hover:border-orange-500 dark:hover:border-orange-400 text-gray-800 dark:text-gray-200 px-8 py-4 text-base sm:text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+          >
+            Founder Journey
+          </Button>
+        </motion.div>
+
+        {/* Executive Stats Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto px-4"
+        >
+          {[
+            { value: "11+", label: "Client Enterprise Deployments" },
+            { value: "6+", label: "Proprietary AI SaaS Products" },
+            { value: "30+", label: "Autonomous Solutions & FastMCP" },
+            { value: "B.Tech", label: "Artificial Intelligence & Data Science" },
+          ].map((stat, i) => (
+            <div
+              key={i}
+              className="p-4 rounded-2xl bg-gray-50/80 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-800/80 backdrop-blur-md shadow-sm hover:border-orange-500/50 transition-all"
+            >
+              <div className="text-2xl sm:text-3xl font-extrabold text-orange-500 dark:text-orange-400 mb-1">
+                {stat.value}
+              </div>
+              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </motion.div>
       </div>
     </section>
