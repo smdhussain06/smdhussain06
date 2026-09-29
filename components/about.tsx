@@ -10,51 +10,56 @@ const basePath = process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''
 const pillars = [
   {
     icon: Bot,
-    title: "Autonomous Agents & FastMCP",
-    desc: "Architecting multi-agent workspaces, MCP protocols, and automated client acquisition pipelines.",
+    title: "Autonomous Multi-Agent Architecture",
+    desc: "Architecting collaborative multi-agent workspaces, protocol bridges, and automated client acquisition pipelines.",
   },
   {
     icon: Layers,
-    title: "Enterprise AI & Scalable SaaS",
-    desc: "Production deployments across ERP systems, OCR pipelines, and multi-channel conversational bots.",
+    title: "Enterprise AI and Scalable SaaS Platforms",
+    desc: "Production deployments across real-time ERP systems, OCR processing engines, and multi-channel conversational bots.",
   },
   {
     icon: Cpu,
-    title: "Edge AI & Mobile Computation",
-    desc: "Running local LLMs (Ollama) and lightweight agent runtimes directly on Android Termux and edge hardware.",
+    title: "Edge AI and Offline Intelligence",
+    desc: "Running local machine learning models and lightweight agent runtimes natively on Android Termux and edge hardware.",
   },
   {
     icon: Box,
-    title: "3D Spatial Computing & Motion",
-    desc: "Headless Blender automation, procedural 3D modeling, and cinematic After Effects motion design.",
+    title: "3D Spatial Computing and Motion Design",
+    desc: "Headless Blender automation, procedural 3D modeling, and cinematic After Effects visual identity systems.",
   },
 ]
 
 export default function About() {
   return (
-    <section id="about" className="py-16 sm:py-20 bg-white dark:bg-black">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 sm:py-32 bg-[#FAFAFA] dark:bg-[#0A0A0A] relative overflow-hidden">
+      {/* Subtle Ambient Glow */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#FF5C00]/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
+
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-4 sm:mb-6">About Me</h2>
-          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full" />
+          <h2 className="text-4xl sm:text-5xl font-black text-[#0F172A] dark:text-white tracking-tight mb-4">
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]">Me</span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] mx-auto rounded-full" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-12">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center mb-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="order-1 lg:order-1"
+            className="order-1"
           >
-            <div className="relative">
-              <PersonalImageSlider className="w-64 h-64 sm:w-72 sm:h-72 lg:w-full lg:h-full lg:max-w-md mx-auto lg:mx-0 lg:aspect-square" />
+            <div className="rounded-3xl p-3 bg-white/70 dark:bg-[#111111]/70 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl shadow-black/5 dark:shadow-none">
+              <PersonalImageSlider className="w-full aspect-square rounded-2xl overflow-hidden" />
             </div>
           </motion.div>
 
@@ -63,39 +68,28 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="space-y-4 sm:space-y-6 order-2 lg:order-2 lg:flex lg:flex-col lg:justify-center"
+            className="space-y-5 order-2"
           >
-            <div className="prose prose-lg dark:prose-invert max-w-none">
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
-                Hey there! 👋 I'm <strong className="text-black dark:text-white">Mohammed Hussain</strong> — Founder & Lead AI Architect at{" "}
-                <span className="text-orange-500 font-semibold">A Generative Slice (AGS)</span>, and a recent graduate with a{" "}
-                <strong className="text-black dark:text-white">B.Tech in Artificial Intelligence & Data Science</strong> from Aalim Muhammed Salegh College of Engineering. 🎓🚀
-              </p>
+            <p className="text-lg sm:text-xl font-medium text-[#0F172A] dark:text-white leading-relaxed">
+              I am <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]">Mohammed Hussain</span> — Founder and Lead AI Systems Architect at A Generative Slice, and a graduate with a Bachelor of Technology in Artificial Intelligence and Data Science from Aalim Muhammed Salegh College of Engineering.
+            </p>
 
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
-                My journey began with 4+ years of deep freelance design and visual storytelling across the Adobe Creative Suite (Premiere Pro, Photoshop, After Effects) and 3D modeling in Blender. That creative foundation evolved into something far more expansive: pioneering high-performance AI systems that don't just generate content, but actively solve complex enterprise bottlenecks.
-              </p>
+            <p className="text-[#64748B] dark:text-white/60 leading-relaxed text-base sm:text-lg">
+              My journey began with four years of creative direction and visual storytelling across the Adobe Creative Suite and 3D modeling in Blender. That design foundation evolved into something far more expansive: pioneering high-performance AI systems that solve complex enterprise bottlenecks with precision.
+            </p>
 
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
-                Today, through <strong className="text-black dark:text-white">A Generative Slice</strong>, I lead an engineering and creative team delivering 11+ client enterprise deployments (from intelligent trading ERPs to luxury architectural showcases) and 6+ proprietary AI software platforms, including executive FastMCP agents, autonomous client acquisition engines, and headless 3D spatial pipelines.
-              </p>
+            <p className="text-[#64748B] dark:text-white/60 leading-relaxed text-base sm:text-lg">
+              Today, through A Generative Slice, I lead an engineering and creative team delivering eleven client enterprise deployments across industrial logistics, architectural showcases, and luxury commerce, alongside six proprietary AI platforms.
+            </p>
 
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-base sm:text-lg">
-                Whether deploying privacy-first Edge AI running locally on mobile devices or architecting multi-agent collaborative workflows, my mission is to bridge technical rigor with bespoke design elegance.
-              </p>
-
-              <motion.p
-                className="text-orange-500 dark:text-orange-400 font-semibold text-base sm:text-lg pt-2"
-                whileHover={{ scale: 1.01 }}
-              >
-                Let's collaborate to engineer autonomous intelligence and extraordinary digital experiences! 🌐💡
-              </motion.p>
-            </div>
+            <p className="text-[#64748B] dark:text-white/60 leading-relaxed text-base sm:text-lg">
+              Whether deploying privacy-first Edge AI running locally on mobile hardware or orchestrating autonomous agent workflows, my focus remains bridging technical rigor with bespoke design elegance.
+            </p>
           </motion.div>
         </div>
 
-        {/* Strategic Pillars Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-4">
+        {/* Strategic Capabilities in Apple-Style Glass Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((pillar, index) => (
             <motion.div
               key={index}
@@ -103,13 +97,15 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="p-5 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-orange-500/50 hover:shadow-lg transition-all"
+              className="rounded-3xl p-7 bg-white/70 dark:bg-[#111111]/70 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-xl shadow-black/5 dark:shadow-none hover:border-[#FF5C00]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500 mb-3">
-                <pillar.icon className="w-5 h-5" />
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FF5C00] to-[#FF8C1A] flex items-center justify-center text-white mb-5 shadow-lg shadow-[#FF5C00]/25">
+                  <pillar.icon className="w-6 h-6 stroke-[2]" />
+                </div>
+                <h3 className="text-lg font-bold text-[#0F172A] dark:text-white mb-2 leading-snug">{pillar.title}</h3>
+                <p className="text-sm text-[#64748B] dark:text-white/60 leading-relaxed">{pillar.desc}</p>
               </div>
-              <h3 className="text-base font-bold text-black dark:text-white mb-2">{pillar.title}</h3>
-              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{pillar.desc}</p>
             </motion.div>
           ))}
         </div>

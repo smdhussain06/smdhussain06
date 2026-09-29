@@ -87,12 +87,12 @@ const BackgroundDots = () => {
 export default function Hero() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
   const roles = [
-    "Founder & CEO @ A Generative Slice",
-    "B.Tech in Artificial Intelligence & Data Science",
+    "Founder and Lead Systems Architect at A Generative Slice",
+    "Bachelor of Technology in Artificial Intelligence and Data Science",
     "Autonomous Multi-Agent Systems Architect",
-    "FastMCP & Edge Intelligence Pioneer",
+    "Offline Edge Intelligence Specialist",
     "Enterprise AI Solutions Builder",
-    "Creative Technologist & 3D Visualizer"
+    "Creative Technologist and 3D Visualizer"
   ]
 
   useEffect(() => {
@@ -108,43 +108,38 @@ export default function Hero() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-16">
-      {/* Clean Background */}
-      <div className="absolute inset-0 bg-white dark:bg-black" />
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-28 pb-20 px-6">
+      {/* Brand Ambient Glow Backdrop matching A Generative Slice */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#FF5C00]/15 blur-[140px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[45%] h-[45%] rounded-full bg-[#FF8C1A]/10 blur-[130px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-500/10 via-transparent to-transparent opacity-60" />
+      </div>
 
       {/* Animated Background Elements */}
       <BackgroundDots />
 
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-        {/* Status Pill Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-600 dark:text-orange-400 text-xs sm:text-sm font-semibold mb-6 backdrop-blur-md shadow-sm"
-        >
-          <span className="w-2 h-2 rounded-full bg-orange-500 animate-ping" />
-          <span>Founder @ A Generative Slice · B.Tech Graduate in AI & Data Science</span>
-        </motion.div>
-
+      <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center text-center">
+        {/* Main Headline with Masking Effect */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-black dark:text-white mb-4 sm:mb-6 tracking-tight leading-none"
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-[#0F172A] dark:text-white mb-6 tracking-tight leading-[0.9]"
         >
-          Mohammed
+          MOHAMMED
           <br />
-          <span className="bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 bg-clip-text text-transparent">
-            Hussain
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] via-[#FF7A1A] to-[#FF8C1A]">
+            HUSSAIN
           </span>
         </motion.h1>
 
+        {/* Dynamic Role Display with Smooth Transition */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg sm:text-2xl font-medium text-gray-700 dark:text-gray-200 mb-6 max-w-3xl mx-auto leading-relaxed px-4 min-h-[2.5em] flex items-center justify-center"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-lg sm:text-2xl font-semibold text-[#0F172A]/80 dark:text-white/80 mb-6 max-w-3xl mx-auto leading-relaxed px-4 min-h-[2.8em] flex items-center justify-center"
         >
           <div className="relative w-full h-full text-center">
             {roles.map((role, index) => (
@@ -152,7 +147,7 @@ export default function Hero() {
                 key={index}
                 className={`absolute inset-0 flex items-center justify-center transition-all duration-500 transform ${
                   index === currentRoleIndex 
-                    ? 'opacity-100 translate-y-0 text-orange-600 dark:text-orange-400 font-semibold' 
+                    ? 'opacity-100 translate-y-0 text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] font-bold' 
                     : 'opacity-0 translate-y-2 pointer-events-none'
                 }`}
               >
@@ -162,60 +157,61 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        {/* Lead Narrative */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-4"
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-base sm:text-xl text-[#64748B] dark:text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
         >
-          Architecting autonomous multi-agent systems, high-impact enterprise AI workflows, and spatial 3D computing at the intersection of deep engineering and creative mastery.
+          Architecting autonomous multi-agent ecosystems, high-impact enterprise AI workflows, and spatial 3D computing at the intersection of deep engineering and visual mastery.
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* Action Buttons with Apple-like Rounded Corners */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-wrap items-center justify-center gap-4 px-4 mb-14"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex flex-wrap items-center justify-center gap-4 px-4 mb-16"
         >
           <Button
             onClick={() => scrollToSection("projects")}
             size="lg"
-            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-base sm:text-lg font-semibold rounded-full shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105"
+            className="bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] hover:from-[#FF7A1A] hover:to-[#FFA033] text-white px-9 py-4 text-base font-semibold rounded-2xl shadow-xl shadow-[#FF5C00]/25 hover:shadow-[#FF5C00]/40 transition-all duration-300 transform hover:-translate-y-0.5 border-0"
           >
-            Explore Solutions & Work
+            Explore Solutions
           </Button>
           <Button
             onClick={() => scrollToSection("experience")}
             variant="outline"
             size="lg"
-            className="border-gray-300 dark:border-gray-700 hover:border-orange-500 dark:hover:border-orange-400 text-gray-800 dark:text-gray-200 px-8 py-4 text-base sm:text-lg font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
+            className="bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-black/10 dark:border-white/10 hover:border-[#FF5C00]/30 hover:bg-black/[0.03] dark:hover:bg-white/[0.08] text-[#0F172A] dark:text-white px-9 py-4 text-base font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-0.5"
           >
             Founder Journey
           </Button>
         </motion.div>
 
-        {/* Executive Stats Strip */}
+        {/* Executive Stats in Apple-Style Glass Container */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto px-4"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mx-auto"
         >
           {[
             { value: "11+", label: "Client Enterprise Deployments" },
-            { value: "6+", label: "Proprietary AI SaaS Products" },
-            { value: "30+", label: "Autonomous Solutions & FastMCP" },
-            { value: "B.Tech", label: "Artificial Intelligence & Data Science" },
+            { value: "6+", label: "Proprietary AI SaaS Platforms" },
+            { value: "30+", label: "Autonomous Digital Solutions" },
+            { value: "Completed", label: "Artificial Intelligence and Data Science" },
           ].map((stat, i) => (
             <div
               key={i}
-              className="p-4 rounded-2xl bg-gray-50/80 dark:bg-gray-900/60 border border-gray-200/80 dark:border-gray-800/80 backdrop-blur-md shadow-sm hover:border-orange-500/50 transition-all"
+              className="rounded-3xl p-6 bg-white/70 dark:bg-[#111111]/70 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-xl shadow-black/5 dark:shadow-none hover:border-[#FF5C00]/30 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="text-2xl sm:text-3xl font-extrabold text-orange-500 dark:text-orange-400 mb-1">
+              <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] mb-1 tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
+              <div className="text-xs sm:text-sm text-[#64748B] dark:text-white/60 font-medium leading-snug">
                 {stat.label}
               </div>
             </div>

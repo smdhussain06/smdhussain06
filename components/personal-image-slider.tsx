@@ -133,7 +133,7 @@ export default function PersonalImageSlider({ className = "" }: PersonalImageSli
       />
 
       {/* Image Counter */}
-      <div className="absolute bottom-4 right-4 bg-black/50 text-white px-2 py-1 rounded-full text-xs font-medium z-20">
+      <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md text-white px-2.5 py-1 rounded-xl text-xs font-medium z-20 border border-white/10">
         {currentImageIndex + 1} / {availableImages.length}
       </div>
 

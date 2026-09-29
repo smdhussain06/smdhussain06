@@ -39,116 +39,116 @@ const getProjectIcon = (iconType: string) => {
 
 const projects = [
   {
-    title: "A Generative Slice (AGS) — Enterprise AI Ecosystem",
+    title: "A Generative Slice Enterprise Platform",
     category: "Autonomous AI & SaaS",
     description:
-      "Flagship venture studio platform engineering elite enterprise AI software, autonomous multi-agent pipelines, FastMCP workspaces, and bespoke digital ecosystems.",
+      "Venture studio platform engineering elite enterprise AI software, autonomous multi-agent pipelines, and bespoke digital ecosystems.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "saas",
     isSlider: false,
-    tags: ["Venture Studio", "FastMCP", "Multi-Agent Systems", "SaaS Hub"],
+    tags: ["Venture Studio", "Autonomous Agents", "Enterprise SaaS"],
     link: "https://github.com/A-Generative-Slice",
     github: "https://github.com/A-Generative-Slice",
     buttonText: "Explore Ecosystem",
     buttonType: "github",
   },
   {
-    title: "SliceInbox — Litelab AI Chief of Staff (MCP)",
+    title: "SliceInbox Intelligent Email Automation",
     category: "Autonomous AI & SaaS",
     description:
-      "Autonomous Executive AI Chief of Staff Model Context Protocol (FastMCP) workspace triaging 4 corporate Zoho Mail channels for European lighting house Litelab Milano.",
+      "Autonomous Executive AI Chief of Staff workspace triaging four corporate communication channels for European luxury lighting brand Litelab Milano.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "ai",
     isSlider: false,
-    tags: ["FastMCP", "Zoho Mail", "Autonomous Triage", "Enterprise AI"],
+    tags: ["Email Automation", "Executive AI", "Autonomous Triage"],
     link: "https://github.com/A-Generative-Slice/SliceInbox",
     github: "https://github.com/A-Generative-Slice/SliceInbox",
     buttonText: "View Architecture",
     buttonType: "github",
   },
   {
-    title: "SliceLeads — Autonomous Client Acquisition Engine",
+    title: "SliceLeads Automated Client Acquisition Engine",
     category: "Autonomous AI & SaaS",
     description:
-      "4-tier B2B acquisition engine integrating Playwright Google Maps scraping, Groq AI, and Gemini 2.0 Flash automated cold email pitching and mailbox verification.",
+      "Automated client acquisition pipeline integrating precision scraping, generative email pitching, and automated mailbox deliverability verification.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "ai",
     isSlider: false,
-    tags: ["Playwright", "Gemini 2.0", "Groq AI", "Lead Automation"],
+    tags: ["Lead Automation", "Generative Outreach", "Data Pipelines"],
     link: "https://github.com/A-Generative-Slice/SliceLeads",
     github: "https://github.com/A-Generative-Slice/SliceLeads",
     buttonText: "View Pipeline",
     buttonType: "github",
   },
   {
-    title: "Project Mald & Rose Chemicals — Enterprise AI ERP",
+    title: "Project Mald and Rose Chemicals Enterprise ERP",
     category: "Enterprise Deployments",
     description:
-      "Multi-godown stock sync ERP with Tesseract OCR waybill capture, Gemini AI invoice parsing, and Sarvam AI conversational WhatsApp ordering.",
+      "Multi-godown stock synchronization ERP with optical character recognition for physical waybills, automated invoice extraction, and conversational commerce.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "enterprise",
     isSlider: false,
-    tags: ["Enterprise ERP", "Tesseract OCR", "Gemini AI", "Sarvam AI"],
+    tags: ["Enterprise ERP", "Document Vision", "Conversational Commerce"],
     link: "https://rosechemicals.in/",
     github: "https://github.com/A-Generative-Slice/Rose-Chemicals",
     buttonText: "Live Platform",
     buttonType: "demo",
   },
   {
-    title: "KaiPulla - Edge AI & Offline Assistant",
+    title: "KaiPulla Offline Edge Intelligence",
     category: "Edge AI & Systems",
     description:
-      "Private, 100% offline AI assistant powered by Ollama local models. Works natively on PC & Android (Termux) with zero cloud reliance and complete data privacy.",
+      "Private, completely offline personal AI assistant engineered to run local language models natively on mobile Android and personal computers without internet.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "edge",
     isSlider: true,
     folderPath: "edge-ai-mobile-computation",
-    tags: ["Edge AI", "Ollama", "Android Termux", "Privacy First"],
+    tags: ["Edge AI", "Offline LLMs", "Mobile Computation", "Zero Cloud Dependency"],
     link: "https://github.com/smdhussain06/KaiPulla-offline-assistant",
     github: "https://github.com/smdhussain06/KaiPulla-offline-assistant",
     buttonText: "View Repository",
     buttonType: "github",
   },
   {
-    title: "AttiTutor – Personalized Peer Learning",
+    title: "AttiTutor Personalized Learning Platform",
     category: "Edge AI & Systems",
     description:
-      "Interactive AI learning companion that explains difficult academic concepts in your peers' voice using shared memories — turning study sessions into engaging web apps.",
+      "Interactive conversational learning companion that simplifies complex academic curricula through contextual peer explanations and shared notes.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "ai",
     isSlider: true,
     folderPath: "attitutor-learning",
-    tags: ["EdTech", "AI", "Web App", "Personalized Learning"],
+    tags: ["EdTech", "Conversational AI", "Interactive Web App"],
     link: "https://smdhussain06.github.io/AttiTutor/",
     github: "https://github.com/smdhussain06/AttiTutor",
     buttonText: "Try It Live",
     buttonType: "demo",
   },
   {
-    title: "Slice3D & Spatial Computing Lab",
+    title: "Slice3D Spatial Computing Lab",
     category: "Creative & 3D",
     description:
-      "Headless Blender 3D procedural spatial computing engine, procedural MCP bridge, and automated GLTF/GLB web asset pipelines for architectural visualization.",
+      "Headless Blender procedural spatial computing engine and automated 3D web asset pipelines for photorealistic architectural visualization.",
     image: "/3DMOCKUP.jpg",
     iconType: "3d",
     isSlider: true,
     folderPath: "3d-projects",
-    tags: ["Blender 3D", "Headless 3D", "Spatial Computing", "FastMCP"],
+    tags: ["Blender 3D", "Procedural Modeling", "Spatial Computing"],
     link: "https://github.com/A-Generative-Slice/Slice3D",
     github: "https://github.com/A-Generative-Slice/Slice3D",
     buttonText: "View 3D Lab",
     buttonType: "gallery",
   },
   {
-    title: "Motion Graphics Reel & Cinematic Systems",
+    title: "Motion Graphics and Visual Design Systems",
     category: "Creative & 3D",
     description:
-      "Creative motion graphics reel and brand identity campaigns showcasing 3D animation, typography, and visual effects across Adobe Suite and Blender.",
+      "Cinematic motion design reel, procedural animations, and bespoke brand design systems crafted across Adobe After Effects and Blender.",
     image: "/placeholder.svg?height=300&width=400",
     iconType: "motion",
     isSlider: true,
     folderPath: "motion-graphics",
-    tags: ["After Effects", "Motion Graphics", "3D Animation", "Visual FX"],
+    tags: ["After Effects", "Motion Graphics", "3D Animation", "Design Systems"],
     link: "#",
     github: "#",
     buttonText: "Watch Reel",
@@ -172,29 +172,31 @@ export default function Projects() {
     selectedCategory === "All" ? projects : projects.filter((project) => project.category === selectedCategory)
 
   return (
-    <section id="projects" className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-24 sm:py-32 bg-[#FAFAFA] dark:bg-[#0A0A0A] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-4 sm:mb-6">Featured Projects</h2>
-          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full mb-6 sm:mb-8" />
+          <h2 className="text-4xl sm:text-5xl font-black text-[#0F172A] dark:text-white tracking-tight mb-4">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]">Solutions</span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] mx-auto rounded-full mb-8" />
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 px-4">
+          {/* Category Filter - Apple-like rounded buttons, NOT pills */}
+          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-8 px-4">
             {categories.map((category) => (
               <Button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                variant={selectedCategory === category ? "default" : "outline"}
-                className={`px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full transition-all duration-300 ${
+                variant="ghost"
+                className={`px-5 py-2.5 text-sm font-semibold rounded-2xl transition-all duration-300 ${
                   selectedCategory === category
-                    ? "bg-gradient-to-r from-orange-500 to-orange-600 text-white"
-                    : "border-gray-300 dark:border-gray-600 hover:border-orange-500 dark:hover:border-orange-400"
+                    ? "bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] text-white shadow-lg shadow-[#FF5C00]/25"
+                    : "bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-black/5 dark:border-white/10 text-[#0F172A] dark:text-white hover:border-[#FF5C00]/30"
                 }`}
               >
                 {category}
@@ -203,73 +205,73 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="group relative bg-gray-50 dark:bg-gray-900 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-800"
+              className="group rounded-3xl overflow-hidden bg-white/70 dark:bg-[#111111]/70 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-xl shadow-black/5 dark:shadow-none hover:border-[#FF5C00]/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="relative overflow-hidden h-48">
-                {project.isSlider && project.folderPath ? (
-                  <ImageSlider 
-                    basePath={basePath}
-                    folderPath={project.folderPath}
-                    alt={project.title}
-                    fileExtension={project.fileExtension || "jpg"}
-                  />
-                ) : (
-                  <img
-                    src={`${basePath}${project.image}` || `${basePath}/placeholder.svg`}
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                    onError={(e) => {
-                      console.log('Image failed to load:', project.image);
-                      e.currentTarget.src = `${basePath}/placeholder.svg`;
-                    }}
-                    onLoad={() => console.log('Image loaded successfully:', project.image)}
-                  />
-                )}
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-orange-500 dark:text-orange-400">{project.category}</span>
-                  {getProjectIcon(project.iconType)}
+              <div>
+                <div className="relative overflow-hidden h-52 bg-black/5 dark:bg-black/40">
+                  {project.isSlider && project.folderPath ? (
+                    <ImageSlider 
+                      basePath={basePath}
+                      folderPath={project.folderPath}
+                      alt={project.title}
+                      fileExtension={project.fileExtension || "jpg"}
+                    />
+                  ) : (
+                    <img
+                      src={`${basePath}${project.image}` || `${basePath}/placeholder.svg`}
+                      alt={project.title}
+                      className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.src = `${basePath}/placeholder.svg`;
+                      }}
+                    />
+                  )}
                 </div>
 
-                <h3 className="text-xl font-bold text-black dark:text-white mb-3 group-hover:text-orange-500 transition-colors duration-300">
-                  {project.title}
-                </h3>
-
-                <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-2 py-1 bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 rounded-md text-xs font-medium"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Action Buttons */}
-                {project.buttonText && (
-                  <div className="flex gap-2">
-                    <Button
-                      onClick={() => window.open(project.link, '_blank')}
-                      className="flex-1 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white text-sm py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105"
-                    >
-                      {project.buttonText}
-                    </Button>
+                <div className="p-7">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#FF5C00]">{project.category}</span>
+                    {getProjectIcon(project.iconType)}
                   </div>
-                )}
+
+                  <h3 className="text-xl font-bold text-[#0F172A] dark:text-white mb-3 group-hover:text-[#FF5C00] transition-colors duration-300 leading-snug">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-[#64748B] dark:text-white/60 mb-5 leading-relaxed text-sm">{project.description}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 bg-[#FF5C00]/10 text-[#FF5C00] dark:text-[#FF8C1A] border border-[#FF5C00]/20 rounded-xl text-xs font-semibold"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
+
+              {/* Action Buttons */}
+              {project.buttonText && (
+                <div className="px-7 pb-7">
+                  <Button
+                    onClick={() => window.open(project.link, '_blank')}
+                    className="w-full bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] hover:from-[#FF7A1A] hover:to-[#FFA033] text-white text-sm py-3 px-5 rounded-2xl transition-all duration-300 font-semibold shadow-md shadow-[#FF5C00]/20 transform hover:-translate-y-0.5 border-0"
+                  >
+                    {project.buttonText}
+                  </Button>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

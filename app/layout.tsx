@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Mohammed Hussain — Founder @ A Generative Slice | AI Engineer & Systems Architect",
   description:
-    "Official portfolio of Mohammed Hussain — B.Tech Graduate in AI & Data Science, Founder & CEO of A Generative Slice (AGS). Architecting autonomous multi-agent systems, enterprise AI solutions, edge intelligence, and bespoke digital ecosystems.",
+    "Official portfolio of Mohammed Hussain — Graduate in Artificial Intelligence and Data Science, Founder & Lead AI Architect at A Generative Slice. Architecting autonomous multi-agent systems, enterprise AI solutions, edge intelligence, and bespoke digital ecosystems.",
   keywords: [
     "Mohammed Hussain",
     "A Generative Slice",

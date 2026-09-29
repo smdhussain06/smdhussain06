@@ -6,66 +6,68 @@ import { GraduationCap, Calendar, Award, Users } from "lucide-react"
 const education = [
   {
     institution: "Aalim Muhammed Salegh College of Engineering",
-    degree: "Bachelor of Technology (B.Tech) in Artificial Intelligence and Data Science",
-    field: "Artificial Intelligence & Data Science",
-    duration: "2021 - 2025",
-    grade: "Completed & Graduated",
+    degree: "Bachelor of Technology in Artificial Intelligence and Data Science",
+    field: "Artificial Intelligence and Data Science",
+    duration: "2021 — 2025",
+    grade: "Graduated with First Class Distinction",
     skills: [
-      "Artificial Intelligence (AI)",
+      "Artificial Intelligence",
       "Multi-Agent Systems",
-      "Data Science & Analytics",
-      "Machine Learning & Deep Learning",
-      "Python & Neural Architectures",
-      "Edge AI & Edge Computing",
+      "Data Science and Analytics",
+      "Machine Learning and Deep Learning",
+      "Python and Neural Architectures",
+      "Edge AI and Edge Computing",
       "Natural Language Processing",
     ],
     description:
-      "Successfully completed full 4-year B.Tech engineering degree in Artificial Intelligence & Data Science. Mastered machine learning, deep learning, statistical modeling, distributed multi-agent systems, and production edge computing. Concluded with the Semester 8 Capstone Project engineering production-ready autonomous intelligence systems.",
+      "Successfully completed full four-year engineering degree in Artificial Intelligence and Data Science. Mastered machine learning, deep learning, statistical modeling, distributed multi-agent systems, and production edge computing. Concluded with the Semester 8 Capstone Project engineering production-ready autonomous intelligence systems.",
   },
   {
     institution: "Fathima Central Senior Secondary School",
     degree: "Senior Secondary School",
     field: "Bio Mathematics",
-    duration: "Jan 2018 - Dec 2020",
-    grade: "A",
+    duration: "January 2018 — December 2020",
+    grade: "Grade A",
     activities: ["Science Fair Project 2019 Delhi", "125th Anniversary Year Hosting"],
-    skills: ["Internet of Things (IoT)", "Communication", "Show Hosting"],
+    skills: ["Internet of Things", "Public Communication", "Show Hosting"],
     description:
-      "Important journey to gain confidence in communication. Despite having communication skills, I initially avoided speaking with people, but the supportive staff and friends encouraged me to participate in events and hosting activities.",
+      "Formative journey to develop public speaking confidence and communication skills. Actively participated in state-level science symposiums and school hosting activities.",
   },
   {
     institution: "Al Hira Model School",
-    degree: "Middle School, Secondary Education",
-    field: "Secondary Education",
-    duration: "May 2009 - Dec 2018",
-    grade: "B",
-    activities: ["Science Fair Project Shastha College", "Interschool Competition", "Soccer"],
-    skills: ["English", "Hindi", "Creative Problem Solving"],
+    degree: "Secondary School Education",
+    field: "General Sciences and Mathematics",
+    duration: "May 2009 — December 2018",
+    grade: "Grade B",
+    activities: ["Science Fair Project Shastha College", "Interschool Competition", "Football"],
+    skills: ["Creative Problem Solving", "Analytical Thinking", "Discipline"],
     description:
-      "My favorite school that built me from scratch. They provided essential survival skills at a young age, giving confidence for real life. Built discipline, taught basic manners, and provided excellent CBSE education foundation.",
+      "Built fundamental discipline, basic etiquette, and strong CBSE education foundation that seeded early interest in science, mathematics, and computing.",
   },
 ]
 
 export default function Education() {
   return (
-    <section id="education" className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" className="py-24 sm:py-32 bg-[#FAFAFA] dark:bg-[#0A0A0A] relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-black dark:text-white mb-6">Education</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-auto rounded-full" />
+          <h2 className="text-4xl sm:text-5xl font-black text-[#0F172A] dark:text-white tracking-tight mb-4">
+            Academic <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]">Milestones</span>
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] mx-auto rounded-full" />
         </motion.div>
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 to-orange-600 hidden md:block" />
+          <div className="absolute left-8 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#FF5C00] via-[#FF8C1A] to-transparent hidden md:block opacity-40" />
 
-          <div className="space-y-12">
+          <div className="space-y-10">
             {education.map((edu, index) => (
               <motion.div
                 key={index}
@@ -76,57 +78,38 @@ export default function Education() {
                 className="relative"
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-6 w-4 h-4 bg-orange-500 rounded-full border-4 border-white dark:border-gray-50 hidden md:block" />
+                <div className="absolute left-6 top-8 w-4 h-4 bg-[#FF5C00] rounded-full border-4 border-white dark:border-[#0A0A0A] shadow-md shadow-[#FF5C00]/50 hidden md:block" />
 
-                <div className="md:ml-20 bg-white dark:bg-black rounded-2xl p-6 hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-800">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
+                <div className="md:ml-20 rounded-3xl p-8 bg-white/70 dark:bg-[#111111]/70 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-xl shadow-black/5 dark:shadow-none hover:border-[#FF5C00]/30 transition-all duration-300">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 gap-2">
                     <div className="flex-1">
                       <div className="flex items-center mb-2">
-                        <GraduationCap className="w-5 h-5 text-orange-500 mr-2" />
-                        <h3 className="text-xl font-bold text-black dark:text-white">{edu.institution}</h3>
+                        <GraduationCap className="w-5 h-5 text-[#FF5C00] mr-2 shrink-0" />
+                        <h3 className="text-xl font-bold text-[#0F172A] dark:text-white">{edu.institution}</h3>
                       </div>
-                      <p className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-1">{edu.degree}</p>
-                      <p className="text-orange-500 dark:text-orange-400 font-medium mb-2">{edu.field}</p>
+                      <p className="text-lg font-semibold text-[#0F172A]/90 dark:text-white/90 mb-1">{edu.degree}</p>
+                      <p className="text-[#FF5C00] dark:text-[#FF8C1A] font-medium text-sm mb-2">{edu.field}</p>
                     </div>
 
-                    <div className="lg:text-right text-sm text-gray-500 dark:text-gray-400 lg:ml-4">
+                    <div className="lg:text-right text-sm text-[#64748B] dark:text-white/60 lg:ml-4 shrink-0">
                       <div className="flex items-center lg:justify-end mb-1">
-                        <Calendar className="w-4 h-4 mr-2" />
+                        <Calendar className="w-4 h-4 mr-2 text-[#FF5C00]" />
                         {edu.duration}
                       </div>
-                      <div className="flex items-center lg:justify-end">
-                        <Award className="w-4 h-4 mr-2" />
-                        Grade: {edu.grade}
+                      <div className="flex items-center lg:justify-end font-semibold text-[#0F172A] dark:text-white">
+                        <Award className="w-4 h-4 mr-2 text-[#FF5C00]" />
+                        {edu.grade}
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{edu.description}</p>
-
-                  {edu.activities && (
-                    <div className="mb-4">
-                      <div className="flex items-center mb-2">
-                        <Users className="w-4 h-4 text-orange-500 mr-2" />
-                        <span className="font-semibold text-gray-700 dark:text-gray-300">Activities & Societies:</span>
-                      </div>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {edu.activities.map((activity, actIndex) => (
-                          <span
-                            key={actIndex}
-                            className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
-                          >
-                            {activity}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  <p className="text-[#64748B] dark:text-white/60 mb-6 leading-relaxed text-base">{edu.description}</p>
 
                   <div className="flex flex-wrap gap-2">
                     {edu.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 rounded-full text-sm font-medium"
+                        className="px-3.5 py-1.5 bg-[#FF5C00]/10 text-[#FF5C00] dark:text-[#FF8C1A] border border-[#FF5C00]/20 rounded-xl text-xs font-semibold"
                       >
                         {skill}
                       </span>
