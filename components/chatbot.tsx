@@ -163,29 +163,29 @@ export default function Chatbot() {
     <>
       {/* Floating Chat Bubble */}
       <div 
-        className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${
+        className={`fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 transition-all duration-300 no-print ${
           isOpen ? "scale-0 opacity-0 pointer-events-none" : "scale-100 opacity-100"
         }`}
       >
         <button
           onClick={() => setIsOpen(true)}
-          className="p-3.5 bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] text-white rounded-2xl shadow-xl hover:shadow-2xl shadow-[#FF5C00]/25 transform hover:scale-105 active:scale-95 transition-all duration-300 border border-white/20 flex items-center justify-center"
+          className="p-3 sm:p-3.5 bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] text-white rounded-2xl shadow-xl hover:shadow-2xl shadow-[#FF5C00]/25 transform hover:scale-105 active:scale-95 transition-all duration-300 border border-white/20 flex items-center justify-center"
           aria-label="Open AI Assistant"
         >
           <img 
             src={`${process.env.NODE_ENV === 'production' ? '/smdhussain06' : ''}/capcicum.svg`}
             alt="Capcicum Assistant"
-            className="w-7 h-7 drop-shadow"
+            className="w-6 h-6 sm:w-7 sm:h-7 drop-shadow"
           />
         </button>
       </div>
 
       {/* Chat Window */}
       <div 
-        className={`fixed bottom-6 right-6 z-50 w-84 sm:w-96 bg-white/95 dark:bg-[#111111]/95 backdrop-blur-2xl rounded-3xl shadow-2xl border border-black/10 dark:border-white/10 transition-all duration-300 flex flex-col overflow-hidden ${
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-32px)] max-w-sm sm:w-96 bg-white/95 dark:bg-[#111111]/95 backdrop-blur-2xl rounded-3xl shadow-2xl border border-black/10 dark:border-white/10 transition-all duration-300 flex flex-col overflow-hidden no-print ${
           isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"
         }`}
-        style={{ height: "540px" }}
+        style={{ height: "540px", maxHeight: "85vh" }}
       >
         {/* Chat Header */}
         <div className="flex items-center justify-between p-4 px-5 border-b border-black/5 dark:border-white/10 bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] text-white">

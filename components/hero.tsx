@@ -1,98 +1,23 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { useState, useEffect } from "react"
-// Remove ChevronDown from imports since it's no longer used
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { Printer, ArrowRight, Compass } from "lucide-react"
 
-// Pure CSS background - no React re-renders
-const BackgroundDots = () => {
-  return (
-    <div className="absolute inset-0 pointer-events-none">
-      <style jsx>{`
-        @keyframes float1 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(50px, -50px) scale(1.2); }
-          50% { transform: translate(100px, -100px) scale(1.5); }
-          75% { transform: translate(50px, -50px) scale(1.2); }
-        }
-        @keyframes float2 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(-30px, 40px) scale(1.3); }
-          50% { transform: translate(-60px, 80px) scale(1.1); }
-          75% { transform: translate(-30px, 40px) scale(1.3); }
-        }
-        @keyframes float3 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(70px, 30px) scale(1.4); }
-          50% { transform: translate(140px, 60px) scale(1); }
-          75% { transform: translate(70px, 30px) scale(1.4); }
-        }
-        .floating-dot {
-          position: absolute;
-          width: 8px;
-          height: 8px;
-          background: rgb(254 215 170 / 0.6);
-          border-radius: 50%;
-          will-change: transform;
-        }
-        .dark .floating-dot {
-          background: rgb(154 52 18 / 0.6);
-        }
-        .dot-1 { left: 10%; top: 20%; animation: float1 12s ease-in-out infinite; }
-        .dot-2 { left: 20%; top: 60%; animation: float2 15s ease-in-out infinite; }
-        .dot-3 { left: 70%; top: 10%; animation: float3 18s ease-in-out infinite; }
-        .dot-4 { left: 80%; top: 70%; animation: float1 14s ease-in-out infinite; animation-delay: -2s; }
-        .dot-5 { left: 30%; top: 30%; animation: float2 16s ease-in-out infinite; animation-delay: -4s; }
-        .dot-6 { left: 60%; top: 80%; animation: float3 13s ease-in-out infinite; animation-delay: -1s; }
-        .dot-7 { left: 90%; top: 40%; animation: float1 17s ease-in-out infinite; animation-delay: -3s; }
-        .dot-8 { left: 40%; top: 90%; animation: float2 11s ease-in-out infinite; animation-delay: -5s; }
-        .dot-9 { left: 15%; top: 75%; animation: float3 19s ease-in-out infinite; animation-delay: -1.5s; }
-        .dot-10 { left: 75%; top: 25%; animation: float1 13.5s ease-in-out infinite; animation-delay: -3.5s; }
-        .dot-11 { left: 55%; top: 55%; animation: float2 16.5s ease-in-out infinite; animation-delay: -2.5s; }
-        .dot-12 { left: 85%; top: 15%; animation: float3 14.5s ease-in-out infinite; animation-delay: -4.5s; }
-        .dot-13 { left: 25%; top: 85%; animation: float1 15.5s ease-in-out infinite; animation-delay: -1s; }
-        .dot-14 { left: 95%; top: 60%; animation: float2 12.5s ease-in-out infinite; animation-delay: -6s; }
-        .dot-15 { left: 5%; top: 45%; animation: float3 18.5s ease-in-out infinite; animation-delay: -2s; }
-        .dot-16 { left: 45%; top: 15%; animation: float1 16.8s ease-in-out infinite; animation-delay: -4s; }
-        .dot-17 { left: 65%; top: 95%; animation: float2 13.8s ease-in-out infinite; animation-delay: -3s; }
-        .dot-18 { left: 35%; top: 65%; animation: float3 17.2s ease-in-out infinite; animation-delay: -5s; }
-        .dot-19 { left: 50%; top: 35%; animation: float1 14.2s ease-in-out infinite; animation-delay: -1.8s; }
-        .dot-20 { left: 82%; top: 88%; animation: float2 15.8s ease-in-out infinite; animation-delay: -3.8s; }
-      `}</style>
-      <div className="floating-dot dot-1"></div>
-      <div className="floating-dot dot-2"></div>
-      <div className="floating-dot dot-3"></div>
-      <div className="floating-dot dot-4"></div>
-      <div className="floating-dot dot-5"></div>
-      <div className="floating-dot dot-6"></div>
-      <div className="floating-dot dot-7"></div>
-      <div className="floating-dot dot-8"></div>
-      <div className="floating-dot dot-9"></div>
-      <div className="floating-dot dot-10"></div>
-      <div className="floating-dot dot-11"></div>
-      <div className="floating-dot dot-12"></div>
-      <div className="floating-dot dot-13"></div>
-      <div className="floating-dot dot-14"></div>
-      <div className="floating-dot dot-15"></div>
-      <div className="floating-dot dot-16"></div>
-      <div className="floating-dot dot-17"></div>
-      <div className="floating-dot dot-18"></div>
-      <div className="floating-dot dot-19"></div>
-      <div className="floating-dot dot-20"></div>
-    </div>
-  )
+interface HeroProps {
+  onOpenCV?: () => void
 }
 
-export default function Hero() {
+export default function Hero({ onOpenCV }: HeroProps) {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
   const roles = [
-    "Founder and Lead Systems Architect at A Generative Slice",
+    "Founder & Lead AI Architect at A Generative Slice",
     "Bachelor of Technology in Artificial Intelligence and Data Science",
     "Autonomous Multi-Agent Systems Architect",
     "Offline Edge Intelligence Specialist",
     "Enterprise AI Solutions Builder",
-    "Creative Technologist and 3D Visualizer"
+    "Creative Technologist & 3D Spatial Visualizer"
   ]
 
   useEffect(() => {
@@ -108,24 +33,21 @@ export default function Hero() {
   }
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-28 pb-20 px-6">
+    <section id="hero" className="min-h-[90vh] sm:min-h-screen flex items-center justify-center relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24 px-4 sm:px-6">
       {/* Brand Ambient Glow Backdrop matching A Generative Slice */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#FF5C00]/15 blur-[140px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#FF5C00]/12 blur-[140px]" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[45%] h-[45%] rounded-full bg-[#FF8C1A]/10 blur-[130px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-500/10 via-transparent to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-orange-500/5 via-transparent to-transparent opacity-50" />
       </div>
 
-      {/* Animated Background Elements */}
-      <BackgroundDots />
-
       <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center text-center">
-        {/* Main Headline with Masking Effect */}
+        {/* Main Headline */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-[#0F172A] dark:text-white mb-6 tracking-tight leading-[0.9]"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white mb-4 sm:mb-6 tracking-tight leading-[0.95]"
         >
           MOHAMMED
           <br />
@@ -136,10 +58,10 @@ export default function Hero() {
 
         {/* Dynamic Role Display with Smooth Transition */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-lg sm:text-2xl font-semibold text-[#0F172A]/80 dark:text-white/80 mb-6 max-w-3xl mx-auto leading-relaxed px-4 min-h-[2.8em] flex items-center justify-center"
+          transition={{ duration: 0.8, delay: 0.25 }}
+          className="text-sm sm:text-xl font-bold text-slate-800/90 dark:text-white/90 mb-4 sm:mb-6 max-w-2xl mx-auto leading-relaxed px-2 min-h-[2.2em] sm:min-h-[2.6em] flex items-center justify-center"
         >
           <div className="relative w-full h-full text-center">
             {roles.map((role, index) => (
@@ -157,46 +79,59 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Lead Narrative */}
+        {/* Minimal Narrative Statement */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-base sm:text-xl text-[#64748B] dark:text-white/60 max-w-2xl mx-auto mb-10 leading-relaxed font-normal"
+          transition={{ duration: 0.8, delay: 0.35 }}
+          className="text-sm sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed px-4 font-normal"
         >
-          Architecting autonomous multi-agent ecosystems, high-impact enterprise AI workflows, and spatial 3D computing at the intersection of deep engineering and visual mastery.
+          Architecting autonomous multi-agent ecosystems, high-impact enterprise AI workflows, and spatial 3D computing with mathematical precision and Apple-grade craft.
         </motion.p>
 
-        {/* Action Buttons with Apple-like Rounded Corners */}
+        {/* Action Buttons with Apple Rounded Corners */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-wrap items-center justify-center gap-4 px-4 mb-16"
+          transition={{ duration: 0.8, delay: 0.45 }}
+          className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 px-2 mb-12 sm:mb-16 w-full max-w-xl"
         >
           <Button
             onClick={() => scrollToSection("projects")}
             size="lg"
-            className="bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] hover:from-[#FF7A1A] hover:to-[#FFA033] text-white px-9 py-4 text-base font-semibold rounded-2xl shadow-xl shadow-[#FF5C00]/25 hover:shadow-[#FF5C00]/40 transition-all duration-300 transform hover:-translate-y-0.5 border-0"
+            className="flex-1 sm:flex-initial bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] hover:from-[#FF7A1A] hover:to-[#FFA033] text-white px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold rounded-2xl shadow-xl shadow-[#FF5C00]/25 hover:shadow-[#FF5C00]/40 transition-all duration-300 transform hover:-translate-y-0.5 border-0 flex items-center justify-center gap-2"
           >
-            Explore Solutions
+            <span>Explore Solutions</span>
+            <ArrowRight className="w-4 h-4" />
           </Button>
+
+          {/* Dedicated Print CV Action */}
           <Button
-            onClick={() => scrollToSection("experience")}
+            onClick={onOpenCV}
             variant="outline"
             size="lg"
-            className="bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-black/10 dark:border-white/10 hover:border-[#FF5C00]/30 hover:bg-black/[0.03] dark:hover:bg-white/[0.08] text-[#0F172A] dark:text-white px-9 py-4 text-base font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-0.5"
+            className="flex-1 sm:flex-initial bg-white/70 dark:bg-white/[0.05] backdrop-blur-xl border border-black/10 dark:border-white/10 hover:border-[#FF5C00]/40 hover:bg-orange-500/10 text-slate-900 dark:text-white px-5 sm:px-7 py-3.5 sm:py-4 text-sm sm:text-base font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
+          >
+            <Printer className="w-4 h-4 text-[#FF5C00]" />
+            <span>Print CV (PDF)</span>
+          </Button>
+
+          <Button
+            onClick={() => scrollToSection("experience")}
+            variant="ghost"
+            size="lg"
+            className="hidden sm:inline-flex text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 px-6 py-4 text-sm font-semibold rounded-2xl transition-all"
           >
             Founder Journey
           </Button>
         </motion.div>
 
-        {/* Executive Stats in Apple-Style Glass Container */}
+        {/* Minimal Executive Stats Grid */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mx-auto"
+          transition={{ duration: 0.8, delay: 0.55 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 w-full max-w-4xl mx-auto"
         >
           {[
             { value: "11+", label: "Client Enterprise Deployments" },
@@ -206,12 +141,12 @@ export default function Hero() {
           ].map((stat, i) => (
             <div
               key={i}
-              className="rounded-3xl p-6 bg-white/70 dark:bg-[#111111]/70 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-xl shadow-black/5 dark:shadow-none hover:border-[#FF5C00]/30 hover:-translate-y-1 transition-all duration-300"
+              className="rounded-2xl sm:rounded-3xl p-4 sm:p-6 bg-white/70 dark:bg-[#111111]/70 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-lg shadow-black/5 dark:shadow-none hover:border-[#FF5C00]/30 hover:-translate-y-0.5 transition-all duration-300"
             >
-              <div className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] mb-1 tracking-tight">
+              <div className="text-2xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] mb-1 tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm text-[#64748B] dark:text-white/60 font-medium leading-snug">
+              <div className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 font-semibold leading-tight">
                 {stat.label}
               </div>
             </div>

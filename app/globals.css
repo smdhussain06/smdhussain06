@@ -176,3 +176,60 @@ html {
   -webkit-line-clamp: 3;
   line-clamp: 3;
 }
+
+/* Print Styles for Guaranteed Single-Page Executive CV across all devices */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 6mm 8mm;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide regular interactive layout components when printing */
+  .no-print,
+  nav,
+  footer,
+  .glass-navbar,
+  #hero,
+  #about,
+  #skills,
+  #experience,
+  #education,
+  #projects,
+  #newsletters,
+  #contact,
+  .fixed,
+  button,
+  [data-radix-portal] {
+    display: none !important;
+  }
+
+  /* Make the print CV container strictly visible and format as 1-page */
+  #print-cv-container {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

@@ -172,28 +172,28 @@ export default function Projects() {
     selectedCategory === "All" ? projects : projects.filter((project) => project.category === selectedCategory)
 
   return (
-    <section id="projects" className="py-24 sm:py-32 bg-[#FAFAFA] dark:bg-[#0A0A0A] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+    <section id="projects" className="py-20 sm:py-28 bg-[#FAFAFA] dark:bg-[#0A0A0A] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-black text-[#0F172A] dark:text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-black text-[#0F172A] dark:text-white tracking-tight mb-4">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A]">Solutions</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] mx-auto rounded-full mb-8" />
 
-          {/* Category Filter - Apple-like rounded buttons, NOT pills */}
-          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 mb-8 px-4">
+          {/* Category Filter - Responsive on mobile (smooth horizontal scroll) & desktop */}
+          <div className="flex overflow-x-auto sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-3 mb-8 px-1 pb-2 sm:pb-0 no-scrollbar">
             {categories.map((category) => (
               <Button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 variant="ghost"
-                className={`px-5 py-2.5 text-sm font-semibold rounded-2xl transition-all duration-300 ${
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-2xl transition-all duration-300 shrink-0 ${
                   selectedCategory === category
                     ? "bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] text-white shadow-lg shadow-[#FF5C00]/25"
                     : "bg-white/60 dark:bg-white/[0.04] backdrop-blur-xl border border-black/5 dark:border-white/10 text-[#0F172A] dark:text-white hover:border-[#FF5C00]/30"
