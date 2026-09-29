@@ -2,21 +2,17 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Moon, Sun, Menu, X, Printer, FileText } from "lucide-react"
+import { Moon, Sun, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-interface NavbarProps {
-  onOpenCV?: () => void
-}
-
-export default function Navbar({ onOpenCV }: NavbarProps) {
+export default function Navbar() {
   const [isDark, setIsDark] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30)
+      setIsScrolled(window.scrollY > 20)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -52,8 +48,8 @@ export default function Navbar({ onOpenCV }: NavbarProps) {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 no-print ${
         isScrolled
-          ? "bg-white/80 dark:bg-[#070707]/80 backdrop-blur-xl border-b border-black/5 dark:border-white/10 shadow-sm"
-          : "bg-transparent"
+          ? "bg-white/90 dark:bg-[#070707]/90 backdrop-blur-xl border-b border-black/5 dark:border-white/10 shadow-sm"
+          : "bg-white/70 dark:bg-[#0A0A0A]/70 backdrop-blur-md"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -81,16 +77,6 @@ export default function Navbar({ onOpenCV }: NavbarProps) {
               </motion.a>
             ))}
 
-            {/* Print CV Action */}
-            <button
-              onClick={onOpenCV}
-              className="px-3.5 py-1.5 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 text-xs font-semibold hover:bg-gradient-to-r hover:from-[#FF5C00] hover:to-[#FF8C1A] hover:text-white transition-all duration-200 flex items-center gap-1.5 shadow-sm active:scale-95"
-              title="View and Print 1-Page CV"
-            >
-              <Printer className="w-3.5 h-3.5" />
-              <span>Print CV</span>
-            </button>
-
             {/* Theme Toggle */}
             <Button
               onClick={toggleTheme}
@@ -105,16 +91,6 @@ export default function Navbar({ onOpenCV }: NavbarProps) {
 
           {/* Mobile Right Controls */}
           <div className="md:hidden flex items-center space-x-2">
-            {/* Quick CV Button on Mobile Header */}
-            <button
-              onClick={onOpenCV}
-              className="px-2.5 py-1 rounded-xl bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/20 text-xs font-semibold flex items-center gap-1 active:scale-95 transition-transform"
-              aria-label="Print CV"
-            >
-              <Printer className="w-3 h-3" />
-              <span>CV</span>
-            </button>
-
             <Button
               onClick={toggleTheme}
               variant="ghost"
@@ -158,19 +134,6 @@ export default function Navbar({ onOpenCV }: NavbarProps) {
                     {item.name}
                   </a>
                 ))}
-
-                <div className="pt-2 mt-2 border-t border-black/5 dark:border-white/10">
-                  <button
-                    onClick={() => {
-                      setIsMobileMenuOpen(false)
-                      onOpenCV?.()
-                    }}
-                    className="w-full px-3 py-3 rounded-xl bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] text-white text-sm font-semibold flex items-center justify-center gap-2 shadow-md shadow-[#FF5C00]/25"
-                  >
-                    <Printer className="w-4 h-4" />
-                    <span>Print / Save CV as PDF</span>
-                  </button>
-                </div>
               </div>
             </motion.div>
           )}

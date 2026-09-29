@@ -8,9 +8,7 @@ export default function Footer() {
   const [showEasterEgg, setShowEasterEgg] = useState(false)
 
   return (
-    <footer className="relative bg-[#FAFAFA] dark:bg-[#070707] text-slate-800 dark:text-white py-16 border-t border-black/5 dark:border-white/10 overflow-hidden">
-      {/* Ambient background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-[#FF5C00]/10 rounded-full blur-[100px] pointer-events-none" />
+    <footer className="relative bg-white dark:bg-[#070707] text-slate-800 dark:text-white py-16 border-t border-black/5 dark:border-white/10">
 
       <div className="max-w-6xl mx-auto px-6 sm:px-8 relative z-10">
         <div className="text-center">

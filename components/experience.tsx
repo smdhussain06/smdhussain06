@@ -58,7 +58,7 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20 sm:py-28 bg-[#FAFAFA] dark:bg-[#0A0A0A] relative overflow-hidden">
+    <section id="experience" className="py-20 sm:py-28 bg-white dark:bg-[#0A0A0A] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

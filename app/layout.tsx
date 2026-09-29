@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import Chatbot from "@/components/chatbot"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -14,15 +13,13 @@ export const metadata: Metadata = {
   keywords: [
     "Mohammed Hussain",
     "A Generative Slice",
-    "AGS",
     "AI Engineer",
     "Autonomous Multi-Agent Systems",
     "Model Context Protocol",
-    "MCP",
+    "FastMCP",
     "Edge AI",
     "Data Science",
     "Machine Learning",
-    "Graphic Designer",
     "3D Spatial Computing",
     "Blender",
   ],
@@ -33,13 +30,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://mohammadhussain.dev",
     title: "Mohammed Hussain — Founder @ A Generative Slice | AI Engineer",
-    description: "Portfolio of Mohammed Hussain — B.Tech in AI & Data Science, Founder & CEO of A Generative Slice. Architecting autonomous multi-agent systems and enterprise AI solutions.",
+    description: "Portfolio of Mohammed Hussain — Graduate in AI & Data Science, Founder & Lead AI Architect at A Generative Slice. Architecting autonomous multi-agent systems and enterprise AI solutions.",
     siteName: "Mohammed Hussain Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Mohammed Hussain — Founder @ A Generative Slice | AI Engineer",
-    description: "Portfolio of Mohammed Hussain — B.Tech in AI & Data Science, Founder & CEO of A Generative Slice.",
+    description: "Portfolio of Mohammed Hussain — Graduate in AI & Data Science, Founder & Lead AI Architect at A Generative Slice.",
     creator: "@smdhussain06",
   },
   robots: {
@@ -55,10 +52,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-white text-slate-900 dark:bg-[#0A0A0A] dark:text-white antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
-          <Chatbot />
         </ThemeProvider>
       </body>
     </html>

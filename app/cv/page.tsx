@@ -32,7 +32,7 @@ export default function CVPage() {
               className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#FF5C00] to-[#FF8C1A] text-white text-sm font-semibold shadow-lg shadow-[#FF5C00]/25 hover:shadow-xl hover:shadow-[#FF5C00]/35 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
             >
               <Download className="w-4 h-4" />
-              <span>Save as PDF (Print)</span>
+              <span>Save as PDF</span>
             </button>
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function CVPage() {
         <div className="mt-3 px-4 py-2 rounded-xl bg-orange-500/10 border border-orange-500/20 text-xs text-orange-700 dark:text-orange-300 flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-[#FF5C00] shrink-0" />
           <span>
-            <strong>Android & Mobile Tip:</strong> Tap <strong>Save as PDF (Print)</strong> to open your phone's native print screen, then choose <strong>"Save as PDF"</strong>.
+            <strong>Android & Mobile Tip:</strong> Tap <strong>Save as PDF</strong> to open your phone's native print screen, then select <strong>Save as PDF</strong> in the destination menu.
           </span>
         </div>
       </div>

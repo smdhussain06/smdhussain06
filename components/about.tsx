@@ -32,10 +32,7 @@ const pillars = [
 
 export default function About() {
   return (
-    <section id="about" className="py-20 sm:py-28 bg-[#FAFAFA] dark:bg-[#0A0A0A] relative overflow-hidden">
-      {/* Subtle Ambient Glow */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#FF5C00]/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2" />
-
+    <section id="about" className="py-20 sm:py-28 bg-white dark:bg-[#0A0A0A] relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

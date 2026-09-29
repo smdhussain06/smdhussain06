@@ -26,10 +26,7 @@ const newsletters = [
 
 export default function Newsletters() {
   return (
-    <section id="newsletters" className="relative py-24 sm:py-32 bg-[#FAFAFA] dark:bg-[#0A0A0A] overflow-hidden">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#FF5C00]/10 rounded-full blur-[120px] pointer-events-none" />
-
+    <section id="newsletters" className="relative py-20 sm:py-28 bg-white dark:bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
