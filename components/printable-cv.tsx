@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Mail, MapPin, Globe, Linkedin, Github, Phone } from "lucide-react"
+import { Mail, MapPin, Linkedin, Github, Phone } from "lucide-react"
 
 interface PrintableCVProps {
   id?: string
@@ -9,8 +9,6 @@ interface PrintableCVProps {
 }
 
 export default function PrintableCV({ id = "print-cv-container", className = "" }: PrintableCVProps) {
-  const basePath = process.env.NODE_ENV === "production" ? "/smdhussain06" : ""
-
   return (
     <div
       id={id}
@@ -20,57 +18,53 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
         printColorAdjust: "exact",
       }}
     >
-      <div className="w-full max-w-4xl mx-auto p-6 sm:p-8 space-y-4 print:p-0 print:space-y-3.5 bg-white">
-        {/* Classical Minimal Header */}
-        <header className="flex items-center gap-5 border-b-2 border-slate-900 pb-3.5">
-          {/* Zoomed Portrait Photograph */}
-          <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-2xl overflow-hidden border border-slate-200 shrink-0 bg-slate-50">
-            <img
-              src={`${basePath}/personal-images/hussain-blazer-zoomed.png`}
-              alt="Mohammed Hussain"
-              className="w-full h-full object-cover object-center"
-              onError={(e) => {
-                e.currentTarget.src = `${basePath}/personal-images/hussain-blazer.png`
-              }}
-            />
-          </div>
-
-          <div className="flex-1">
-            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+      <div className="w-full max-w-4xl mx-auto p-6 sm:p-8 space-y-3.5 print:p-0 print:space-y-3 print:max-w-none bg-white">
+        {/* Classical Executive Header - Photo-Free, Crisp, Neat */}
+        <header className="border-b-2 border-slate-900 pb-3">
+          <div className="flex items-baseline justify-between gap-4">
+            <div>
               <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-950 uppercase">
                 Mohammed Hussain
               </h1>
-              <span className="text-xs font-bold text-[#FF4C00] uppercase tracking-wider">
-                AI & Data Science Engineer
-              </span>
+              <p className="text-xs font-semibold text-slate-600 mt-0.5">
+                AI & Data Science Engineer · Enterprise Operations and Systems Architecture
+              </p>
             </div>
-
-            <p className="text-[11px] font-semibold text-slate-600 mt-0.5">
-              Enterprise Operations and Systems Architecture
-            </p>
-
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10.5px] text-slate-600 mt-2 font-medium">
-              <span className="flex items-center gap-1">
-                <MapPin className="w-3 h-3 text-[#FF4C00]" />
+            <div className="text-right shrink-0">
+              <span className="text-[10px] font-bold text-[#FF4C00] uppercase tracking-widest block">
+                Executive Curriculum Vitae
+              </span>
+              <span className="text-[10px] text-slate-500 font-medium">
                 Chennai, Tamil Nadu, India
               </span>
-              <span className="flex items-center gap-1">
-                <Phone className="w-3 h-3 text-[#FF4C00]" />
-                +91 91763 30206
-              </span>
-              <span className="flex items-center gap-1">
-                <Mail className="w-3 h-3 text-[#FF4C00]" />
-                s.m.d.hussainjoe@gmail.com
-              </span>
-              <span className="flex items-center gap-1">
-                <Linkedin className="w-3 h-3 text-[#FF4C00]" />
-                linkedin.com/in/smdhussain06
-              </span>
-              <span className="flex items-center gap-1">
-                <Github className="w-3 h-3 text-[#FF4C00]" />
-                github.com/smdhussain06
-              </span>
             </div>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-700 mt-2.5 pt-2 border-t border-slate-100 font-medium">
+            <span className="flex items-center gap-1.5">
+              <MapPin className="w-3 h-3 text-[#FF4C00]" />
+              Chennai, Tamil Nadu, India
+            </span>
+            <span className="text-slate-300">·</span>
+            <span className="flex items-center gap-1.5">
+              <Phone className="w-3 h-3 text-[#FF4C00]" />
+              +91 91763 30206
+            </span>
+            <span className="text-slate-300">·</span>
+            <span className="flex items-center gap-1.5">
+              <Mail className="w-3 h-3 text-[#FF4C00]" />
+              s.m.d.hussainjoe@gmail.com
+            </span>
+            <span className="text-slate-300">·</span>
+            <span className="flex items-center gap-1.5">
+              <Linkedin className="w-3 h-3 text-[#FF4C00]" />
+              linkedin.com/in/smdhussain06
+            </span>
+            <span className="text-slate-300">·</span>
+            <span className="flex items-center gap-1.5">
+              <Github className="w-3 h-3 text-[#FF4C00]" />
+              github.com/smdhussain06
+            </span>
           </div>
         </header>
 
@@ -206,7 +200,7 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
             </div>
           </div>
           <p className="text-[10px] text-slate-600 mt-0.5 leading-snug">
-            Aalim Muhammed Salegh College of Engineering, Anna University, Chennai. Undergraduate engineering coursework in neural computing, statistical modeling, distributed systems, and practical software design.
+            Aalim Muhammed Salegh College of Engineering, Anna University, Chennai. Coursework in neural computing, statistical modeling, distributed systems, and practical software design.
           </p>
         </section>
 

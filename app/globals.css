@@ -195,7 +195,7 @@ html {
 @media print {
   @page {
     size: letter portrait;
-    margin: 6mm 8mm;
+    margin: 0;
   }
 
   html, body {
@@ -231,18 +231,19 @@ html {
     display: none !important;
   }
 
-  /* Make the print CV container strictly visible, full-width edge-to-edge on Letter */
+  /* Make the print CV container strictly visible with executive paper margins */
   #print-cv-container {
     display: block !important;
     position: static !important;
     visibility: visible !important;
     opacity: 1 !important;
+    box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
     min-height: 100% !important;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 14mm 16mm !important;
     overflow: visible !important;
     box-shadow: none !important;
     border: none !important;
