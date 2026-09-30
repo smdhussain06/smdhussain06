@@ -49,9 +49,9 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                 <h1 className="text-2xl font-black tracking-tight text-white uppercase leading-tight">
                   Mohammed
                   <br />
-                  <span className="text-slate-950">Hussain</span>
+                  <span className="text-white">Hussain</span>
                 </h1>
-                <p className="text-xs font-bold text-white/95 tracking-wide mt-1 uppercase">
+                <p className="text-xs font-bold text-white tracking-wide mt-1 uppercase">
                   AI & Data Science Engineer
                 </p>
 
@@ -62,7 +62,7 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                     target="_blank"
                     rel="noreferrer"
                     aria-label="LinkedIn"
-                    className="p-1.5 rounded-lg bg-black/20 hover:bg-black/35 text-white transition-colors border border-white/10"
+                    className="p-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-white transition-colors border border-white/25"
                   >
                     <Linkedin className="w-3.5 h-3.5 text-white" />
                   </a>
@@ -71,41 +71,41 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                     target="_blank"
                     rel="noreferrer"
                     aria-label="GitHub"
-                    className="p-1.5 rounded-lg bg-black/20 hover:bg-black/35 text-white transition-colors border border-white/10"
+                    className="p-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-white transition-colors border border-white/25"
                   >
                     <Github className="w-3.5 h-3.5 text-white" />
                   </a>
                   <a
                     href="mailto:s.m.d.hussainjoe@gmail.com"
                     aria-label="Email"
-                    className="p-1.5 rounded-lg bg-black/20 hover:bg-black/35 text-white transition-colors border border-white/10"
+                    className="p-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-white transition-colors border border-white/25"
                   >
                     <Mail className="w-3.5 h-3.5 text-white" />
                   </a>
                 </div>
               </div>
 
-              {/* Contact Section with High-Contrast Obsidian & White Styling */}
+              {/* Contact Section in Pure White */}
               <div className="space-y-2.5 pt-2 border-t border-white/25">
-                <h2 className="text-xs font-black uppercase tracking-wider text-slate-950 flex items-center justify-between">
+                <h2 className="text-xs font-black uppercase tracking-wider text-white flex items-center justify-between">
                   <span>Contact</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-white" />
                 </h2>
                 <div className="space-y-2 text-[11px] text-white">
                   <div className="flex items-center gap-2.5">
-                    <Mail className="w-3.5 h-3.5 text-slate-950 shrink-0" />
+                    <Mail className="w-3.5 h-3.5 text-white shrink-0" />
                     <span className="truncate font-medium">s.m.d.hussainjoe@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-2.5">
-                    <Phone className="w-3.5 h-3.5 text-slate-950 shrink-0" />
+                    <Phone className="w-3.5 h-3.5 text-white shrink-0" />
                     <span className="font-medium">+91 91763 30206</span>
                   </div>
                   <div className="flex items-center gap-2.5">
-                    <MapPin className="w-3.5 h-3.5 text-slate-950 shrink-0" />
+                    <MapPin className="w-3.5 h-3.5 text-white shrink-0" />
                     <span className="font-medium">Chennai, Tamil Nadu, India</span>
                   </div>
                   <div className="flex items-center gap-2.5">
-                    <Globe className="w-3.5 h-3.5 text-slate-950 shrink-0" />
+                    <Globe className="w-3.5 h-3.5 text-white shrink-0" />
                     <span className="font-medium">github.com/smdhussain06</span>
                   </div>
                 </div>
@@ -113,7 +113,7 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
 
               {/* Languages Section */}
               <div className="space-y-2.5 pt-2 border-t border-white/25">
-                <h2 className="text-xs font-black uppercase tracking-wider text-slate-950 flex items-center justify-between">
+                <h2 className="text-xs font-black uppercase tracking-wider text-white flex items-center justify-between">
                   <span>Languages</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-white" />
                 </h2>
@@ -136,14 +136,14 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                     <span className="text-white font-medium">Hindi</span>
                     <div className="flex gap-1 w-24">
                       <div className="h-1.5 flex-1 rounded-sm bg-white" />
-                      <div className="h-1.5 flex-1 rounded-sm bg-black/25" />
+                      <div className="h-1.5 flex-1 rounded-sm bg-white/30" />
                     </div>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-white font-medium">Urdu</span>
                     <div className="flex gap-1 w-24">
                       <div className="h-1.5 flex-1 rounded-sm bg-white" />
-                      <div className="h-1.5 flex-1 rounded-sm bg-black/25" />
+                      <div className="h-1.5 flex-1 rounded-sm bg-white/30" />
                     </div>
                   </div>
                 </div>
@@ -151,29 +151,29 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
 
               {/* Skills Section in Left Column */}
               <div className="space-y-2.5 pt-2 border-t border-white/25">
-                <h2 className="text-xs font-black uppercase tracking-wider text-slate-950 flex items-center justify-between">
+                <h2 className="text-xs font-black uppercase tracking-wider text-white flex items-center justify-between">
                   <span>Skills</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-white" />
                 </h2>
                 <div className="space-y-1.5 text-[11px] text-white">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-950 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
                     <span className="font-medium">Financial Operations & Invoicing</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-950 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
                     <span className="font-medium">International Voice & Client Support</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-950 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
                     <span className="font-medium">Workflow Automation & APIs</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-950 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
                     <span className="font-medium">Python & Data Analysis</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-950 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
                     <span className="font-medium">Dispute Mitigation & Counseling</span>
                   </div>
                 </div>
