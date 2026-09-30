@@ -187,7 +187,6 @@ html {
     height: auto !important;
     opacity: 0 !important;
     pointer-events: none !important;
-    visibility: hidden !important;
     z-index: -999 !important;
   }
 }
@@ -196,7 +195,7 @@ html {
 @media print {
   @page {
     size: letter portrait;
-    margin: 0;
+    margin: 6mm 8mm;
   }
 
   html, body {
