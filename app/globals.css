@@ -177,17 +177,10 @@ html {
   line-clamp: 3;
 }
 
-/* Screen mode: pre-render off-screen so images and fonts are decoded before print */
+/* Screen mode: hide print-cv-container on screen */
 @media screen {
   #print-cv-container {
-    position: fixed !important;
-    left: -99999px !important;
-    top: 0 !important;
-    width: 215.9mm !important;
-    height: auto !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-    z-index: -999 !important;
+    display: none !important;
   }
 }
 

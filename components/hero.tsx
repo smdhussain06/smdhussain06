@@ -2,18 +2,13 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Printer, ArrowRight } from "lucide-react"
+import { Download, ArrowRight } from "lucide-react"
 
 export default function Hero() {
+  const basePath = process.env.NODE_ENV === "production" ? "/smdhussain06" : ""
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-  }
-
-  const handlePrintCV = () => {
-    // Triggers direct native print spooler after UI event settles
-    setTimeout(() => {
-      window.print()
-    }, 100)
   }
 
   return (
@@ -75,16 +70,15 @@ export default function Hero() {
             <ArrowRight className="w-4 h-4" />
           </Button>
 
-          {/* Button with ONLY print icon and "CV" — zero bracketed information, triggers print immediately */}
-          <Button
-            onClick={handlePrintCV}
-            variant="outline"
-            size="lg"
-            className="flex-1 sm:flex-initial bg-white dark:bg-[#111111] border border-black/10 dark:border-white/10 hover:border-[#FF5C00]/40 hover:bg-orange-500/10 text-slate-900 dark:text-white px-5 sm:px-7 py-3.5 sm:py-4 text-sm sm:text-base font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 shadow-sm"
+          {/* Direct Download of authentic vector PDF — instant, 100% reliable across all phones */}
+          <a
+            href={`${basePath}/mohammed-hussain-cv.pdf`}
+            download="Mohammed_Hussain_CV.pdf"
+            className="flex-1 sm:flex-initial bg-white dark:bg-[#111111] border border-black/10 dark:border-white/10 hover:border-[#FF5C00]/40 hover:bg-orange-500/10 text-slate-900 dark:text-white px-5 sm:px-7 py-3.5 sm:py-4 text-sm sm:text-base font-semibold rounded-2xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 shadow-sm cursor-pointer"
           >
-            <Printer className="w-4 h-4 text-[#FF5C00]" />
+            <Download className="w-4 h-4 text-[#FF4C00]" />
             <span>CV</span>
-          </Button>
+          </a>
         </motion.div>
 
         {/* Executive Stats Grid on Flat White Surface */}
