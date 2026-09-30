@@ -21,16 +21,38 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
       }}
     >
       <div className="grid grid-cols-12 w-full h-[279mm] max-h-[279mm] overflow-hidden">
-        {/* Left Column: Signature Coat Orange Gradient Sidebar */}
+        {/* Left Column: Signature Coat Orange Gradient Sidebar with Guaranteed Vector Background */}
         <aside
-          className="col-span-12 sm:col-span-4 text-white flex flex-col justify-between border-r border-[#E63E00] p-0"
+          className="col-span-12 sm:col-span-4 text-white flex flex-col justify-between border-r border-[#E63E00] p-0 relative overflow-hidden"
           style={{
+            backgroundColor: "#FF4C00",
             background: "linear-gradient(180deg, #FF4C00 0%, #FF5A00 50%, #E63E00 100%)",
             WebkitPrintColorAdjust: "exact",
             printColorAdjust: "exact",
           }}
         >
-          <div>
+          {/* Guaranteed Print SVG Background - Vector shapes are never stripped by PDF writers */}
+          <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+            <svg
+              className="w-full h-full"
+              width="100%"
+              height="100%"
+              preserveAspectRatio="none"
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient id="coatOrangePdfGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#FF4C00" />
+                  <stop offset="50%" stopColor="#FF5A00" />
+                  <stop offset="100%" stopColor="#E63E00" />
+                </linearGradient>
+              </defs>
+              <rect width="100" height="100" fill="url(#coatOrangePdfGrad)" />
+            </svg>
+          </div>
+
+          <div className="relative z-10">
             {/* Zoomed Portrait Photograph flush at top matching coat outfit */}
             <div className="w-full overflow-hidden bg-[#FF4C00] aspect-[4/4] relative border-b-2 border-white/20">
               <img
@@ -111,7 +133,7 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                 </div>
               </div>
 
-              {/* Languages Section */}
+              {/* Languages Section with Vector Meter Bars */}
               <div className="space-y-2.5 pt-2 border-t border-white/25">
                 <h2 className="text-xs font-black uppercase tracking-wider text-white flex items-center justify-between">
                   <span>Languages</span>
@@ -120,36 +142,36 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                 <div className="space-y-2 text-[11px]">
                   <div className="flex items-center justify-between">
                     <span className="text-white font-medium">English</span>
-                    <div className="flex gap-1 w-24">
-                      <div className="h-1.5 flex-1 rounded-sm bg-white" />
-                      <div className="h-1.5 flex-1 rounded-sm bg-white" />
-                    </div>
+                    <svg className="w-24 h-2 rounded-sm" viewBox="0 0 100 8" preserveAspectRatio="none">
+                      <rect width="47" height="8" rx="2" fill="#FFFFFF" />
+                      <rect x="53" width="47" height="8" rx="2" fill="#FFFFFF" />
+                    </svg>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-white font-medium">Tamil</span>
-                    <div className="flex gap-1 w-24">
-                      <div className="h-1.5 flex-1 rounded-sm bg-white" />
-                      <div className="h-1.5 flex-1 rounded-sm bg-white" />
-                    </div>
+                    <svg className="w-24 h-2 rounded-sm" viewBox="0 0 100 8" preserveAspectRatio="none">
+                      <rect width="47" height="8" rx="2" fill="#FFFFFF" />
+                      <rect x="53" width="47" height="8" rx="2" fill="#FFFFFF" />
+                    </svg>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-white font-medium">Hindi</span>
-                    <div className="flex gap-1 w-24">
-                      <div className="h-1.5 flex-1 rounded-sm bg-white" />
-                      <div className="h-1.5 flex-1 rounded-sm bg-white/30" />
-                    </div>
+                    <svg className="w-24 h-2 rounded-sm" viewBox="0 0 100 8" preserveAspectRatio="none">
+                      <rect width="47" height="8" rx="2" fill="#FFFFFF" />
+                      <rect x="53" width="47" height="8" rx="2" fill="#FFFFFF" fillOpacity="0.3" />
+                    </svg>
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-white font-medium">Urdu</span>
-                    <div className="flex gap-1 w-24">
-                      <div className="h-1.5 flex-1 rounded-sm bg-white" />
-                      <div className="h-1.5 flex-1 rounded-sm bg-white/30" />
-                    </div>
+                    <svg className="w-24 h-2 rounded-sm" viewBox="0 0 100 8" preserveAspectRatio="none">
+                      <rect width="47" height="8" rx="2" fill="#FFFFFF" />
+                      <rect x="53" width="47" height="8" rx="2" fill="#FFFFFF" fillOpacity="0.3" />
+                    </svg>
                   </div>
                 </div>
               </div>
 
-              {/* Skills Section in Left Column */}
+              {/* Skills Section with Vector Bullets */}
               <div className="space-y-2.5 pt-2 border-t border-white/25">
                 <h2 className="text-xs font-black uppercase tracking-wider text-white flex items-center justify-between">
                   <span>Skills</span>
@@ -157,23 +179,33 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                 </h2>
                 <div className="space-y-1.5 text-[11px] text-white">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+                    <svg className="w-1.5 h-1.5 shrink-0" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" fill="#FFFFFF" />
+                    </svg>
                     <span className="font-medium">Financial Operations & Invoicing</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+                    <svg className="w-1.5 h-1.5 shrink-0" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" fill="#FFFFFF" />
+                    </svg>
                     <span className="font-medium">International Voice & Client Support</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+                    <svg className="w-1.5 h-1.5 shrink-0" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" fill="#FFFFFF" />
+                    </svg>
                     <span className="font-medium">Workflow Automation & APIs</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+                    <svg className="w-1.5 h-1.5 shrink-0" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" fill="#FFFFFF" />
+                    </svg>
                     <span className="font-medium">Python & Data Analysis</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white shrink-0" />
+                    <svg className="w-1.5 h-1.5 shrink-0" viewBox="0 0 8 8">
+                      <circle cx="4" cy="4" r="3" fill="#FFFFFF" />
+                    </svg>
                     <span className="font-medium">Dispute Mitigation & Counseling</span>
                   </div>
                 </div>
@@ -181,7 +213,7 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
             </div>
           </div>
 
-          <div className="px-6 py-4 text-[9px] text-white/90 text-center border-t border-white/20 font-medium">
+          <div className="px-6 py-4 text-[9px] text-white/90 text-center border-t border-white/20 font-medium relative z-10">
             Chennai, Tamil Nadu, India
           </div>
         </aside>
@@ -194,7 +226,9 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
               <h2 className="text-sm font-bold uppercase tracking-wider text-slate-950">
                 Profile
               </h2>
-              <div className="w-10 h-0.5 bg-[#FF4C00] mt-1 mb-2.5" />
+              <svg className="w-10 h-1 mt-1 mb-2.5" viewBox="0 0 40 4">
+                <rect width="40" height="4" rx="2" fill="#FF4C00" />
+              </svg>
               <p className="text-[11px] leading-relaxed text-slate-700 text-justify">
                 Artificial Intelligence and Data Science graduate with hands-on experience in financial operations at State Bank of India, voice processes at Zealous Services and LeadPro, and automation systems at A Generative Slice. Focused on building reliable software workflows, handling client communication, and solving operational challenges.
               </p>
@@ -205,7 +239,9 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
               <h2 className="text-sm font-bold uppercase tracking-wider text-slate-950">
                 Experience
               </h2>
-              <div className="w-10 h-0.5 bg-[#FF4C00] mt-1 mb-2.5" />
+              <svg className="w-10 h-1 mt-1 mb-2.5" viewBox="0 0 40 4">
+                <rect width="40" height="4" rx="2" fill="#FF4C00" />
+              </svg>
 
               <div className="space-y-3">
                 {/* Role 1: A Generative Slice */}
@@ -293,7 +329,9 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
               <h2 className="text-sm font-bold uppercase tracking-wider text-slate-950">
                 Education
               </h2>
-              <div className="w-10 h-0.5 bg-[#FF4C00] mt-1 mb-2.5" />
+              <svg className="w-10 h-1 mt-1 mb-2.5" viewBox="0 0 40 4">
+                <rect width="40" height="4" rx="2" fill="#FF4C00" />
+              </svg>
 
               <div className="grid grid-cols-12 gap-3">
                 <div className="col-span-4 space-y-0.5">
@@ -309,12 +347,14 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
               </div>
             </section>
 
-            {/* Expertise Section */}
+            {/* Expertise Section with Vector Progress Bars */}
             <section>
               <h2 className="text-sm font-bold uppercase tracking-wider text-slate-950">
                 Expertise
               </h2>
-              <div className="w-10 h-0.5 bg-[#FF4C00] mt-1 mb-2.5" />
+              <svg className="w-10 h-1 mt-1 mb-2.5" viewBox="0 0 40 4">
+                <rect width="40" height="4" rx="2" fill="#FF4C00" />
+              </svg>
 
               <div className="grid grid-cols-2 gap-x-6 gap-y-2.5 text-[11px]">
                 <div>
@@ -322,9 +362,10 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                     <span>Financial Operations & Billing</span>
                     <span className="text-[#FF4C00]">Advanced</span>
                   </div>
-                  <div className="w-full bg-slate-100 rounded-sm h-1.5 overflow-hidden">
-                    <div className="bg-[#FF4C00] h-full rounded-sm w-[92%]" />
-                  </div>
+                  <svg className="w-full h-1.5 rounded-sm" viewBox="0 0 100 6" preserveAspectRatio="none">
+                    <rect width="100" height="6" rx="2" fill="#F1F5F9" />
+                    <rect width="92" height="6" rx="2" fill="#FF4C00" />
+                  </svg>
                 </div>
 
                 <div>
@@ -332,9 +373,10 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                     <span>International Voice & Support</span>
                     <span className="text-[#FF4C00]">Fluent</span>
                   </div>
-                  <div className="w-full bg-slate-100 rounded-sm h-1.5 overflow-hidden">
-                    <div className="bg-[#FF4C00] h-full rounded-sm w-[90%]" />
-                  </div>
+                  <svg className="w-full h-1.5 rounded-sm" viewBox="0 0 100 6" preserveAspectRatio="none">
+                    <rect width="100" height="6" rx="2" fill="#F1F5F9" />
+                    <rect width="90" height="6" rx="2" fill="#FF4C00" />
+                  </svg>
                 </div>
 
                 <div>
@@ -342,9 +384,10 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                     <span>Workflow Automation & APIs</span>
                     <span className="text-[#FF4C00]">Proficient</span>
                   </div>
-                  <div className="w-full bg-slate-100 rounded-sm h-1.5 overflow-hidden">
-                    <div className="bg-[#FF4C00] h-full rounded-sm w-[94%]" />
-                  </div>
+                  <svg className="w-full h-1.5 rounded-sm" viewBox="0 0 100 6" preserveAspectRatio="none">
+                    <rect width="100" height="6" rx="2" fill="#F1F5F9" />
+                    <rect width="94" height="6" rx="2" fill="#FF4C00" />
+                  </svg>
                 </div>
 
                 <div>
@@ -352,9 +395,10 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
                     <span>Customer Relations & Care</span>
                     <span className="text-[#FF4C00]">Experienced</span>
                   </div>
-                  <div className="w-full bg-slate-100 rounded-sm h-1.5 overflow-hidden">
-                    <div className="bg-[#FF4C00] h-full rounded-sm w-[92%]" />
-                  </div>
+                  <svg className="w-full h-1.5 rounded-sm" viewBox="0 0 100 6" preserveAspectRatio="none">
+                    <rect width="100" height="6" rx="2" fill="#F1F5F9" />
+                    <rect width="92" height="6" rx="2" fill="#FF4C00" />
+                  </svg>
                 </div>
               </div>
             </section>
