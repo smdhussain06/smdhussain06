@@ -9,7 +9,7 @@ const education = [
     degree: "Bachelor of Technology in Artificial Intelligence and Data Science",
     field: "Artificial Intelligence and Data Science",
     duration: "2021 — 2025",
-    grade: "Graduated with First Class Distinction",
+    grade: "Anna University, Chennai",
     skills: [
       "Artificial Intelligence",
       "Multi-Agent Systems",

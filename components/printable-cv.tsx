@@ -193,7 +193,7 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
 
           <div className="flex items-baseline justify-between">
             <div className="text-xs font-bold text-slate-950">
-              Bachelor of Technology in Artificial Intelligence and Data Science · <span className="font-semibold text-[#FF4C00]">First Class Distinction</span>
+              Bachelor of Technology in Artificial Intelligence and Data Science
             </div>
             <div className="text-[10px] font-semibold text-slate-600">
               2021 — 2025

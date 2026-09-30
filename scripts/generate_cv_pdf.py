@@ -296,12 +296,8 @@ def generate():
     # ==========================================
     pdf.section_header("EDUCATION", "Anna University")
     
-    # Degree + Distinction seamlessly placed
-    pdf.rich_line(pdf.left, pdf.y, [
-        ("Bachelor of Technology in Artificial Intelligence and Data Science", "F2", 9.5, (0.04, 0.06, 0.10)),
-        ("  \u00b7  ", "F1", 9.5, (0.50, 0.55, 0.65)),
-        ("First Class Distinction", "F2", 9, (1.0, 0.30, 0.0))
-    ])
+    # Degree line
+    pdf.text(pdf.left, pdf.y, "Bachelor of Technology in Artificial Intelligence and Data Science", font="F2", size=9.5, color=(0.04, 0.06, 0.10))
     pdf.text_right(pdf.y, "2021 \u2014 2025", font="F1", size=8.5, color=(0.45, 0.50, 0.60))
     pdf.y -= 12
 
