@@ -14,16 +14,16 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
   return (
     <div
       id={id}
-      className={`bg-white text-slate-900 w-full font-sans print:p-0 print:m-0 print:max-w-none print:w-full print:h-[279mm] print:max-h-[279mm] print:overflow-hidden border-0 shadow-none ${className}`}
+      className={`bg-white text-slate-900 w-full font-sans print:p-0 print:m-0 print:max-w-none print:w-full border-0 shadow-none ${className}`}
       style={{
         WebkitPrintColorAdjust: "exact",
         printColorAdjust: "exact",
       }}
     >
-      <div className="grid grid-cols-12 w-full h-[279mm] max-h-[279mm] overflow-hidden">
+      <div className="grid grid-cols-12 w-full min-h-full">
         {/* Left Column: Signature Coat Orange Gradient Sidebar with Guaranteed Vector Background */}
         <aside
-          className="col-span-12 sm:col-span-4 text-white flex flex-col justify-between border-r border-[#E63E00] p-0 relative overflow-hidden"
+          className="col-span-12 sm:col-span-4 text-white flex flex-col justify-between border-r border-[#E63E00] p-0 relative overflow-hidden min-h-full"
           style={{
             backgroundColor: "#FF4C00",
             background: "linear-gradient(180deg, #FF4C00 0%, #FF5A00 50%, #E63E00 100%)",
@@ -219,7 +219,7 @@ export default function PrintableCV({ id = "print-cv-container", className = "" 
         </aside>
 
         {/* Right Column: Crisp White Layout */}
-        <main className="col-span-12 sm:col-span-8 px-8 py-6 space-y-5 bg-white flex flex-col justify-between">
+        <main className="col-span-12 sm:col-span-8 px-8 py-6 space-y-5 bg-white flex flex-col justify-between min-h-full">
           <div className="space-y-5">
             {/* Profile Section */}
             <section>

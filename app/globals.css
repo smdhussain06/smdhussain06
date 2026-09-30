@@ -177,6 +177,21 @@ html {
   line-clamp: 3;
 }
 
+/* Screen mode: pre-render off-screen so images and fonts are decoded before print */
+@media screen {
+  #print-cv-container {
+    position: fixed !important;
+    left: -99999px !important;
+    top: 0 !important;
+    width: 215.9mm !important;
+    height: auto !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    z-index: -999 !important;
+  }
+}
+
 /* Print Styles for Guaranteed Single-Page Full-Screen Executive CV on Letter/A4 */
 @media print {
   @page {
@@ -190,9 +205,12 @@ html {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
+    min-height: 100% !important;
+    overflow: visible !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+    color-adjust: exact !important;
   }
 
   /* Hide regular interactive layout components when printing */
@@ -218,11 +236,15 @@ html {
   #print-cv-container {
     display: block !important;
     position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     width: 100% !important;
     max-width: 100% !important;
+    height: auto !important;
     min-height: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: visible !important;
     box-shadow: none !important;
     border: none !important;
     page-break-inside: avoid !important;

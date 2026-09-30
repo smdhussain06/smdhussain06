@@ -10,8 +10,10 @@ export default function Hero() {
   }
 
   const handlePrintCV = () => {
-    // Triggers direct native print/Save as PDF spooler immediately
-    window.print()
+    // Triggers direct native print spooler after UI event settles
+    setTimeout(() => {
+      window.print()
+    }, 100)
   }
 
   return (

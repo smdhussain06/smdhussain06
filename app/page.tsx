@@ -14,9 +14,9 @@ import PrintableCV from "@/components/printable-cv"
 
 export default function Home() {
   return (
-    <div className="relative bg-white dark:bg-[#0A0A0A] text-slate-900 dark:text-white overflow-x-hidden selection:bg-[#FF5C00]/20 selection:text-[#FF5C00]">
-      {/* Dedicated Print Target: Always rendered in DOM, strictly visible when window.print() is executed */}
-      <PrintableCV id="print-cv-container" className="hidden print:block" />
+    <div className="relative bg-white dark:bg-[#0A0A0A] text-slate-900 dark:text-white overflow-x-hidden print:overflow-visible selection:bg-[#FF5C00]/20 selection:text-[#FF5C00]">
+      {/* Dedicated Print Target: Pre-rendered offscreen to eliminate render delay or flash */}
+      <PrintableCV id="print-cv-container" />
 
       {/* Main Website Structure: Clean, minimal, flat white */}
       <div className="no-print">
